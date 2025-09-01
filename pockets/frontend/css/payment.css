@@ -1,0 +1,268 @@
+/* Стили для страницы оплаты */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.payment-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Заголовок */
+.payment-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.payment-header h1 {
+    color: #007bff;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.back-link {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #007bff;
+}
+
+/* Информация о теме */
+.topic-info {
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.topic-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.topic-info h2 {
+    color: #007bff;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.topic-info p {
+    color: #6c757d;
+    font-size: 18px;
+}
+
+/* Преимущества */
+.benefits {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.benefits h3 {
+    color: #28a745;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    color: #555;
+}
+
+.benefits li:last-child {
+    border-bottom: none;
+}
+
+/* Цена */
+.price-section {
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.price {
+    font-size: 48px;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.currency {
+    font-size: 24px;
+    vertical-align: top;
+}
+
+.amount {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.period {
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.price-note {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* QR код */
+.qr-section {
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.qr-code {
+    margin-bottom: 20px;
+}
+
+.qr-placeholder {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #999;
+}
+
+.qr-placeholder span {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.qr-placeholder small {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.qr-section p {
+    color: #6c757d;
+    font-size: 16px;
+}
+
+/* Кнопка оплаты */
+.payment-actions {
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.btn-pay {
+    background-color: #28a745;
+    color: white;
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-pay:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40,167,69,0.3);
+}
+
+.payment-note {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Дополнительная информация */
+.additional-info {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.additional-info h3 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.additional-info ol {
+    padding-left: 20px;
+}
+
+.additional-info li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 20px 15px;
+    }
+    
+    .payment-header h1 {
+        font-size: 28px;
+    }
+    
+    .topic-info h2 {
+        font-size: 24px;
+    }
+    
+    .price {
+        font-size: 36px;
+    }
+    
+    .qr-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .qr-placeholder span {
+        font-size: 36px;
+    }
+    
+    .btn-pay {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}

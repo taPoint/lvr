@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pockets - Школа английского языка</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Pockets</h1>
+                <span>Школа английского языка</span>
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-primary">Войти</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
+            <div class="hero">
+                <h2>Изучайте английский с удовольствием!</h2>
+                <p>Выберите тему и начните обучение прямо сейчас</p>
+            </div>
+
+            <!-- Блоки с темами -->
+            <div class="topics-grid">
+                <div class="topic-card" data-topic="1">
+                    <div class="topic-icon">📚</div>
+                    <h3>Present Simple</h3>
+                    <p>Настоящее простое время - основа английской грамматики</p>
+                    <button class="btn btn-topic">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="2">
+                    <div class="topic-icon">⏰</div>
+                    <h3>Past Simple</h3>
+                    <p>Простое прошедшее время - рассказываем о прошлом</p>
+                    <button class="btn btn-topic">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="3">
+                    <div class="topic-icon">🔮</div>
+                    <h3>Future Simple</h3>
+                    <p>Простое будущее время - планируем будущее</p>
+                    <button class="btn btn-topic">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="4">
+                    <div class="topic-icon">🔄</div>
+                    <h3>Present Continuous</h3>
+                    <p>Настоящее длительное время - действия в процессе</p>
+                    <button class="btn btn-topic">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="5">
+                    <div class="topic-icon">💪</div>
+                    <h3>Modal Verbs</h3>
+                    <p>Модальные глаголы - выражаем возможности и необходимость</p>
+                    <button class="btn btn-topic">Начать изучение</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Pockets</h4>
+                    <p>Школа английского языка</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>Email: info@pockets-school.ru</p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Социальные сети</h4>
+                    <p>VK: @pockets_school</p>
+                    <p>Telegram: @pockets_school</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pockets. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно входа -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="authContent">
+                <!-- Контент будет загружен из auth.html -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
