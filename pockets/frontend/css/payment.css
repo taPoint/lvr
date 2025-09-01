@@ -1,7 +1,15 @@
 /* Стили для страницы оплаты */
+:root {
+    --brand-primary: #61525a;
+    --brand-accent: #5f9dff;
+    --warm-gray: #6b7280;
+    --section-background: #f7f5f2;
+    --border: 220, 14%, 90%; /* Light gray in HSL */
+}
+
 .page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--section-background);
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -10,73 +18,81 @@
 .payment {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 2.5rem 1.25rem;
 }
 
 /* Заголовок */
 .payment__header {
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid hsl(var(--border));
 }
 
 .payment__title {
-    color: #007bff;
-    font-size: 36px;
-    margin-bottom: 15px;
+    color: var(--brand-primary);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .payment__back-link {
-    color: #6c757d;
+    color: var(--warm-gray);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .payment__back-link:hover {
-    color: #007bff;
+    color: var(--brand-accent);
 }
 
 /* Информация о теме */
 .payment__topic-info {
     text-align: center;
     background: white;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
 }
 
 .payment__topic-icon {
-    font-size: 64px;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
 }
 
 .payment__topic-title {
-    color: #007bff;
-    font-size: 28px;
-    margin-bottom: 15px;
+    color: var(--brand-primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .payment__topic-description {
-    color: #6c757d;
-    font-size: 18px;
+    color: var(--warm-gray);
+    font-size: 1.125rem;
+    line-height: 1.6;
 }
 
 /* Преимущества */
 .payment__benefits {
     background: white;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
 }
 
 .payment__benefits-title {
-    color: #28a745;
-    font-size: 24px;
-    margin-bottom: 20px;
+    color: var(--brand-accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -86,10 +102,11 @@
 }
 
 .payment__benefits-item {
-    padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 16px;
-    color: #555;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+    font-size: 1rem;
+    color: var(--brand-primary);
+    font-weight: 500;
 }
 
 .payment__benefits-item:last-child {
@@ -100,157 +117,171 @@
 .payment__price-section {
     text-align: center;
     background: white;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
 }
 
 .payment__price {
-    font-size: 48px;
-    color: #28a745;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    color: var(--brand-accent);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
 }
 
 .payment__price-currency {
-    font-size: 24px;
+    font-size: 1.5rem;
     vertical-align: top;
 }
 
 .payment__price-amount {
-    font-weight: bold;
-    margin: 0 5px;
+    font-weight: 700;
+    margin: 0 0.25rem;
 }
 
 .payment__price-period {
-    font-size: 18px;
-    color: #6c757d;
+    font-size: 1.125rem;
+    color: var(--warm-gray);
+    font-weight: 500;
 }
 
 .payment__price-note {
-    color: #6c757d;
-    font-size: 14px;
+    color: var(--warm-gray);
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* QR код */
 .payment__qr-section {
     text-align: center;
     background: white;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
 }
 
 .payment__qr-code {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .payment__qr-placeholder {
     width: 200px;
     height: 200px;
-    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-    border: 2px dashed #ccc;
-    border-radius: 12px;
+    background: var(--section-background);
+    border: 2px dashed hsl(var(--border));
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    color: #999;
+    color: var(--warm-gray);
 }
 
 .payment__qr-text {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .payment__qr-label {
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 1rem;
+    margin-top: 0.75rem;
+    font-weight: 500;
 }
 
 .payment__qr-description {
-    color: #6c757d;
-    font-size: 16px;
+    color: var(--warm-gray);
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 /* Кнопка оплаты */
 .payment__actions {
     text-align: center;
     background: white;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
 }
 
 .payment__btn--pay {
-    background-color: #28a745;
+    background-color: var(--brand-accent);
     color: white;
-    padding: 18px 40px;
-    font-size: 20px;
+    padding: 1rem 2.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    border: none;
-    border-radius: 8px;
+    border: 2px solid var(--brand-accent);
+    border-radius: 8rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     display: inline-block;
 }
 
 .payment__btn--pay:hover {
-    background-color: #1e7e34;
+    background-color: #4a89e8;
+    border-color: #4a89e8;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(40,167,69,0.3);
+    box-shadow: 0 8px 25px rgba(95, 157, 255, 0.3);
 }
 
 .payment__note {
-    color: #6c757d;
-    font-size: 14px;
+    color: var(--warm-gray);
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* Дополнительная информация */
 .payment__additional-info {
     background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
 }
 
 .payment__additional-title {
-    color: #007bff;
-    font-size: 24px;
-    margin-bottom: 20px;
+    color: var(--brand-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .payment__additional-list {
-    padding-left: 20px;
+    padding-left: 1.5rem;
 }
 
 .payment__additional-item {
-    padding: 8px 0;
-    color: #555;
-    font-size: 16px;
+    padding: 0.5rem 0;
+    color: var(--brand-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .payment {
-        padding: 20px 15px;
+        padding: 1.5rem 1rem;
     }
     
     .payment__title {
-        font-size: 28px;
+        font-size: 1.875rem;
     }
     
     .payment__topic-title {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .payment__price {
-        font-size: 36px;
+        font-size: 2.25rem;
     }
     
     .payment__qr-placeholder {
@@ -259,11 +290,25 @@
     }
     
     .payment__qr-text {
-        font-size: 36px;
+        font-size: 2.25rem;
     }
     
     .payment__btn--pay {
-        padding: 15px 30px;
-        font-size: 18px;
+        padding: 0.875rem 2rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment__title {
+        font-size: 1.5rem;
+    }
+    
+    .payment__topic-icon {
+        font-size: 3rem;
+    }
+    
+    .payment__price {
+        font-size: 2rem;
     }
 }

@@ -5,11 +5,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --brand-primary: #61525a;
+    --brand-accent: #5f9dff;
+    --warm-gray: #6b7280;
+    --section-background: #f7f5f2;
+    --border: 220, 14%, 90%; /* Light gray in HSL */
+}
+
 .page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f8f9fa;
+    background-color: var(--section-background);
 }
 
 /* Контейнеры */
@@ -25,44 +33,46 @@
 .header__btn,
 .topic-card__btn {
     display: inline-block;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--brand-accent);
+    border-radius: 8rem;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .header__btn--primary {
-    background-color: #007bff;
+    background-color: var(--brand-accent);
     color: white;
 }
 
 .header__btn--primary:hover {
-    background-color: #0056b3;
+    background-color: #4a89e8;
+    border-color: #4a89e8;
     transform: translateY(-2px);
 }
 
 .topic-card__btn--primary {
-    background-color: #28a745;
+    background-color: var(--brand-accent);
     color: white;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 
 .topic-card__btn--primary:hover {
-    background-color: #1e7e34;
+    background-color: #4a89e8;
+    border-color: #4a89e8;
     transform: translateY(-2px);
 }
 
 /* Хедер */
 .header {
     background-color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 20px 0;
+    border-bottom: 1px solid hsl(var(--border));
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -72,6 +82,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .header__logo {
@@ -80,118 +91,140 @@
 }
 
 .header__title {
-    color: #007bff;
-    font-size: 28px;
-    margin-bottom: 5px;
+    color: var(--brand-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
 }
 
 .header__subtitle {
-    color: #6c757d;
-    font-size: 14px;
+    color: var(--warm-gray);
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .header__auth-buttons {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
+    align-items: center;
 }
 
 /* Основной контент */
 .main {
-    padding: 60px 0;
+    padding: 4rem 0;
 }
 
 .hero {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
+    background-color: white;
+    padding: 3rem 0;
+    border-radius: 1rem;
+    margin: 2rem 1rem 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero__title {
-    font-size: 36px;
-    color: #007bff;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--brand-primary);
 }
 
 .hero__subtitle {
-    font-size: 18px;
-    color: #6c757d;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--warm-gray);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
 }
 
 /* Сетка тем */
 .topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
 }
 
 .topic-card {
     background-color: white;
-    border-radius: 12px;
-    padding: 30px;
+    border-radius: 1rem;
+    padding: 2rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
+    border: 1px solid hsl(var(--border));
 }
 
 .topic-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--brand-accent);
 }
 
 .topic-card__icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
 }
 
 .topic-card__title {
-    color: #007bff;
-    font-size: 24px;
-    margin-bottom: 15px;
+    color: var(--brand-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .topic-card__description {
-    color: #6c757d;
-    margin-bottom: 20px;
+    color: var(--warm-gray);
+    margin-bottom: 1.5rem;
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* Футер */
 .footer {
-    background-color: #343a40;
+    background-color: var(--brand-primary);
     color: white;
-    padding: 40px 0 20px;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
 }
 
 .footer__content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .footer__heading {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 18px;
+    color: var(--brand-accent);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .footer__text {
-    margin-bottom: 8px;
-    color: #adb5bd;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
 }
 
 .footer__bottom {
     text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #495057;
-    color: #adb5bd;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .footer__copyright {
     margin: 0;
+    font-size: 0.875rem;
 }
 
 /* Модальное окно */
@@ -203,63 +236,95 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
 }
 
 .modal__content {
     background-color: white;
     margin: 5% auto;
     padding: 0;
-    border-radius: 12px;
+    border-radius: 1rem;
     width: 90%;
     max-width: 500px;
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .modal__close {
-    color: #aaa;
+    color: var(--warm-gray);
     float: right;
-    font-size: 28px;
+    font-size: 1.5rem;
     font-weight: bold;
     position: absolute;
-    right: 20px;
-    top: 15px;
+    right: 1.25rem;
+    top: 1rem;
     cursor: pointer;
     z-index: 1001;
+    transition: color 0.3s ease;
 }
 
 .modal__close:hover {
-    color: #000;
+    color: var(--brand-primary);
 }
 
 .modal__body {
-    padding: 30px;
+    padding: 2rem;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .header__container {
         flex-direction: column;
-        gap: 20px;
+        gap: 1rem;
+    }
+    
+    .hero {
+        margin: 1rem;
+        padding: 2rem 1rem;
     }
     
     .hero__title {
-        font-size: 28px;
+        font-size: 2rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
     }
     
     .topics-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
     
     .topic-card {
-        padding: 20px;
+        padding: 1.5rem;
     }
     
     .footer__content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+    
+    .modal__content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .topic-card__icon {
+        font-size: 2.5rem;
+    }
+    
+    .topic-card__title {
+        font-size: 1.25rem;
     }
 }

@@ -1,47 +1,56 @@
 /* Стили для страницы авторизации */
+:root {
+    --brand-primary: #61525a;
+    --brand-accent: #5f9dff;
+    --warm-gray: #6b7280;
+    --section-background: #f7f5f2;
+    --border: 220, 14%, 90%; /* Light gray in HSL */
+}
+
 .page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--section-background);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 20px;
+    padding: 1rem;
 }
 
 .auth {
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    padding: 40px;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
     width: 100%;
     max-width: 500px;
     position: relative;
+    border: 1px solid hsl(var(--border));
 }
 
 /* Переключатель форм */
 .auth__tabs {
     display: flex;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid hsl(var(--border));
 }
 
 .auth__tab-btn {
     flex: 1;
-    padding: 15px;
+    padding: 1rem;
     background: none;
     border: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: #666;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--warm-gray);
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .auth__tab-btn--active {
-    color: #007bff;
+    color: var(--brand-accent);
 }
 
 .auth__tab-btn--active::after {
@@ -51,11 +60,11 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #007bff;
+    background-color: var(--brand-accent);
 }
 
 .auth__tab-btn:hover {
-    color: #007bff;
+    color: var(--brand-accent);
 }
 
 /* Формы */
@@ -69,128 +78,140 @@
 
 .auth__form-title {
     text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 28px;
+    color: var(--brand-primary);
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
 }
 
 .auth__form-group {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .auth__form-label {
     display: block;
-    margin-bottom: 8px;
-    color: #555;
-    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
 }
 
 .auth__form-input {
     width: 100%;
-    padding: 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+    padding: 0.875rem 1rem;
+    border: 2px solid hsl(var(--border));
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
 }
 
 .auth__form-input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 3px rgba(95, 157, 255, 0.1);
 }
 
 .auth__form-btn {
     width: 100%;
-    padding: 15px;
-    background-color: #007bff;
+    padding: 0.875rem 1.5rem;
+    background-color: var(--brand-accent);
     color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
+    border: 2px solid var(--brand-accent);
+    border-radius: 8rem;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .auth__form-btn--primary {
-    background-color: #007bff;
+    background-color: var(--brand-accent);
 }
 
 .auth__form-btn--primary:hover {
-    background-color: #0056b3;
+    background-color: #4a89e8;
+    border-color: #4a89e8;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+    box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
 .auth__form-btn--secondary {
-    background-color: #6c757d;
+    background-color: var(--warm-gray);
+    border-color: var(--warm-gray);
 }
 
 .auth__form-btn--secondary:hover {
-    background-color: #545b62;
-    box-shadow: 0 5px 15px rgba(108,117,125,0.3);
+    background-color: #4b5563;
+    border-color: #4b5563;
+    box-shadow: 0 5px 15px rgba(107, 114, 128, 0.3);
 }
 
 /* Футер формы */
 .auth__form-footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
 }
 
 .auth__form-link--forgot {
-    color: #007bff;
+    color: var(--brand-accent);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .auth__form-link--forgot:hover {
+    color: #4a89e8;
     text-decoration: underline;
 }
 
 /* Тестовый аккаунт */
 .auth__test-account {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #28a745;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--section-background);
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--brand-accent);
 }
 
 .auth__test-account-title {
-    color: #28a745;
-    margin-bottom: 15px;
-    font-size: 18px;
+    color: var(--brand-accent);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .auth__test-account-info {
-    margin-bottom: 8px;
-    color: #666;
-    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: var(--warm-gray);
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .auth__test-account-btn {
-    margin-top: 15px;
-    background-color: #28a745;
+    margin-top: 1rem;
+    background-color: var(--brand-accent);
     width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
+    padding: 0.875rem 1.5rem;
+    border: 2px solid var(--brand-accent);
+    border-radius: 8rem;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     color: white;
 }
 
 .auth__test-account-btn--secondary {
-    background-color: #28a745;
+    background-color: var(--brand-accent);
 }
 
 .auth__test-account-btn--secondary:hover {
-    background-color: #1e7e34;
-    box-shadow: 0 5px 15px rgba(40,167,69,0.3);
+    background-color: #4a89e8;
+    border-color: #4a89e8;
+    box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
 /* Анимации */
@@ -212,16 +233,24 @@
 /* Адаптивность */
 @media (max-width: 600px) {
     .auth {
-        padding: 30px 20px;
-        margin: 20px;
+        padding: 1.5rem 1.25rem;
+        margin: 1rem;
     }
     
     .auth__form-title {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .auth__tab-btn {
-        padding: 12px;
-        font-size: 14px;
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .auth__form-input {
+        padding: 0.75rem;
+    }
+    
+    .auth__form-btn {
+        padding: 0.75rem 1.25rem;
     }
 }
