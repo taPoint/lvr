@@ -383,6 +383,191 @@
     box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
+/* План действий */
+.topic__plan {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
+}
+
+.topic__plan-title {
+    color: var(--brand-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.topic__plan-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.topic__plan-step {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--section-background);
+    border-radius: 0.75rem;
+    border: 1px solid hsl(var(--border));
+}
+
+.topic__plan-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.topic__plan-step-title {
+    color: var(--brand-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.topic__plan-step-description {
+    color: var(--warm-gray);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Документы для скачивания */
+.topic__documents {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
+}
+
+.topic__documents-title {
+    color: var(--brand-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.topic__document {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.topic__document:hover {
+    border-color: var(--brand-accent);
+    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.1);
+}
+
+.topic__document-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.topic__document-info {
+    flex: 1;
+}
+
+.topic__document-title {
+    color: var(--brand-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.topic__document-description {
+    color: var(--warm-gray);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.topic__document-download {
+    display: inline-block;
+    background-color: var(--brand-accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.topic__document-download:hover {
+    background-color: #4a89e8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.3);
+}
+
+/* Советы по изучению */
+.topic__tips {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
+}
+
+.topic__tips-title {
+    color: var(--brand-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.topic__tips-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.topic__tip {
+    padding: 1.5rem;
+    background-color: var(--section-background);
+    border-radius: 0.75rem;
+    border: 1px solid hsl(var(--border));
+}
+
+.topic__tip-title {
+    color: var(--brand-accent);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.topic__tip-list {
+    list-style: none;
+    padding: 0;
+}
+
+.topic__tip-list li {
+    color: var(--brand-primary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.topic__tip-list li::before {
+    content: '•';
+    color: var(--brand-accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .topic__header {
@@ -400,14 +585,26 @@
         padding: 0 1rem;
     }
     
-    .theory,
-    .exercises,
-    .test {
+    .topic__plan,
+    .topic__documents,
+    .topic__tips {
         padding: 1.5rem;
     }
     
-    .theory__examples {
+    .topic__plan-steps {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .topic__tips-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .topic__document {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
     
     .topic__navigation {
@@ -417,10 +614,6 @@
     
     .topic__nav-btn {
         width: 100%;
-    }
-    
-    .exercise {
-        padding: 1.25rem;
     }
 }
 
