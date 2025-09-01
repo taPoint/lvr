@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оплата - Pockets</title>
     <link rel="stylesheet" href="css/payment.css">
 </head>
-<body>
-    <div class="payment-container">
-        <div class="payment-header">
-            <h1>Оплата темы</h1>
-            <a href="pockets.html" class="back-link">← Вернуться к темам</a>
+
+<body class="page">
+    <div class="payment">
+        <div class="payment__header">
+            <h1 class="payment__title">Оплата темы</h1>
+            <a href="pockets.html" class="payment__back-link">← Вернуться к темам</a>
         </div>
 
-        <div class="payment-content">
+        <div class="payment__content">
             <!-- Информация о теме -->
-            <div class="topic-info">
-                <div class="topic-icon" id="topicIcon">📚</div>
-                <h2 id="topicTitle">Название темы</h2>
-                <p id="topicDescription">Описание темы</p>
+            <div class="payment__topic-info">
+                <div class="payment__topic-icon" id="topicIcon">📚</div>
+                <h2 class="payment__topic-title" id="topicTitle">Название темы</h2>
+                <p class="payment__topic-description" id="topicDescription">Описание темы</p>
             </div>
 
             <!-- Преимущества покупки -->
-            <div class="benefits">
-                <h3>Что вы получите:</h3>
-                <ul>
-                    <li>✅ Подробное объяснение грамматики</li>
-                    <li>✅ Интерактивные упражнения</li>
-                    <li>✅ Аудио материалы</li>
-                    <li>✅ Тесты для проверки знаний</li>
-                    <li>✅ Сертификат о прохождении</li>
-                    <li>✅ Доступ навсегда</li>
+            <div class="payment__benefits">
+                <h3 class="payment__benefits-title">Что вы получите:</h3>
+                <ul class="payment__benefits-list">
+                    <li class="payment__benefits-item">✅ Подробное объяснение грамматики</li>
+                    <li class="payment__benefits-item">✅ Интерактивные упражнения</li>
+                    <li class="payment__benefits-item">✅ Аудио материалы</li>
+                    <li class="payment__benefits-item">✅ Тесты для проверки знаний</li>
+                    <li class="payment__benefits-item">✅ Сертификат о прохождении</li>
+                    <li class="payment__benefits-item">✅ Доступ навсегда</li>
                 </ul>
             </div>
 
             <!-- Цена -->
-            <div class="price-section">
-                <div class="price">
-                    <span class="currency">₽</span>
-                    <span class="amount">299</span>
-                    <span class="period">/тема</span>
+            <div class="payment__price-section">
+                <div class="payment__price">
+                    <span class="payment__price-currency">₽</span>
+                    <span class="payment__price-amount">299</span>
+                    <span class="payment__price-period">/тема</span>
                 </div>
-                <p class="price-note">Оплата через СБП</p>
+                <p class="payment__price-note">Оплата через СБП</p>
             </div>
 
             <!-- QR код СБП (заглушка) -->
-            <div class="qr-section">
-                <div class="qr-code">
-                    <div class="qr-placeholder">
-                        <span>QR</span>
-                        <small>СБП</small>
+            <div class="payment__qr-section">
+                <div class="payment__qr-code">
+                    <div class="payment__qr-placeholder">
+                        <span class="payment__qr-text">QR</span>
+                        <small class="payment__qr-label">СБП</small>
                     </div>
                 </div>
-                <p>Отсканируйте QR-код для оплаты</p>
+                <p class="payment__qr-description">Отсканируйте QR-код для оплаты</p>
             </div>
 
             <!-- Кнопка оплаты -->
-            <div class="payment-actions">
-                <button id="payButton" class="btn btn-pay">Оплатить тему</button>
-                <p class="payment-note">После оплаты тема будет доступна в вашем аккаунте</p>
+            <div class="payment__actions">
+                <button id="payButton" class="payment__btn payment__btn--pay">Оплатить тему</button>
+                <p class="payment__note">После оплаты тема будет доступна в вашем аккаунте</p>
             </div>
 
             <!-- Дополнительная информация -->
-            <div class="additional-info">
-                <h3>Как это работает:</h3>
-                <ol>
-                    <li>Нажмите кнопку "Оплатить тему"</li>
-                    <li>Откроется QR-код для оплаты через СБП</li>
-                    <li>Отсканируйте код в вашем банковском приложении</li>
-                    <li>Подтвердите оплату</li>
-                    <li>Получите доступ к теме автоматически</li>
+            <div class="payment__additional-info">
+                <h3 class="payment__additional-title">Как это работает:</h3>
+                <ol class="payment__additional-list">
+                    <li class="payment__additional-item">Нажмите кнопку "Оплатить тему"</li>
+                    <li class="payment__additional-item">Откроется QR-код для оплаты через СБП</li>
+                    <li class="payment__additional-item">Отсканируйте код в вашем банковском приложении</li>
+                    <li class="payment__additional-item">Подтвердите оплату</li>
+                    <li class="payment__additional-item">Получите доступ к теме автоматически</li>
                 </ol>
             </div>
         </div>
@@ -77,4 +79,5 @@
 
     <script src="js/payment.js"></script>
 </body>
+
 </html>

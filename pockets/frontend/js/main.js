@@ -45,14 +45,14 @@ class PocketsApp {
         const topicCards = document.querySelectorAll('.topic-card');
         topicCards.forEach(card => {
             card.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('btn-topic')) {
+                if (!e.target.classList.contains('topic-card__btn')) {
                     this.handleTopicClick(card);
                 }
             });
         });
 
         // Кнопки "Начать изучение"
-        const topicButtons = document.querySelectorAll('.btn-topic');
+        const topicButtons = document.querySelectorAll('.topic-card__btn');
         topicButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -64,7 +64,7 @@ class PocketsApp {
         // Модальное окно
         const modal = document.getElementById('authModal');
         if (modal) {
-            const closeBtn = modal.querySelector('.close');
+            const closeBtn = modal.querySelector('.modal__close');
             if (closeBtn) {
                 closeBtn.addEventListener('click', () => this.hideAuthModal());
             }
@@ -161,20 +161,20 @@ class PocketsApp {
     // Инициализация функционала авторизации
     initAuthFunctionality() {
         // Переключение между формами
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const authForms = document.querySelectorAll('.auth-form');
+        const tabBtns = document.querySelectorAll('.auth__tab-btn');
+        const authForms = document.querySelectorAll('.auth__form');
 
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const tab = btn.dataset.tab;
                 
                 // Убираем активный класс у всех кнопок и форм
-                tabBtns.forEach(b => b.classList.remove('active'));
-                authForms.forEach(f => f.classList.remove('active'));
+                tabBtns.forEach(b => b.classList.remove('auth__tab-btn--active'));
+                authForms.forEach(f => f.classList.remove('auth__form--active'));
                 
                 // Добавляем активный класс выбранной кнопке и форме
-                btn.classList.add('active');
-                document.getElementById(tab + 'Form').classList.add('active');
+                btn.classList.add('auth__tab-btn--active');
+                document.getElementById(tab + 'Form').classList.add('auth__form--active');
             });
         });
 
@@ -287,7 +287,7 @@ class PocketsApp {
 
     // Переход к изучению темы
     goToTopic(topicId) {
-        window.location.href = `topic${topicId}.html`;
+        window.location.href = `topics/topic${topicId}.html`;
     }
 
     // Показать страницу оплаты
@@ -319,7 +319,7 @@ class PocketsApp {
         const topicCards = document.querySelectorAll('.topic-card');
         topicCards.forEach(card => {
             const topicId = card.dataset.topic;
-            const button = card.querySelector('.btn-topic');
+            const button = card.querySelector('.topic-card__btn');
             
             if (this.currentUser) {
                 if (this.isTopicPurchased(topicId)) {

@@ -36,7 +36,7 @@ class TopicManager {
     // Настройка обработчиков событий
     setupEventListeners() {
         // Кнопки проверки упражнений
-        const checkButtons = document.querySelectorAll('.btn-check');
+        const checkButtons = document.querySelectorAll('.exercise__btn--check');
         checkButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const exerciseId = e.target.closest('.exercise').id;
@@ -54,14 +54,14 @@ class TopicManager {
         }
 
         // Навигационные кнопки
-        const nextBtn = document.querySelector('.navigation-buttons .btn-primary');
+        const nextBtn = document.querySelector('.topic__nav-btn--next');
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
                 this.nextTopic();
             });
         }
 
-        const prevBtn = document.querySelector('.navigation-buttons .btn-secondary');
+        const prevBtn = document.querySelector('.topic__nav-btn--prev');
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
                 this.previousTopic();
@@ -97,16 +97,16 @@ class TopicManager {
 
     // Показать сообщение о необходимости авторизации
     showAuthRequired() {
-        const topicContent = document.querySelector('.topic-content');
+        const topicContent = document.querySelector('.topic__content');
         if (topicContent) {
             topicContent.innerHTML = `
-                <div class="auth-required">
-                    <div class="auth-icon">🔒</div>
-                    <h2>Требуется авторизация</h2>
-                    <p>Для изучения темы необходимо войти в систему</p>
-                    <div class="auth-actions">
-                        <button class="btn btn-primary" onclick="topicManager.goToAuth()">Войти</button>
-                        <button class="btn btn-secondary" onclick="topicManager.goToMain()">Вернуться к темам</button>
+                <div class="topic__auth-required">
+                    <div class="topic__auth-icon">🔒</div>
+                    <h2 class="topic__auth-title">Требуется авторизация</h2>
+                    <p class="topic__auth-description">Для изучения темы необходимо войти в систему</p>
+                    <div class="topic__auth-actions">
+                        <button class="topic__btn topic__btn--primary" onclick="topicManager.goToAuth()">Войти</button>
+                        <button class="topic__btn topic__btn--secondary" onclick="topicManager.goToMain()">Вернуться к темам</button>
                     </div>
                 </div>
             `;
@@ -115,16 +115,16 @@ class TopicManager {
 
     // Показать сообщение о необходимости оплаты
     showPaymentRequired() {
-        const topicContent = document.querySelector('.topic-content');
+        const topicContent = document.querySelector('.topic__content');
         if (topicContent) {
             topicContent.innerHTML = `
-                <div class="payment-required">
-                    <div class="payment-icon">💰</div>
-                    <h2>Тема не куплена</h2>
-                    <p>Для изучения этой темы необходимо совершить покупку</p>
-                    <div class="payment-actions">
-                        <button class="btn btn-primary" onclick="topicManager.goToPayment()">Купить тему</button>
-                        <button class="btn btn-secondary" onclick="topicManager.goToMain()">Вернуться к темам</button>
+                <div class="topic__payment-required">
+                    <div class="topic__payment-icon">💰</div>
+                    <h2 class="topic__payment-title">Тема не куплена</h2>
+                    <p class="topic__payment-description">Для изучения этой темы необходимо совершить покупку</p>
+                    <div class="topic__payment-actions">
+                        <button class="topic__btn topic__btn--primary" onclick="topicManager.goToPayment()">Купить тему</button>
+                        <button class="topic__btn topic__btn--secondary" onclick="topicManager.goToMain()">Вернуться к темам</button>
                     </div>
                 </div>
             `;
@@ -191,35 +191,26 @@ class TopicManager {
         if (!exercise) return;
 
         // Убираем существующие сообщения о результате
-        const existingResult = exercise.querySelector('.exercise-result');
+        const existingResult = exercise.querySelector('.exercise__result');
         if (existingResult) {
             existingResult.remove();
         }
 
         // Создаем сообщение о результате
         const resultDiv = document.createElement('div');
-        resultDiv.className = `exercise-result ${isCorrect ? 'correct' : 'incorrect'}`;
+        resultDiv.className = `exercise__result exercise__result--${isCorrect ? 'correct' : 'incorrect'}`;
         
         if (isCorrect) {
             resultDiv.innerHTML = `
-                <div class="result-icon">✅</div>
-                <p class="result-text">Правильно! Молодец!</p>
+                <div class="exercise__result-icon">✅</div>
+                <p class="exercise__result-text">Правильно! Молодец!</p>
             `;
         } else {
             resultDiv.innerHTML = `
-                <div class="result-icon">❌</div>
-                <p class="result-text">Неправильно. Правильный ответ: <strong>${correctAnswer}</strong></p>
+                <div class="exercise__result-icon">❌</div>
+                <p class="exercise__result-text">Неправильно. Правильный ответ: <strong>${correctAnswer}</strong></p>
             `;
         }
-
-        // Добавляем стили
-        resultDiv.style.cssText = `
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            ${isCorrect ? 'background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;' : 'background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;'}
-        `;
 
         // Добавляем в упражнение
         exercise.appendChild(resultDiv);
@@ -237,38 +228,38 @@ class TopicManager {
 
     // Начать тест
     startTest() {
-        const testSection = document.querySelector('.test-section');
+        const testSection = document.querySelector('.test');
         if (testSection) {
             testSection.innerHTML = `
-                <h2>Итоговый тест</h2>
-                <div class="test-questions">
-                    <div class="test-question">
-                        <h3>Вопрос 1</h3>
-                        <p>Выберите правильную форму глагола:</p>
-                        <p>"She ___ (work) in a hospital."</p>
-                        <div class="test-options">
-                            <label><input type="radio" name="test1" value="work"> work</label>
-                            <label><input type="radio" name="test1" value="works"> works</label>
+                <h2 class="test__title">Итоговый тест</h2>
+                <div class="test__questions">
+                    <div class="test__question">
+                        <h3 class="test__question-title">Вопрос 1</h3>
+                        <p class="test__question-text">Выберите правильную форму глагола:</p>
+                        <p class="test__question-text">"She ___ (work) in a hospital."</p>
+                        <div class="test__options">
+                            <label class="test__option"><input type="radio" name="test1" value="work" class="test__option-input"> <span class="test__option-text">work</span></label>
+                            <label class="test__option"><input type="radio" name="test1" value="works" class="test__option-input"> <span class="test__option-text">works</span></label>
                         </div>
                     </div>
                     
-                    <div class="test-question">
-                        <h3>Вопрос 2</h3>
-                        <p>Поставьте глагол в правильную форму:</p>
-                        <p>"My friend ___ (live) in Moscow."</p>
-                        <input type="text" id="testAnswer2" placeholder="Введите ответ">
+                    <div class="test__question">
+                        <h3 class="test__question-title">Вопрос 2</h3>
+                        <p class="test__question-text">Поставьте глагол в правильную форму:</p>
+                        <p class="test__question-text">"My friend ___ (live) in Moscow."</p>
+                        <input type="text" id="testAnswer2" placeholder="Введите ответ" class="test__input">
                     </div>
                     
-                    <div class="test-question">
-                        <h3>Вопрос 3</h3>
-                        <p>Переведите на английский:</p>
-                        <p>"Он работает в банке"</p>
-                        <input type="text" id="testAnswer3" placeholder="Введите перевод">
+                    <div class="test__question">
+                        <h3 class="test__question-title">Вопрос 3</h3>
+                        <p class="test__question-text">Переведите на английский:</p>
+                        <p class="test__question-text">"Он работает в банке"</p>
+                        <input type="text" id="testAnswer3" placeholder="Введите перевод" class="test__input">
                     </div>
                 </div>
                 
-                <div class="test-actions">
-                    <button class="btn btn-primary" onclick="topicManager.submitTest()">Завершить тест</button>
+                <div class="test__actions">
+                    <button class="test__btn test__btn--primary" onclick="topicManager.submitTest()">Завершить тест</button>
                 </div>
             `;
         }
@@ -295,28 +286,28 @@ class TopicManager {
 
     // Показать результат теста
     showTestResult(correctAnswers, totalQuestions) {
-        const testSection = document.querySelector('.test-section');
+        const testSection = document.querySelector('.test');
         if (testSection) {
             const percentage = Math.round((correctAnswers / totalQuestions) * 100);
             const grade = this.getGrade(percentage);
             
             testSection.innerHTML = `
-                <h2>Результаты теста</h2>
-                <div class="test-results">
-                    <div class="result-score">
-                        <h3>Ваш результат: ${correctAnswers} из ${totalQuestions}</h3>
-                        <div class="score-percentage">${percentage}%</div>
-                        <div class="score-grade">${grade}</div>
+                <h2 class="test__title">Результаты теста</h2>
+                <div class="test__results">
+                    <div class="test__result-score">
+                        <h3 class="test__result-title">Ваш результат: ${correctAnswers} из ${totalQuestions}</h3>
+                        <div class="test__result-percentage">${percentage}%</div>
+                        <div class="test__result-grade">${grade}</div>
                     </div>
                     
-                    <div class="result-details">
-                        <p>Правильных ответов: ${correctAnswers}</p>
-                        <p>Неправильных ответов: ${totalQuestions - correctAnswers}</p>
+                    <div class="test__result-details">
+                        <p class="test__result-detail">Правильных ответов: ${correctAnswers}</p>
+                        <p class="test__result-detail">Неправильных ответов: ${totalQuestions - correctAnswers}</p>
                     </div>
                     
-                    <div class="result-actions">
-                        <button class="btn btn-primary" onclick="topicManager.retakeTest()">Пройти тест заново</button>
-                        <button class="btn btn-secondary" onclick="topicManager.goToMain()">Вернуться к темам</button>
+                    <div class="test__result-actions">
+                        <button class="test__btn test__btn--primary" onclick="topicManager.retakeTest()">Пройти тест заново</button>
+                        <button class="test__btn test__btn--secondary" onclick="topicManager.goToMain()">Вернуться к темам</button>
                     </div>
                 </div>
             `;
@@ -352,7 +343,7 @@ class TopicManager {
 
     // Загрузить прогресс
     loadProgress() {
-        const progressElement = document.querySelector('.topic-progress span');
+        const progressElement = document.querySelector('.topic__progress-text');
         if (progressElement) {
             const progress = this.calculateProgress();
             progressElement.textContent = `Прогресс: ${progress}%`;
@@ -373,18 +364,18 @@ class TopicManager {
 
     // Переход к авторизации
     goToAuth() {
-        window.location.href = 'auth.html';
+        window.location.href = '../auth.html';
     }
 
     // Переход к оплате
     goToPayment() {
         sessionStorage.setItem('payment_topic', this.currentTopic);
-        window.location.href = 'payment.html';
+        window.location.href = '../payment.html';
     }
 
     // Переход на главную
     goToMain() {
-        window.location.href = 'pockets.html';
+        window.location.href = '../pockets.html';
     }
 
     // Следующая тема
@@ -407,40 +398,40 @@ class TopicManager {
 // CSS стили для результатов
 const style = document.createElement('style');
 style.textContent = `
-    .exercise-result {
+    .exercise__result {
         margin-top: 15px;
         padding: 15px;
         border-radius: 6px;
         text-align: center;
     }
 
-    .exercise-result.correct {
+    .exercise__result--correct {
         background-color: #d4edda;
         color: #155724;
         border: 1px solid #c3e6cb;
     }
 
-    .exercise-result.incorrect {
+    .exercise__result--incorrect {
         background-color: #f8d7da;
         color: #721c24;
         border: 1px solid #f5c6cb;
     }
 
-    .result-icon {
+    .exercise__result-icon {
         font-size: 24px;
         margin-bottom: 10px;
     }
 
-    .result-text {
+    .exercise__result-text {
         margin: 0;
         font-weight: 500;
     }
 
-    .test-questions {
+    .test__questions {
         margin-bottom: 30px;
     }
 
-    .test-question {
+    .test__question {
         background: #f8f9fa;
         padding: 20px;
         border-radius: 8px;
@@ -448,19 +439,24 @@ style.textContent = `
         border-left: 4px solid #007bff;
     }
 
-    .test-question h3 {
+    .test__question-title {
         color: #007bff;
         margin-bottom: 15px;
     }
 
-    .test-options {
+    .test__question-text {
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .test__options {
         display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 15px;
     }
 
-    .test-options label {
+    .test__option {
         display: flex;
         align-items: center;
         padding: 10px 15px;
@@ -470,53 +466,73 @@ style.textContent = `
         transition: all 0.3s ease;
     }
 
-    .test-options label:hover {
+    .test__option:hover {
         border-color: #007bff;
         background-color: #f8f9fa;
     }
 
-    .test-options input[type="radio"] {
+    .test__option-input {
         margin-right: 10px;
         transform: scale(1.2);
     }
 
-    .test-actions {
+    .test__option-text {
+        color: #555;
+    }
+
+    .test__input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+        margin-top: 15px;
+    }
+
+    .test__input:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    }
+
+    .test__actions {
         text-align: center;
     }
 
-    .test-results {
+    .test__results {
         text-align: center;
         padding: 30px;
     }
 
-    .result-score h3 {
+    .test__result-title {
         color: #007bff;
         margin-bottom: 20px;
     }
 
-    .score-percentage {
+    .test__result-percentage {
         font-size: 48px;
         font-weight: bold;
         color: #28a745;
         margin-bottom: 10px;
     }
 
-    .score-grade {
+    .test__result-grade {
         font-size: 24px;
         color: #6c757d;
         margin-bottom: 30px;
     }
 
-    .result-details {
+    .test__result-details {
         margin-bottom: 30px;
     }
 
-    .result-details p {
+    .test__result-detail {
         color: #666;
         margin-bottom: 10px;
     }
 
-    .result-actions {
+    .test__result-actions {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -524,33 +540,33 @@ style.textContent = `
         margin: 0 auto;
     }
 
-    .auth-required,
-    .payment-required {
+    .topic__auth-required,
+    .topic__payment-required {
         text-align: center;
         padding: 60px 20px;
     }
 
-    .auth-icon,
-    .payment-icon {
+    .topic__auth-icon,
+    .topic__payment-icon {
         font-size: 64px;
         margin-bottom: 20px;
     }
 
-    .auth-required h2,
-    .payment-required h2 {
+    .topic__auth-title,
+    .topic__payment-title {
         color: #dc3545;
         margin-bottom: 15px;
     }
 
-    .auth-required p,
-    .payment-required p {
+    .topic__auth-description,
+    .topic__payment-description {
         color: #6c757d;
         margin-bottom: 30px;
         font-size: 18px;
     }
 
-    .auth-actions,
-    .payment-actions {
+    .topic__auth-actions,
+    .topic__payment-actions {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -558,20 +574,48 @@ style.textContent = `
         margin: 0 auto;
     }
 
-    .auth-actions .btn,
-    .payment-actions .btn {
+    .topic__btn {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
         width: 100%;
+    }
+
+    .topic__btn--primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .topic__btn--primary:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .topic__btn--secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .topic__btn--secondary:hover {
+        background-color: #545b62;
+        transform: translateY(-2px);
     }
 
     /* Адаптивность */
     @media (max-width: 768px) {
-        .result-actions,
-        .auth-actions,
-        .payment-actions {
+        .test__result-actions,
+        .topic__auth-actions,
+        .topic__payment-actions {
             max-width: 100%;
         }
         
-        .test-question {
+        .test__question {
             padding: 15px;
         }
     }

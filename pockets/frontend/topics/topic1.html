@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Simple - Pockets</title>
+    <link rel="stylesheet" href="../css/topics.css">
+</head>
+
+<body class="page">
+    <div class="topic">
+        <header class="topic__header">
+            <a href="../pockets.html" class="topic__back-link">← К темам</a>
+            <h1 class="topic__title">Present Simple</h1>
+            <div class="topic__progress">
+                <span class="topic__progress-text">Прогресс: 0%</span>
+            </div>
+        </header>
+
+        <main class="topic__content">
+            <!-- Теория -->
+            <section class="theory">
+                <h2 class="theory__title">Теория</h2>
+                <div class="theory__content">
+                    <h3 class="theory__subtitle">Что такое Present Simple?</h3>
+                    <p class="theory__text">Present Simple - это настоящее простое время в английском языке. Оно
+                        используется для описания:</p>
+                    <ul class="theory__list">
+                        <li class="theory__list-item">Постоянных действий и привычек</li>
+                        <li class="theory__list-item">Фактов и общих истин</li>
+                        <li class="theory__list-item">Расписаний и графиков</li>
+                        <li class="theory__list-item">Действий, происходящих регулярно</li>
+                    </ul>
+
+                    <h3 class="theory__subtitle">Формула образования</h3>
+                    <div class="theory__formula">
+                        <p class="theory__formula-text"><strong>Утвердительная форма:</strong></p>
+                        <p class="theory__formula-text">I/You/We/They + глагол</p>
+                        <p class="theory__formula-text">He/She/It + глагол + s/es</p>
+                    </div>
+
+                    <h3 class="theory__subtitle">Примеры</h3>
+                    <div class="theory__examples">
+                        <div class="theory__example">
+                            <p class="theory__example-text"><strong>I work</strong> in a bank. (Я работаю в банке)</p>
+                            <p class="theory__example-text"><strong>She works</strong> in a hospital. (Она работает в
+                                больнице)</p>
+                        </div>
+                        <div class="theory__example">
+                            <p class="theory__example-text"><strong>We study</strong> English. (Мы изучаем английский)
+                            </p>
+                            <p class="theory__example-text"><strong>He studies</strong> French. (Он изучает французский)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Упражнения -->
+            <section class="exercises">
+                <h2 class="exercises__title">Упражнения</h2>
+
+                <div class="exercise" id="exercise1">
+                    <h3 class="exercise__title">Упражнение 1: Выберите правильную форму глагола</h3>
+                    <div class="exercise__question">
+                        <p class="exercise__question-text">My friend ___ (live) in Moscow.</p>
+                        <div class="exercise__options">
+                            <label class="exercise__option"><input type="radio" name="q1" value="live"
+                                    class="exercise__option-input"> <span
+                                    class="exercise__option-text">live</span></label>
+                            <label class="exercise__option"><input type="radio" name="q1" value="lives"
+                                    class="exercise__option-input"> <span
+                                    class="exercise__option-text">lives</span></label>
+                        </div>
+                    </div>
+                    <button class="exercise__btn exercise__btn--check" onclick="checkAnswer(1)">Проверить</button>
+                </div>
+
+                <div class="exercise" id="exercise2">
+                    <h3 class="exercise__title">Упражнение 2: Поставьте глагол в правильную форму</h3>
+                    <div class="exercise__question">
+                        <p class="exercise__question-text">She ___ (work) as a teacher.</p>
+                        <input type="text" id="answer2" placeholder="Введите ответ" class="exercise__input">
+                        <button class="exercise__btn exercise__btn--check" onclick="checkAnswer(2)">Проверить</button>
+                    </div>
+                </div>
+
+                <div class="exercise" id="exercise3">
+                    <h3 class="exercise__title">Упражнение 3: Переведите предложение</h3>
+                    <div class="exercise__question">
+                        <p class="exercise__question-text">Переведите: "Я учусь в университете"</p>
+                        <input type="text" id="answer3" placeholder="Введите перевод на английский"
+                            class="exercise__input">
+                        <button class="exercise__btn exercise__btn--check" onclick="checkAnswer(3)">Проверить</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Тест -->
+            <section class="test">
+                <h2 class="test__title">Итоговый тест</h2>
+                <div class="test__info">
+                    <p class="test__description">Пройдите тест, чтобы закрепить знания</p>
+                    <button id="startTest" class="test__btn test__btn--primary">Начать тест</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="topic__footer">
+            <div class="topic__navigation">
+                <button class="topic__nav-btn topic__nav-btn--prev" disabled>← Предыдущая тема</button>
+                <button class="topic__nav-btn topic__nav-btn--next" onclick="nextTopic()">Следующая тема →</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/topics.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 /* Стили для страниц тем */
-body {
+.page {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
     margin: 0;
@@ -7,14 +7,14 @@ body {
     line-height: 1.6;
 }
 
-.topic-container {
+.topic {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0;
 }
 
 /* Заголовок темы */
-.topic-header {
+.topic__header {
     background: white;
     padding: 30px;
     margin-bottom: 30px;
@@ -26,7 +26,7 @@ body {
     gap: 20px;
 }
 
-.back-link {
+.topic__back-link {
     color: #007bff;
     text-decoration: none;
     font-size: 16px;
@@ -34,17 +34,17 @@ body {
     transition: color 0.3s ease;
 }
 
-.back-link:hover {
+.topic__back-link:hover {
     color: #0056b3;
 }
 
-.topic-header h1 {
+.topic__title {
     color: #007bff;
     font-size: 32px;
     margin: 0;
 }
 
-.topic-progress {
+.topic__progress {
     background-color: #e9ecef;
     padding: 10px 20px;
     border-radius: 20px;
@@ -52,13 +52,17 @@ body {
     font-weight: 500;
 }
 
+.topic__progress-text {
+    margin: 0;
+}
+
 /* Основной контент */
-.topic-content {
+.topic__content {
     padding: 0 20px;
 }
 
 /* Секция теории */
-.theory-section {
+.theory {
     background: white;
     border-radius: 12px;
     padding: 30px;
@@ -66,7 +70,7 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.theory-section h2 {
+.theory__title {
     color: #007bff;
     font-size: 28px;
     margin-bottom: 25px;
@@ -74,30 +78,30 @@ body {
     padding-bottom: 15px;
 }
 
-.theory-section h3 {
+.theory__subtitle {
     color: #495057;
     font-size: 22px;
     margin: 25px 0 15px 0;
 }
 
-.theory-section p {
+.theory__text {
     color: #555;
     font-size: 16px;
     margin-bottom: 15px;
 }
 
-.theory-section ul {
+.theory__list {
     margin-bottom: 20px;
     padding-left: 20px;
 }
 
-.theory-section li {
+.theory__list-item {
     color: #555;
     font-size: 16px;
     margin-bottom: 8px;
 }
 
-.formula {
+.theory__formula {
     background-color: #f8f9fa;
     border-left: 4px solid #007bff;
     padding: 20px;
@@ -105,31 +109,31 @@ body {
     border-radius: 0 8px 8px 0;
 }
 
-.formula p {
+.theory__formula-text {
     margin-bottom: 8px;
     font-weight: 500;
 }
 
-.examples {
+.theory__examples {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin: 20px 0;
 }
 
-.example {
+.theory__example {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
 }
 
-.example p {
+.theory__example-text {
     margin-bottom: 8px;
 }
 
 /* Секция упражнений */
-.exercises-section {
+.exercises {
     background: white;
     border-radius: 12px;
     padding: 30px;
@@ -137,7 +141,7 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.exercises-section h2 {
+.exercises__title {
     color: #28a745;
     font-size: 28px;
     margin-bottom: 25px;
@@ -157,27 +161,27 @@ body {
     border-color: #007bff;
 }
 
-.exercise h3 {
+.exercise__title {
     color: #495057;
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.question p {
+.exercise__question-text {
     font-size: 18px;
     color: #555;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
-.options {
+.exercise__options {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 20px;
 }
 
-.options label {
+.exercise__option {
     display: flex;
     align-items: center;
     padding: 12px 15px;
@@ -187,32 +191,37 @@ body {
     transition: all 0.3s ease;
 }
 
-.options label:hover {
+.exercise__option:hover {
     border-color: #007bff;
     background-color: #f8f9fa;
 }
 
-.options input[type="radio"] {
+.exercise__option-input {
     margin-right: 12px;
     transform: scale(1.2);
 }
 
-.options input[type="text"] {
+.exercise__option-text {
+    color: #555;
+}
+
+.exercise__input {
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #e0e0e0;
     border-radius: 6px;
     font-size: 16px;
     transition: border-color 0.3s ease;
+    margin-bottom: 20px;
 }
 
-.options input[type="text"]:focus {
+.exercise__input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
 }
 
-.btn-check {
+.exercise__btn--check {
     background-color: #007bff;
     color: white;
     padding: 12px 24px;
@@ -224,13 +233,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.btn-check:hover {
+.exercise__btn--check:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
 /* Секция теста */
-.test-section {
+.test {
     background: white;
     border-radius: 12px;
     padding: 30px;
@@ -238,7 +247,7 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.test-section h2 {
+.test__title {
     color: #dc3545;
     font-size: 28px;
     margin-bottom: 25px;
@@ -246,31 +255,48 @@ body {
     padding-bottom: 15px;
 }
 
-.test-info {
+.test__info {
     text-align: center;
 }
 
-.test-info p {
+.test__description {
     color: #6c757d;
     font-size: 18px;
     margin-bottom: 20px;
 }
 
+.test__btn--primary {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.test__btn--primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 /* Футер темы */
-.topic-footer {
+.topic__footer {
     background: white;
     padding: 30px;
     margin-top: 30px;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
-.navigation-buttons {
+.topic__navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navigation-buttons .btn {
+.topic__nav-btn {
     padding: 15px 30px;
     font-size: 16px;
     font-weight: 500;
@@ -282,70 +308,69 @@ body {
     display: inline-block;
 }
 
-.navigation-buttons .btn:disabled {
+.topic__nav-btn:disabled {
     background-color: #e0e0e0;
     color: #999;
     cursor: not-allowed;
     transform: none;
 }
 
-.navigation-buttons .btn:not(:disabled):hover {
+.topic__nav-btn:not(:disabled):hover {
     transform: translateY(-2px);
 }
 
-/* Кнопки */
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-}
-
-.btn-primary:hover:not(:disabled) {
-    background-color: #0056b3;
-    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
-}
-
-.btn-secondary {
+.topic__nav-btn--prev {
     background-color: #6c757d;
     color: white;
 }
 
-.btn-secondary:hover:not(:disabled) {
+.topic__nav-btn--prev:hover:not(:disabled) {
     background-color: #545b62;
     box-shadow: 0 5px 15px rgba(108,117,125,0.3);
 }
 
+.topic__nav-btn--next {
+    background-color: #007bff;
+    color: white;
+}
+
+.topic__nav-btn--next:hover:not(:disabled) {
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
-    .topic-header {
+    .topic__header {
         flex-direction: column;
         text-align: center;
         gap: 15px;
     }
     
-    .topic-header h1 {
+    .topic__title {
         font-size: 28px;
     }
     
-    .topic-content {
+    .topic__content {
         padding: 0 15px;
     }
     
-    .theory-section,
-    .exercises-section,
-    .test-section {
+    .theory,
+    .exercises,
+    .test {
         padding: 20px;
     }
     
-    .examples {
+    .theory__examples {
         grid-template-columns: 1fr;
     }
     
-    .navigation-buttons {
+    .topic__navigation {
         flex-direction: column;
         gap: 15px;
     }
     
-    .navigation-buttons .btn {
+    .topic__nav-btn {
         width: 100%;
     }
 }

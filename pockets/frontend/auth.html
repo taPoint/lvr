@@ -6,63 +6,63 @@
     <title>Авторизация - Pockets</title>
     <link rel="stylesheet" href="css/auth.css">
 </head>
-<body>
-    <div class="auth-container">
+<body class="page">
+    <div class="auth">
         <!-- Переключатель форм -->
-        <div class="auth-tabs">
-            <button class="tab-btn active" data-tab="login">Вход</button>
-            <button class="tab-btn" data-tab="register">Регистрация</button>
+        <div class="auth__tabs">
+            <button class="auth__tab-btn auth__tab-btn--active" data-tab="login">Вход</button>
+            <button class="auth__tab-btn" data-tab="register">Регистрация</button>
         </div>
 
         <!-- Форма входа -->
-        <div id="loginForm" class="auth-form active">
-            <h2>Вход в аккаунт</h2>
-            <form id="loginFormElement">
-                <div class="form-group">
-                    <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" name="email" required>
+        <div id="loginForm" class="auth__form auth__form--active">
+            <h2 class="auth__form-title">Вход в аккаунт</h2>
+            <form id="loginFormElement" class="auth__form-body">
+                <div class="auth__form-group">
+                    <label for="loginEmail" class="auth__form-label">Email</label>
+                    <input type="email" id="loginEmail" name="email" class="auth__form-input" required>
                 </div>
-                <div class="form-group">
-                    <label for="loginPassword">Пароль</label>
-                    <input type="password" id="loginPassword" name="password" required>
+                <div class="auth__form-group">
+                    <label for="loginPassword" class="auth__form-label">Пароль</label>
+                    <input type="password" id="loginPassword" name="password" class="auth__form-input" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Войти</button>
+                <button type="submit" class="auth__form-btn auth__form-btn--primary">Войти</button>
             </form>
-            <div class="form-footer">
-                <a href="#" class="forgot-password">Забыли пароль?</a>
+            <div class="auth__form-footer">
+                <a href="#" class="auth__form-link auth__form-link--forgot">Забыли пароль?</a>
             </div>
         </div>
 
         <!-- Форма регистрации -->
-        <div id="registerForm" class="auth-form">
-            <h2>Регистрация</h2>
-            <form id="registerFormElement">
-                <div class="form-group">
-                    <label for="registerName">Имя</label>
-                    <input type="text" id="registerName" name="name" required>
+        <div id="registerForm" class="auth__form">
+            <h2 class="auth__form-title">Регистрация</h2>
+            <form id="registerFormElement" class="auth__form-body">
+                <div class="auth__form-group">
+                    <label for="registerName" class="auth__form-label">Имя</label>
+                    <input type="text" id="registerName" name="name" class="auth__form-input" required>
                 </div>
-                <div class="form-group">
-                    <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" name="email" required>
+                <div class="auth__form-group">
+                    <label for="registerEmail" class="auth__form-label">Email</label>
+                    <input type="email" id="registerEmail" name="email" class="auth__form-input" required>
                 </div>
-                <div class="form-group">
-                    <label for="registerPassword">Пароль</label>
-                    <input type="password" id="registerPassword" name="password" required>
+                <div class="auth__form-group">
+                    <label for="registerPassword" class="auth__form-label">Пароль</label>
+                    <input type="password" id="registerPassword" name="password" class="auth__form-input" required>
                 </div>
-                <div class="form-group">
-                    <label for="registerPasswordConfirm">Подтвердите пароль</label>
-                    <input type="password" id="registerPasswordConfirm" name="passwordConfirm" required>
+                <div class="auth__form-group">
+                    <label for="registerPasswordConfirm" class="auth__form-label">Подтвердите пароль</label>
+                    <input type="password" id="registerPasswordConfirm" name="passwordConfirm" class="auth__form-input" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                <button type="submit" class="auth__form-btn auth__form-btn--primary">Зарегистрироваться</button>
             </form>
         </div>
 
         <!-- Тестовый аккаунт -->
-        <div class="test-account">
-            <h3>Тестовый аккаунт</h3>
-            <p><strong>Email:</strong> admin</p>
-            <p><strong>Пароль:</strong> admin</p>
-            <button id="useTestAccount" class="btn btn-secondary">Использовать тестовый аккаунт</button>
+        <div class="auth__test-account">
+            <h3 class="auth__test-account-title">Тестовый аккаунт</h3>
+            <p class="auth__test-account-info"><strong>Email:</strong> admin</p>
+            <p class="auth__test-account-info"><strong>Пароль:</strong> admin</p>
+            <button id="useTestAccount" class="auth__test-account-btn auth__test-account-btn--secondary">Использовать тестовый аккаунт</button>
         </div>
     </div>
 

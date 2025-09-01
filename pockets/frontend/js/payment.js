@@ -90,7 +90,7 @@ class PaymentManager {
         }
 
         // Кнопка "Вернуться к темам"
-        const backLink = document.querySelector('.back-link');
+        const backLink = document.querySelector('.payment__back-link');
         if (backLink) {
             backLink.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -108,16 +108,16 @@ class PaymentManager {
 
     // Показать сообщение о необходимости авторизации
     showAuthRequired() {
-        const paymentContent = document.querySelector('.payment-content');
+        const paymentContent = document.querySelector('.payment__content');
         if (paymentContent) {
             paymentContent.innerHTML = `
-                <div class="auth-required">
-                    <div class="auth-icon">🔒</div>
-                    <h2>Требуется авторизация</h2>
-                    <p>Для покупки темы необходимо войти в систему</p>
-                    <div class="auth-actions">
-                        <button class="btn btn-primary" onclick="paymentManager.goToAuth()">Войти</button>
-                        <button class="btn btn-secondary" onclick="paymentManager.redirectToMain()">Вернуться к темам</button>
+                <div class="payment__auth-required">
+                    <div class="payment__auth-icon">🔒</div>
+                    <h2 class="payment__auth-title">Требуется авторизация</h2>
+                    <p class="payment__auth-description">Для покупки темы необходимо войти в систему</p>
+                    <div class="payment__auth-actions">
+                        <button class="payment__btn payment__btn--primary" onclick="paymentManager.goToAuth()">Войти</button>
+                        <button class="payment__btn payment__btn--secondary" onclick="paymentManager.redirectToMain()">Вернуться к темам</button>
                     </div>
                 </div>
             `;
@@ -147,13 +147,13 @@ class PaymentManager {
 
     // Показать процесс оплаты
     showPaymentProcess() {
-        const paymentActions = document.querySelector('.payment-actions');
+        const paymentActions = document.querySelector('.payment__actions');
         if (paymentActions) {
             paymentActions.innerHTML = `
-                <div class="payment-process">
-                    <div class="loading-spinner"></div>
-                    <h3>Обработка оплаты...</h3>
-                    <p>Пожалуйста, подождите</p>
+                <div class="payment__process">
+                    <div class="payment__loading-spinner"></div>
+                    <h3 class="payment__process-title">Обработка оплаты...</h3>
+                    <p class="payment__process-description">Пожалуйста, подождите</p>
                 </div>
             `;
         }
@@ -190,16 +190,16 @@ class PaymentManager {
 
     // Показать успешную оплату
     showPaymentSuccess() {
-        const paymentContent = document.querySelector('.payment-content');
+        const paymentContent = document.querySelector('.payment__content');
         if (paymentContent) {
             paymentContent.innerHTML = `
-                <div class="payment-success">
-                    <div class="success-icon">✅</div>
-                    <h2>Оплата прошла успешно!</h2>
-                    <p>Тема "${this.topicsData[this.currentTopic].title}" добавлена в ваш аккаунт</p>
-                    <div class="success-actions">
-                        <button class="btn btn-primary" onclick="paymentManager.goToTopic()">Начать изучение</button>
-                        <button class="btn btn-secondary" onclick="paymentManager.redirectToMain()">Вернуться к темам</button>
+                <div class="payment__success">
+                    <div class="payment__success-icon">✅</div>
+                    <h2 class="payment__success-title">Оплата прошла успешно!</h2>
+                    <p class="payment__success-description">Тема "${this.topicsData[this.currentTopic].title}" добавлена в ваш аккаунт</p>
+                    <div class="payment__success-actions">
+                        <button class="payment__btn payment__btn--primary" onclick="paymentManager.goToTopic()">Начать изучение</button>
+                        <button class="payment__btn payment__btn--secondary" onclick="paymentManager.redirectToMain()">Вернуться к темам</button>
                     </div>
                 </div>
             `;
@@ -208,7 +208,7 @@ class PaymentManager {
 
     // Переход к изучению темы
     goToTopic() {
-        window.location.href = `topic${this.currentTopic}.html`;
+        window.location.href = `topics/topic${this.currentTopic}.html`;
     }
 
     // Переход на главную страницу
@@ -299,28 +299,28 @@ style.textContent = `
         }
     }
 
-    .auth-required {
+    .payment__auth-required {
         text-align: center;
         padding: 60px 20px;
     }
 
-    .auth-icon {
+    .payment__auth-icon {
         font-size: 64px;
         margin-bottom: 20px;
     }
 
-    .auth-required h2 {
+    .payment__auth-title {
         color: #dc3545;
         margin-bottom: 15px;
     }
 
-    .auth-required p {
+    .payment__auth-description {
         color: #6c757d;
         margin-bottom: 30px;
         font-size: 18px;
     }
 
-    .auth-actions {
+    .payment__auth-actions {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -328,16 +328,16 @@ style.textContent = `
         margin: 0 auto;
     }
 
-    .auth-actions .btn {
+    .payment__auth-actions .payment__btn {
         width: 100%;
     }
 
-    .payment-process {
+    .payment__process {
         text-align: center;
         padding: 40px 20px;
     }
 
-    .loading-spinner {
+    .payment__loading-spinner {
         width: 50px;
         height: 50px;
         border: 4px solid #f3f3f3;
@@ -352,37 +352,37 @@ style.textContent = `
         100% { transform: rotate(360deg); }
     }
 
-    .payment-process h3 {
+    .payment__process-title {
         color: #007bff;
         margin-bottom: 10px;
     }
 
-    .payment-process p {
+    .payment__process-description {
         color: #6c757d;
     }
 
-    .payment-success {
+    .payment__success {
         text-align: center;
         padding: 60px 20px;
     }
 
-    .success-icon {
+    .payment__success-icon {
         font-size: 64px;
         margin-bottom: 20px;
     }
 
-    .payment-success h2 {
+    .payment__success-title {
         color: #28a745;
         margin-bottom: 15px;
     }
 
-    .payment-success p {
+    .payment__success-description {
         color: #6c757d;
         margin-bottom: 30px;
         font-size: 18px;
     }
 
-    .success-actions {
+    .payment__success-actions {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -390,14 +390,14 @@ style.textContent = `
         margin: 0 auto;
     }
 
-    .success-actions .btn {
+    .payment__success-actions .payment__btn {
         width: 100%;
     }
 
     /* Адаптивность */
     @media (max-width: 768px) {
-        .auth-actions,
-        .success-actions {
+        .payment__auth-actions,
+        .payment__success-actions {
             max-width: 100%;
         }
     }

@@ -1,5 +1,5 @@
 /* Стили для страницы оплаты */
-body {
+.page {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
     margin: 0;
@@ -7,39 +7,39 @@ body {
     line-height: 1.6;
 }
 
-.payment-container {
+.payment {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
 /* Заголовок */
-.payment-header {
+.payment__header {
     text-align: center;
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
 }
 
-.payment-header h1 {
+.payment__title {
     color: #007bff;
     font-size: 36px;
     margin-bottom: 15px;
 }
 
-.back-link {
+.payment__back-link {
     color: #6c757d;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.back-link:hover {
+.payment__back-link:hover {
     color: #007bff;
 }
 
 /* Информация о теме */
-.topic-info {
+.payment__topic-info {
     text-align: center;
     background: white;
     border-radius: 12px;
@@ -48,24 +48,24 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.topic-icon {
+.payment__topic-icon {
     font-size: 64px;
     margin-bottom: 20px;
 }
 
-.topic-info h2 {
+.payment__topic-title {
     color: #007bff;
     font-size: 28px;
     margin-bottom: 15px;
 }
 
-.topic-info p {
+.payment__topic-description {
     color: #6c757d;
     font-size: 18px;
 }
 
 /* Преимущества */
-.benefits {
+.payment__benefits {
     background: white;
     border-radius: 12px;
     padding: 30px;
@@ -73,31 +73,31 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.benefits h3 {
+.payment__benefits-title {
     color: #28a745;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.benefits ul {
+.payment__benefits-list {
     list-style: none;
     padding: 0;
 }
 
-.benefits li {
+.payment__benefits-item {
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
     font-size: 16px;
     color: #555;
 }
 
-.benefits li:last-child {
+.payment__benefits-item:last-child {
     border-bottom: none;
 }
 
 /* Цена */
-.price-section {
+.payment__price-section {
     text-align: center;
     background: white;
     border-radius: 12px;
@@ -106,34 +106,34 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.price {
+.payment__price {
     font-size: 48px;
     color: #28a745;
     margin-bottom: 10px;
 }
 
-.currency {
+.payment__price-currency {
     font-size: 24px;
     vertical-align: top;
 }
 
-.amount {
+.payment__price-amount {
     font-weight: bold;
     margin: 0 5px;
 }
 
-.period {
+.payment__price-period {
     font-size: 18px;
     color: #6c757d;
 }
 
-.price-note {
+.payment__price-note {
     color: #6c757d;
     font-size: 14px;
 }
 
 /* QR код */
-.qr-section {
+.payment__qr-section {
     text-align: center;
     background: white;
     border-radius: 12px;
@@ -142,11 +142,11 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.qr-code {
+.payment__qr-code {
     margin-bottom: 20px;
 }
 
-.qr-placeholder {
+.payment__qr-placeholder {
     width: 200px;
     height: 200px;
     background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
@@ -160,23 +160,23 @@ body {
     color: #999;
 }
 
-.qr-placeholder span {
+.payment__qr-text {
     font-size: 48px;
     font-weight: bold;
 }
 
-.qr-placeholder small {
+.payment__qr-label {
     font-size: 16px;
     margin-top: 10px;
 }
 
-.qr-section p {
+.payment__qr-description {
     color: #6c757d;
     font-size: 16px;
 }
 
 /* Кнопка оплаты */
-.payment-actions {
+.payment__actions {
     text-align: center;
     background: white;
     border-radius: 12px;
@@ -185,7 +185,7 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.btn-pay {
+.payment__btn--pay {
     background-color: #28a745;
     color: white;
     padding: 18px 40px;
@@ -196,39 +196,40 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 20px;
+    display: inline-block;
 }
 
-.btn-pay:hover {
+.payment__btn--pay:hover {
     background-color: #1e7e34;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(40,167,69,0.3);
 }
 
-.payment-note {
+.payment__note {
     color: #6c757d;
     font-size: 14px;
 }
 
 /* Дополнительная информация */
-.additional-info {
+.payment__additional-info {
     background: white;
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.additional-info h3 {
+.payment__additional-title {
     color: #007bff;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.additional-info ol {
+.payment__additional-list {
     padding-left: 20px;
 }
 
-.additional-info li {
+.payment__additional-item {
     padding: 8px 0;
     color: #555;
     font-size: 16px;
@@ -236,32 +237,32 @@ body {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .payment-container {
+    .payment {
         padding: 20px 15px;
     }
     
-    .payment-header h1 {
+    .payment__title {
         font-size: 28px;
     }
     
-    .topic-info h2 {
+    .payment__topic-title {
         font-size: 24px;
     }
     
-    .price {
+    .payment__price {
         font-size: 36px;
     }
     
-    .qr-placeholder {
+    .payment__qr-placeholder {
         width: 150px;
         height: 150px;
     }
     
-    .qr-placeholder span {
+    .payment__qr-text {
         font-size: 36px;
     }
     
-    .btn-pay {
+    .payment__btn--pay {
         padding: 15px 30px;
         font-size: 18px;
     }

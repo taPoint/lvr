@@ -29,8 +29,8 @@ class AuthManager {
     // Настройка обработчиков событий
     setupEventListeners() {
         // Переключение между формами
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const authForms = document.querySelectorAll('.auth-form');
+        const tabBtns = document.querySelectorAll('.auth__tab-btn');
+        const authForms = document.querySelectorAll('.auth__form');
 
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -66,7 +66,7 @@ class AuthManager {
         }
 
         // Забыли пароль
-        const forgotPasswordLink = document.querySelector('.forgot-password');
+        const forgotPasswordLink = document.querySelector('.auth__form-link--forgot');
         if (forgotPasswordLink) {
             forgotPasswordLink.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -77,19 +77,19 @@ class AuthManager {
 
     // Переключение между вкладками
     switchTab(tab) {
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const authForms = document.querySelectorAll('.auth-form');
+        const tabBtns = document.querySelectorAll('.auth__tab-btn');
+        const authForms = document.querySelectorAll('.auth__form');
 
         // Убираем активный класс у всех кнопок и форм
-        tabBtns.forEach(btn => btn.classList.remove('active'));
-        authForms.forEach(form => form.classList.remove('active'));
+        tabBtns.forEach(btn => btn.classList.remove('auth__tab-btn--active'));
+        authForms.forEach(form => form.classList.remove('auth__form--active'));
 
         // Добавляем активный класс выбранной кнопке и форме
         const selectedBtn = document.querySelector(`[data-tab="${tab}"]`);
         const selectedForm = document.getElementById(tab + 'Form');
 
-        if (selectedBtn) selectedBtn.classList.add('active');
-        if (selectedForm) selectedForm.classList.add('active');
+        if (selectedBtn) selectedBtn.classList.add('auth__tab-btn--active');
+        if (selectedForm) selectedForm.classList.add('auth__form--active');
     }
 
     // Обработка входа
@@ -182,21 +182,21 @@ class AuthManager {
 
     // Показать форму "Забыли пароль"
     showForgotPassword() {
-        const authContent = document.querySelector('.auth-container');
+        const authContent = document.querySelector('.auth');
         if (authContent) {
             authContent.innerHTML = `
-                <div class="forgot-password-form">
-                    <h2>Восстановление пароля</h2>
-                    <p>Введите ваш email для восстановления пароля</p>
-                    <form id="forgotPasswordForm">
-                        <div class="form-group">
-                            <label for="forgotEmail">Email</label>
-                            <input type="email" id="forgotEmail" name="email" required>
+                <div class="auth__forgot-password">
+                    <h2 class="auth__forgot-title">Восстановление пароля</h2>
+                    <p class="auth__forgot-description">Введите ваш email для восстановления пароля</p>
+                    <form id="forgotPasswordForm" class="auth__forgot-form">
+                        <div class="auth__form-group">
+                            <label for="forgotEmail" class="auth__form-label">Email</label>
+                            <input type="email" id="forgotEmail" name="email" class="auth__form-input" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        <button type="submit" class="auth__form-btn auth__form-btn--primary">Отправить</button>
                     </form>
-                    <div class="form-footer">
-                        <a href="#" class="back-to-login">← Вернуться к входу</a>
+                    <div class="auth__form-footer">
+                        <a href="#" class="auth__form-link auth__form-link--back">← Вернуться к входу</a>
                     </div>
                 </div>
             `;
@@ -211,7 +211,7 @@ class AuthManager {
             }
 
             // Обработчик для возврата к входу
-            const backLink = document.querySelector('.back-to-login');
+            const backLink = document.querySelector('.auth__form-link--back');
             if (backLink) {
                 backLink.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -253,16 +253,16 @@ class AuthManager {
 
     // Показать информацию о пользователе
     showUserInfo() {
-        const authContent = document.querySelector('.auth-container');
+        const authContent = document.querySelector('.auth');
         if (authContent) {
             authContent.innerHTML = `
-                <div class="user-info">
-                    <h2>Добро пожаловать, ${this.currentUser.name}!</h2>
-                    <p>Email: ${this.currentUser.email}</p>
-                    <p>Роль: ${this.currentUser.role === 'admin' ? 'Администратор' : 'Пользователь'}</p>
-                    <div class="user-actions">
-                        <button class="btn btn-primary" onclick="authManager.redirectToMain()">Перейти к темам</button>
-                        <button class="btn btn-secondary" onclick="authManager.logout()">Выйти</button>
+                <div class="auth__user-info">
+                    <h2 class="auth__user-title">Добро пожаловать, ${this.currentUser.name}!</h2>
+                    <p class="auth__user-email">Email: ${this.currentUser.email}</p>
+                    <p class="auth__user-role">Роль: ${this.currentUser.role === 'admin' ? 'Администратор' : 'Пользователь'}</p>
+                    <div class="auth__user-actions">
+                        <button class="auth__form-btn auth__form-btn--primary" onclick="authManager.redirectToMain()">Перейти к темам</button>
+                        <button class="auth__form-btn auth__form-btn--secondary" onclick="authManager.logout()">Выйти</button>
                     </div>
                 </div>
             `;
@@ -382,37 +382,43 @@ style.textContent = `
         }
     }
 
-    .forgot-password-form {
+    .auth__forgot-password {
         text-align: center;
     }
 
-    .forgot-password-form p {
-        color: #666;
-        margin-bottom: 25px;
-    }
-
-    .user-info {
-        text-align: center;
-    }
-
-    .user-info h2 {
+    .auth__forgot-title {
         color: #007bff;
         margin-bottom: 20px;
     }
 
-    .user-info p {
+    .auth__forgot-description {
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .auth__user-info {
+        text-align: center;
+    }
+
+    .auth__user-title {
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    .auth__user-email,
+    .auth__user-role {
         color: #666;
         margin-bottom: 10px;
     }
 
-    .user-actions {
+    .auth__user-actions {
         margin-top: 25px;
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
 
-    .user-actions .btn {
+    .auth__user-actions .auth__form-btn {
         width: 100%;
     }
 `;
