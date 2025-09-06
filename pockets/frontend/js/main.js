@@ -265,6 +265,12 @@ class PocketsApp {
     handleTopicClick(card) {
         const topicId = card.dataset.topic;
         
+        // Бесплатный топик доступен без регистрации
+        if (topicId === 'free') {
+            this.goToTopic(topicId);
+            return;
+        }
+        
         if (!this.currentUser) {
             this.showAuthModal();
             return;
@@ -287,7 +293,11 @@ class PocketsApp {
 
     // Переход к изучению темы
     goToTopic(topicId) {
-        window.location.href = `topics/topic${topicId}.html`;
+        if (topicId === 'free') {
+            window.location.href = 'topics/topic-free.html';
+        } else {
+            window.location.href = `topics/topic${topicId}.html`;
+        }
     }
 
     // Показать страницу оплаты
@@ -320,6 +330,14 @@ class PocketsApp {
         topicCards.forEach(card => {
             const topicId = card.dataset.topic;
             const button = card.querySelector('.topic-card__btn');
+            
+            // Бесплатный топик всегда доступен
+            if (topicId === 'free') {
+                button.textContent = 'Начать бесплатно';
+                button.style.backgroundColor = '#0ea5e9';
+                button.style.color = 'white';
+                return;
+            }
             
             if (this.currentUser) {
                 if (this.isTopicPurchased(topicId)) {

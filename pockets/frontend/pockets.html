@@ -4,19 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LVR - Школа английского языка</title>
+    <meta name="description"
+        content="LVR Языковая школа - курсы иностранных языков для всех уровней. Изучайте английский, немецкий, французский и другие языки с профессионалами.">
+    <title>LVR - Пакеты изучения английского языка</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../frontend/css/index_styles/header.css">
+    <link rel="stylesheet" href="../../frontend/css/index_styles/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
 </head>
 
 <body class="page">
     <!-- Хедер -->
     <header class="header">
         <div class="header__container">
-            <div class="header__logo">
-                <h1 class="header__title">LVR</h1>
-                <span class="header__subtitle">Школа английского языка</span>
-            </div>
-            <div class="header__auth-buttons">
+            <a href="/" class="header__brand">
+                <i class="header__brand-icon" data-lucide="languages"></i>
+                <span class="header__brand-main">LVR</span>
+                <span class="header__brand-subtitle">Языковая школа</span>
+            </a>
+
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="/#about" class="header__nav-link">О школе</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="/#services" class="header__nav-link">Услуги</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="/#gallery" class="header__nav-link">Галерея</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="/#contacts" class="header__nav-link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__contacts">
+                <a href="tel:+79025101923" class="header__contact header__contact--phone">
+                    <i class="header__icon header__icon--phone"></i>
+                    +7-902‒510‒19‒23
+                </a>
+                <a href="https://t.me/" class="header__contact header__contact--telegram">
+                    <i class="header__icon header__icon--telegram"></i>
+                    Telegram
+                </a>
                 <button id="loginBtn" class="header__btn header__btn--primary">Войти</button>
             </div>
         </div>
@@ -32,6 +64,14 @@
 
             <!-- Блоки с темами -->
             <section class="topics-grid">
+                <!-- Бесплатный топик -->
+                <div class="topic-card topic-card--free" data-topic="free">
+                    <div class="topic-card__icon">🎯</div>
+                    <h3 class="topic-card__title">Английский алфавит</h3>
+                    <p class="topic-card__description">Изучите английский алфавит с произношением и примерами слов. Идеально для начинающих!</p>
+                    <button class="topic-card__btn topic-card__btn--primary">Начать бесплатно</button>
+                </div>
+
                 <div class="topic-card" data-topic="1">
                     <div class="topic-card__icon">📚</div>
                     <h3 class="topic-card__title">Present Simple</h3>
@@ -73,24 +113,104 @@
     <!-- Футер -->
     <footer class="footer">
         <div class="footer__container">
-            <div class="footer__content">
-                <div class="footer__section">
-                    <h4 class="footer__heading">LVR</h4>
-                    <p class="footer__text">Школа английского языка</p>
+            <div class="footer__main">
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <i class="footer__logo-icon" data-lucide="languages"></i>
+                        <span class="footer__logo-text">LVR</span>
+                        <span class="footer__logo-subtitle">Школа иностранных языков</span>
+                    </div>
+
+                    <p class="footer__description">
+                        Мы помогаем детям и взрослым изучать иностранные языки в дружелюбной и эффективной
+                        образовательной среде.
+                    </p>
+
+                    <div class="footer__buttons">
+                        <button class="footer__button">
+                            <i class="footer__button-icon" data-lucide="phone"></i>
+                            Позвонить
+                        </button>
+                        <button class="footer__button">
+                            <i class="footer__button-icon" data-lucide="message-circle"></i>
+                            Telegram
+                        </button>
+                    </div>
                 </div>
-                <div class="footer__section">
-                    <h4 class="footer__heading">Контакты</h4>
-                    <p class="footer__text">Email: info@lvr-school.ru</p>
-                    <p class="footer__text">Телефон: +7-902‒510‒19‒23</p>
-                </div>
-                <div class="footer__section">
-                    <h4 class="footer__heading">Социальные сети</h4>
-                    <p class="footer__text">VK: @lvr_school</p>
-                    <p class="footer__text">Telegram: @lvr_school</p>
+
+                <div class="footer__right">
+                    <div class="footer__columns">
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Контакты</h4>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="map-pin"></i>
+                                    <span class="footer__column-text">
+                                        ТРЦ ЕвроПарк<br>
+                                        Улица Розы Люксембург, 215в<br>
+                                        1 этаж
+                                    </span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="phone"></i>
+                                    <span class="footer__column-text">+7‒902‒510‒19‒23</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="message-circle"></i>
+                                    <span
+                                        class="footer__column-text footer__column-text--telegram">@markidonova_elvira</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Время работы</h4>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="clock"></i>
+                                    <span class="footer__column-text">Пн — Пт: 10:00–19:00</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-icon"></span>
+                                    <span class="footer__column-note">Перерыв 12:30–13:30</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-icon"></span>
+                                    <span class="footer__column-text">Сб — Вс: Выходной</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Удобства</h4>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <span class="footer__column-bullet">•</span>
+                                    <span class="footer__column-text">Безналичная оплата</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-bullet">•</span>
+                                    <span class="footer__column-text">Бесплатная парковка (80 мест)</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-bullet">•</span>
+                                    <span class="footer__column-text">Удобное расположение</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="footer__bottom">
-                <p class="footer__copyright">&copy; 2025 LVR. Все права защищены.</p>
+                <div class="footer__divider"></div>
+                <div class="footer__bottom-content">
+                    <span class="footer__copyright">© 2025 Школа иностранных языков LVR. Все права защищены.</span>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Политика конфиденциальности</a>
+                        <a href="#" class="footer__link">Договор оферты</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -105,6 +225,11 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Инициализация иконок Lucide
+        lucide.createIcons();
+    </script>
     <script src="js/main.js"></script>
 </body>
 

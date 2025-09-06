@@ -1,634 +1,396 @@
-/* Стили для страниц тем */
-:root {
-    --brand-primary: #61525a;
-    --brand-accent: #5f9dff;
-    --warm-gray: #6b7280;
-    --section-background: #f7f5f2;
-    --border: 220, 14%, 90%; /* Light gray in HSL */
+/* Стили для страниц топиков */
+
+/* Hero секция топика */
+.topic-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    margin: 2rem 1rem 4rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.page {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--section-background);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+.topic-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
 }
 
-.topic {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-/* Заголовок темы */
-.topic__header {
-    background: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
-    border-radius: 1rem;
-    display: flex;
-    justify-content: space-between;
+.topic-hero__badge {
+    display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.topic__back-link {
-    color: var(--brand-accent);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.topic__back-link:hover {
-    color: #4a89e8;
-}
-
-.topic__title {
-    color: var(--brand-primary);
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-.topic__progress {
-    background-color: var(--section-background);
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
     padding: 0.75rem 1.5rem;
-    border-radius: 8rem;
-    color: var(--warm-gray);
-    font-weight: 600;
-    border: 1px solid hsl(var(--border));
-}
-
-.topic__progress-text {
-    margin: 0;
+    border-radius: 2rem;
+    font-weight: 700;
     font-size: 0.875rem;
-}
-
-/* Основной контент */
-.topic__content {
-    padding: 0 1.25rem;
-}
-
-/* Секция теории */
-.theory {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.theory__title {
-    color: var(--brand-primary);
-    font-size: 1.75rem;
-    font-weight: 700;
+.topic-hero__badge-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.topic-hero__title {
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid hsl(var(--border));
-    padding-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
 }
 
-.theory__subtitle {
-    color: var(--brand-primary);
-    font-size: 1.375rem;
-    font-weight: 600;
-    margin: 1.5rem 0 1rem 0;
+.topic-hero__subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
 }
 
-.theory__text {
+.topic-hero__stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.topic-hero__stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.topic-hero__stat-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Секция алфавита */
+.alphabet-section {
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
+
+.alphabet-section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--brand-primary);
-    font-size: 1rem;
     margin-bottom: 1rem;
-    line-height: 1.6;
 }
 
-.theory__list {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
+.alphabet-section__subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--warm-gray);
+    margin-bottom: 3rem;
 }
 
-.theory__list-item {
-    color: var(--brand-primary);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-}
-
-.theory__formula {
-    background-color: var(--section-background);
-    border-left: 4px solid var(--brand-accent);
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 0 0.75rem 0.75rem 0;
-}
-
-.theory__formula-text {
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--brand-primary);
-}
-
-.theory__examples {
+.alphabet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin: 1.5rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.theory__example {
-    background-color: var(--section-background);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    border: 1px solid hsl(var(--border));
-}
-
-.theory__example-text {
-    margin-bottom: 0.5rem;
-    color: var(--brand-primary);
-    line-height: 1.6;
-}
-
-/* Секция упражнений */
-.exercises {
+.alphabet-letter {
     background: white;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
-}
-
-.exercises__title {
-    color: var(--brand-accent);
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid hsl(var(--border));
-    padding-bottom: 1rem;
-}
-
-.exercise {
-    border: 2px solid hsl(var(--border));
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
 
-.exercise:hover {
+.alphabet-letter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-accent), #4a89e8);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.alphabet-letter:hover::before {
+    transform: scaleX(1);
+}
+
+.alphabet-letter:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(95, 157, 255, 0.2);
     border-color: var(--brand-accent);
-    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.1);
 }
 
-.exercise__title {
+.alphabet-letter__char {
+    font-size: 4rem;
+    font-weight: 800;
     color: var(--brand-primary);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.alphabet-letter__pronunciation {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1.25rem;
+    color: var(--brand-accent);
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
 }
 
-.exercise__question-text {
-    font-size: 1.125rem;
-    color: var(--brand-primary);
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-    line-height: 1.6;
-}
-
-.exercise__options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-}
-
-.exercise__option {
-    display: flex;
-    align-items: center;
-    padding: 0.875rem 1rem;
-    border: 2px solid hsl(var(--border));
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: white;
-}
-
-.exercise__option:hover {
-    border-color: var(--brand-accent);
-    background-color: var(--section-background);
-}
-
-.exercise__option-input {
-    margin-right: 0.75rem;
-    transform: scale(1.2);
-}
-
-.exercise__option-text {
-    color: var(--brand-primary);
+.alphabet-letter__example {
+    font-size: 1rem;
+    color: var(--warm-gray);
     font-weight: 500;
 }
 
-.exercise__input {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    border: 2px solid hsl(var(--border));
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    margin-bottom: 1.25rem;
-    background-color: white;
+/* Секция практики */
+.practice-section {
+    background: white;
+    border-radius: 2rem;
+    padding: 3rem;
+    margin: 0 1rem 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.exercise__input:focus {
+.practice-section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+}
+
+.practice-section__subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--warm-gray);
+    margin-bottom: 3rem;
+}
+
+.practice-game {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.practice-game__question {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 1rem;
+    border: 2px solid var(--brand-accent);
+}
+
+.practice-game__question p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--brand-primary);
+    margin: 0;
+}
+
+.practice-game__input {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.practice-game__input input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid hsl(var(--border));
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.practice-game__input input:focus {
     outline: none;
     border-color: var(--brand-accent);
     box-shadow: 0 0 0 3px rgba(95, 157, 255, 0.1);
 }
 
-.exercise__btn--check {
-    background-color: var(--brand-accent);
+.practice-game__check-btn {
+    padding: 1rem 2rem;
+    background: var(--brand-accent);
     color: white;
-    padding: 0.875rem 1.5rem;
     border: 2px solid var(--brand-accent);
-    border-radius: 8rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.exercise__btn--check:hover {
-    background-color: #4a89e8;
-    border-color: #4a89e8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
-}
-
-/* Секция теста */
-.test {
-    background: white;
     border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
-}
-
-.test__title {
-    color: #dc3545;
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid hsl(var(--border));
-    padding-bottom: 1rem;
-}
-
-.test__info {
-    text-align: center;
-}
-
-.test__description {
-    color: var(--warm-gray);
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-}
-
-.test__btn--primary {
-    background-color: var(--brand-accent);
-    color: white;
-    padding: 0.875rem 1.5rem;
-    border: 2px solid var(--brand-accent);
-    border-radius: 8rem;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.test__btn--primary:hover {
-    background-color: #4a89e8;
+.practice-game__check-btn:hover {
+    background: #4a89e8;
     border-color: #4a89e8;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
-/* Футер темы */
-.topic__footer {
-    background: white;
-    padding: 2rem;
-    margin-top: 2rem;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
-    border-radius: 1rem 1rem 0 0;
+.practice-game__result {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.topic__navigation {
+.practice-game__result--correct {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+    border: 2px solid #10b981;
+}
+
+.practice-game__result--incorrect {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border: 2px solid #ef4444;
+}
+
+.practice-game__controls {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.topic__nav-btn {
-    padding: 0.875rem 1.5rem;
+.practice-game__next-btn,
+.practice-game__reset-btn {
+    padding: 1rem 2rem;
+    border: 2px solid var(--brand-accent);
+    border-radius: 1rem;
     font-size: 1rem;
     font-weight: 600;
-    border: 2px solid;
-    border-radius: 8rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
 }
 
-.topic__nav-btn:disabled {
-    background-color: hsl(var(--border));
-    color: var(--warm-gray);
-    border-color: hsl(var(--border));
-    cursor: not-allowed;
-    transform: none;
-}
-
-.topic__nav-btn:not(:disabled):hover {
-    transform: translateY(-2px);
-}
-
-.topic__nav-btn--prev {
-    background-color: var(--warm-gray);
+.practice-game__next-btn {
+    background: var(--brand-accent);
     color: white;
-    border-color: var(--warm-gray);
 }
 
-.topic__nav-btn--prev:hover:not(:disabled) {
-    background-color: #4b5563;
-    border-color: #4b5563;
-    box-shadow: 0 5px 15px rgba(107, 114, 128, 0.3);
-}
-
-.topic__nav-btn--next {
-    background-color: var(--brand-accent);
-    color: white;
-    border-color: var(--brand-accent);
-}
-
-.topic__nav-btn--next:hover:not(:disabled) {
-    background-color: #4a89e8;
+.practice-game__next-btn:hover {
+    background: #4a89e8;
     border-color: #4a89e8;
+    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
-/* План действий */
-.topic__plan {
+.practice-game__reset-btn {
     background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
+    color: var(--brand-accent);
 }
 
-.topic__plan-title {
-    color: var(--brand-primary);
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.topic__plan-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.topic__plan-step {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: var(--section-background);
-    border-radius: 0.75rem;
-    border: 1px solid hsl(var(--border));
-}
-
-.topic__plan-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.topic__plan-step-title {
-    color: var(--brand-primary);
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-.topic__plan-step-description {
-    color: var(--warm-gray);
-    font-size: 0.875rem;
-    line-height: 1.6;
-}
-
-/* Документы для скачивания */
-.topic__documents {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
-}
-
-.topic__documents-title {
-    color: var(--brand-primary);
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.topic__document {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    border: 1px solid hsl(var(--border));
-    border-radius: 0.75rem;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-.topic__document:hover {
-    border-color: var(--brand-accent);
-    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.1);
-}
-
-.topic__document-icon {
-    font-size: 2.5rem;
-    flex-shrink: 0;
-}
-
-.topic__document-info {
-    flex: 1;
-}
-
-.topic__document-title {
-    color: var(--brand-primary);
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.topic__document-description {
-    color: var(--warm-gray);
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.topic__document-download {
-    display: inline-block;
-    background-color: var(--brand-accent);
+.practice-game__reset-btn:hover {
+    background: var(--brand-accent);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8rem;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.topic__document-download:hover {
-    background-color: #4a89e8;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.3);
-}
-
-/* Советы по изучению */
-.topic__tips {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid hsl(var(--border));
-}
-
-.topic__tips-title {
-    color: var(--brand-primary);
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.topic__tips-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.topic__tip {
-    padding: 1.5rem;
-    background-color: var(--section-background);
-    border-radius: 0.75rem;
-    border: 1px solid hsl(var(--border));
-}
-
-.topic__tip-title {
-    color: var(--brand-accent);
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.topic__tip-list {
-    list-style: none;
-    padding: 0;
-}
-
-.topic__tip-list li {
-    color: var(--brand-primary);
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-    line-height: 1.6;
-}
-
-.topic__tip-list li::before {
-    content: '•';
-    color: var(--brand-accent);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
+    box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .topic__header {
-        flex-direction: column;
-        text-align: center;
+    .topic-hero {
+        padding: 3rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .topic-hero__title {
+        font-size: 2.5rem;
+    }
+    
+    .topic-hero__subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .topic-hero__stats {
+        gap: 1.5rem;
+    }
+    
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1rem;
+    }
+    
+    .alphabet-letter {
         padding: 1.5rem;
     }
     
-    .topic__title {
-        font-size: 1.5rem;
+    .alphabet-letter__char {
+        font-size: 3rem;
     }
     
-    .topic__content {
-        padding: 0 1rem;
+    .practice-section {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem 2rem;
     }
     
-    .topic__plan,
-    .topic__documents,
-    .topic__tips {
-        padding: 1.5rem;
-    }
-    
-    .topic__plan-steps {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .topic__tips-content {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .topic__document {
+    .practice-game__input {
         flex-direction: column;
-        text-align: center;
-        gap: 1rem;
     }
     
-    .topic__navigation {
+    .practice-game__controls {
         flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .topic__nav-btn {
-        width: 100%;
+        align-items: center;
     }
 }
 
 @media (max-width: 480px) {
-    .topic__title {
-        font-size: 1.25rem;
+    .topic-hero__title {
+        font-size: 2rem;
     }
     
-    .theory__title,
-    .exercises__title,
-    .test__title {
-        font-size: 1.5rem;
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
     
-    .exercise__title {
-        font-size: 1.125rem;
+    .alphabet-letter__char {
+        font-size: 2.5rem;
     }
 }

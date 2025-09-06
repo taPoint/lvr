@@ -19,26 +19,30 @@
 }
 
 .auth {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    padding: 2.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    padding: 3rem;
     width: 100%;
     max-width: 500px;
     position: relative;
-    border: 1px solid hsl(var(--border));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 /* Переключатель форм */
 .auth__tabs {
     display: flex;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid hsl(var(--border));
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    position: relative;
 }
 
 .auth__tab-btn {
     flex: 1;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     background: none;
     border: none;
     font-size: 1rem;
@@ -47,24 +51,19 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    border-radius: 0.75rem;
+    z-index: 2;
 }
 
 .auth__tab-btn--active {
-    color: var(--brand-accent);
+    color: white;
+    background: linear-gradient(135deg, var(--brand-accent) 0%, #4a89e8 100%);
+    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.3);
 }
 
-.auth__tab-btn--active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--brand-accent);
-}
-
-.auth__tab-btn:hover {
+.auth__tab-btn:hover:not(.auth__tab-btn--active) {
     color: var(--brand-accent);
+    background: rgba(95, 157, 255, 0.1);
 }
 
 /* Формы */
@@ -79,9 +78,13 @@
 .auth__form-title {
     text-align: center;
     color: var(--brand-primary);
-    margin-bottom: 2rem;
-    font-size: 1.75rem;
-    font-weight: 700;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .auth__form-group {
@@ -98,43 +101,63 @@
 
 .auth__form-input {
     width: 100%;
-    padding: 0.875rem 1rem;
+    padding: 1rem 1.25rem;
     border: 2px solid hsl(var(--border));
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background-color: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .auth__form-input:focus {
     outline: none;
     border-color: var(--brand-accent);
-    box-shadow: 0 0 0 3px rgba(95, 157, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(95, 157, 255, 0.15);
+    transform: translateY(-1px);
 }
 
 .auth__form-btn {
     width: 100%;
-    padding: 0.875rem 1.5rem;
-    background-color: var(--brand-accent);
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--brand-accent) 0%, #4a89e8 100%);
     color: white;
     border: 2px solid var(--brand-accent);
-    border-radius: 8rem;
+    border-radius: 1rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth__form-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.auth__form-btn:hover::before {
+    left: 100%;
 }
 
 .auth__form-btn--primary {
-    background-color: var(--brand-accent);
+    background: linear-gradient(135deg, var(--brand-accent) 0%, #4a89e8 100%);
 }
 
 .auth__form-btn--primary:hover {
-    background-color: #4a89e8;
+    background: linear-gradient(135deg, #4a89e8 0%, #3b82f6 100%);
     border-color: #4a89e8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(95, 157, 255, 0.4);
 }
 
 .auth__form-btn--secondary {
@@ -169,18 +192,38 @@
 
 /* Тестовый аккаунт */
 .auth__test-account {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: var(--section-background);
-    border-radius: 0.75rem;
-    border-left: 4px solid var(--brand-accent);
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 1.5rem;
+    border: 2px solid #0ea5e9;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth__test-account::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0ea5e9, #0284c7);
 }
 
 .auth__test-account-title {
-    color: var(--brand-accent);
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
-    font-weight: 600;
+    color: #0ea5e9;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.auth__test-account-title::before {
+    content: '🎯';
+    font-size: 1.5rem;
 }
 
 .auth__test-account-info {
@@ -191,27 +234,46 @@
 }
 
 .auth__test-account-btn {
-    margin-top: 1rem;
-    background-color: var(--brand-accent);
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
     width: 100%;
-    padding: 0.875rem 1.5rem;
-    border: 2px solid var(--brand-accent);
-    border-radius: 8rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #0ea5e9;
+    border-radius: 1rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     color: white;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth__test-account-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.auth__test-account-btn:hover::before {
+    left: 100%;
 }
 
 .auth__test-account-btn--secondary {
-    background-color: var(--brand-accent);
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
 }
 
 .auth__test-account-btn--secondary:hover {
-    background-color: #4a89e8;
-    border-color: #4a89e8;
-    box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    border-color: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
 }
 
 /* Анимации */
