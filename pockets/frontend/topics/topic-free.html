@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Английский алфавит - LVR</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../../../../frontend/css/index_styles/header.css">
-    <link rel="stylesheet" href="../../../../frontend/css/index_styles/footer.css">
+    <link rel="stylesheet" href="../../../frontend/css/index_styles/header.css">
+    <link rel="stylesheet" href="../../../frontend/css/index_styles/footer.css">
     <link rel="stylesheet" href="../css/topics.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
 </head>
+
 <body class="page">
     <!-- Хедер -->
     <header class="header">
         <div class="header__container">
-            <a href="/" class="header__brand">
+            <a href="../../../index.html" class="header__brand">
                 <i class="header__brand-icon" data-lucide="languages"></i>
                 <span class="header__brand-main">LVR</span>
                 <span class="header__brand-subtitle">Языковая школа</span>
@@ -23,16 +25,16 @@
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="header__nav-item">
-                        <a href="/#about" class="header__nav-link">О школе</a>
+                        <a href="../../../index.html#about" class="header__nav-link">О школе</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="/#services" class="header__nav-link">Услуги</a>
+                        <a href="../../../index.html#services" class="header__nav-link">Услуги</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="/#gallery" class="header__nav-link">Галерея</a>
+                        <a href="../../../index.html#gallery" class="header__nav-link">Галерея</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="/#contacts" class="header__nav-link">Контакты</a>
+                        <a href="../../../index.html#contacts" class="header__nav-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -60,7 +62,8 @@
                     <span>БЕСПЛАТНО</span>
                 </div>
                 <h1 class="topic-hero__title">Английский алфавит</h1>
-                <p class="topic-hero__subtitle">Изучите английский алфавит с произношением и примерами слов. Идеально для начинающих!</p>
+                <p class="topic-hero__subtitle">Изучите английский алфавит с произношением и примерами слов. Идеально
+                    для начинающих!</p>
                 <div class="topic-hero__stats">
                     <div class="topic-hero__stat">
                         <i class="topic-hero__stat-icon" data-lucide="clock"></i>
@@ -80,7 +83,7 @@
             <section class="alphabet-section">
                 <h2 class="alphabet-section__title">Английский алфавит A-Z</h2>
                 <p class="alphabet-section__subtitle">Нажмите на букву, чтобы услышать произношение</p>
-                
+
                 <div class="alphabet-grid">
                     <div class="alphabet-letter" data-letter="A">
                         <div class="alphabet-letter__char">A</div>
@@ -218,7 +221,7 @@
             <section class="practice-section">
                 <h2 class="practice-section__title">Практика</h2>
                 <p class="practice-section__subtitle">Попробуйте написать буквы по памяти</p>
-                
+
                 <div class="practice-game">
                     <div class="practice-game__question">
                         <p>Напишите букву, которая произносится как <strong id="practice-question">[eɪ]</strong></p>
@@ -346,52 +349,52 @@
     <script>
         // Инициализация иконок Lucide
         lucide.createIcons();
-        
+
         // Простая игра с алфавитом
         const alphabet = [
-            {letter: 'A', pronunciation: '[eɪ]', example: 'Apple'},
-            {letter: 'B', pronunciation: '[biː]', example: 'Book'},
-            {letter: 'C', pronunciation: '[siː]', example: 'Cat'},
-            {letter: 'D', pronunciation: '[diː]', example: 'Dog'},
-            {letter: 'E', pronunciation: '[iː]', example: 'Elephant'},
-            {letter: 'F', pronunciation: '[ef]', example: 'Fish'},
-            {letter: 'G', pronunciation: '[dʒiː]', example: 'Guitar'},
-            {letter: 'H', pronunciation: '[eɪtʃ]', example: 'House'},
-            {letter: 'I', pronunciation: '[aɪ]', example: 'Ice'},
-            {letter: 'J', pronunciation: '[dʒeɪ]', example: 'Jump'},
-            {letter: 'K', pronunciation: '[keɪ]', example: 'Kite'},
-            {letter: 'L', pronunciation: '[el]', example: 'Lion'},
-            {letter: 'M', pronunciation: '[em]', example: 'Moon'},
-            {letter: 'N', pronunciation: '[en]', example: 'Night'},
-            {letter: 'O', pronunciation: '[əʊ]', example: 'Orange'},
-            {letter: 'P', pronunciation: '[piː]', example: 'Pen'},
-            {letter: 'Q', pronunciation: '[kjuː]', example: 'Queen'},
-            {letter: 'R', pronunciation: '[ɑː]', example: 'Rose'},
-            {letter: 'S', pronunciation: '[es]', example: 'Sun'},
-            {letter: 'T', pronunciation: '[tiː]', example: 'Tree'},
-            {letter: 'U', pronunciation: '[juː]', example: 'Umbrella'},
-            {letter: 'V', pronunciation: '[viː]', example: 'Violin'},
-            {letter: 'W', pronunciation: '[ˈdʌbəl juː]', example: 'Water'},
-            {letter: 'X', pronunciation: '[eks]', example: 'Box'},
-            {letter: 'Y', pronunciation: '[waɪ]', example: 'Yellow'},
-            {letter: 'Z', pronunciation: '[zed]', example: 'Zebra'}
+            { letter: 'A', pronunciation: '[eɪ]', example: 'Apple' },
+            { letter: 'B', pronunciation: '[biː]', example: 'Book' },
+            { letter: 'C', pronunciation: '[siː]', example: 'Cat' },
+            { letter: 'D', pronunciation: '[diː]', example: 'Dog' },
+            { letter: 'E', pronunciation: '[iː]', example: 'Elephant' },
+            { letter: 'F', pronunciation: '[ef]', example: 'Fish' },
+            { letter: 'G', pronunciation: '[dʒiː]', example: 'Guitar' },
+            { letter: 'H', pronunciation: '[eɪtʃ]', example: 'House' },
+            { letter: 'I', pronunciation: '[aɪ]', example: 'Ice' },
+            { letter: 'J', pronunciation: '[dʒeɪ]', example: 'Jump' },
+            { letter: 'K', pronunciation: '[keɪ]', example: 'Kite' },
+            { letter: 'L', pronunciation: '[el]', example: 'Lion' },
+            { letter: 'M', pronunciation: '[em]', example: 'Moon' },
+            { letter: 'N', pronunciation: '[en]', example: 'Night' },
+            { letter: 'O', pronunciation: '[əʊ]', example: 'Orange' },
+            { letter: 'P', pronunciation: '[piː]', example: 'Pen' },
+            { letter: 'Q', pronunciation: '[kjuː]', example: 'Queen' },
+            { letter: 'R', pronunciation: '[ɑː]', example: 'Rose' },
+            { letter: 'S', pronunciation: '[es]', example: 'Sun' },
+            { letter: 'T', pronunciation: '[tiː]', example: 'Tree' },
+            { letter: 'U', pronunciation: '[juː]', example: 'Umbrella' },
+            { letter: 'V', pronunciation: '[viː]', example: 'Violin' },
+            { letter: 'W', pronunciation: '[ˈdʌbəl juː]', example: 'Water' },
+            { letter: 'X', pronunciation: '[eks]', example: 'Box' },
+            { letter: 'Y', pronunciation: '[waɪ]', example: 'Yellow' },
+            { letter: 'Z', pronunciation: '[zed]', example: 'Zebra' }
         ];
-        
+
         let currentQuestion = 0;
         let score = 0;
-        
+
         function showQuestion() {
             const question = alphabet[currentQuestion];
             document.getElementById('practice-question').textContent = question.pronunciation;
             document.getElementById('practice-answer').value = '';
             document.getElementById('practice-result').textContent = '';
         }
-        
+
         function checkAnswer() {
             const answer = document.getElementById('practice-answer').value.toUpperCase();
             const correctAnswer = alphabet[currentQuestion].letter;
             const result = document.getElementById('practice-result');
-            
+
             if (answer === correctAnswer) {
                 result.textContent = '✅ Правильно!';
                 result.className = 'practice-game__result practice-game__result--correct';
@@ -401,30 +404,31 @@
                 result.className = 'practice-game__result practice-game__result--incorrect';
             }
         }
-        
+
         function nextQuestion() {
             currentQuestion = (currentQuestion + 1) % alphabet.length;
             showQuestion();
         }
-        
+
         function resetGame() {
             currentQuestion = 0;
             score = 0;
             showQuestion();
         }
-        
+
         // Event listeners
         document.getElementById('practice-check').addEventListener('click', checkAnswer);
         document.getElementById('practice-next').addEventListener('click', nextQuestion);
         document.getElementById('practice-reset').addEventListener('click', resetGame);
-        document.getElementById('practice-answer').addEventListener('keypress', function(e) {
+        document.getElementById('practice-answer').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 checkAnswer();
             }
         });
-        
+
         // Initialize
         showQuestion();
     </script>
 </body>
+
 </html>
