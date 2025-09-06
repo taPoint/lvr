@@ -312,8 +312,8 @@ class PocketsApp {
         const loginBtn = document.getElementById('loginBtn');
         if (loginBtn) {
             if (this.currentUser) {
-                loginBtn.textContent = this.currentUser.name;
-                loginBtn.onclick = () => this.logout();
+                // Создаем выпадающее меню для пользователя
+                this.createUserDropdown(loginBtn);
             } else {
                 loginBtn.textContent = 'Войти';
                 loginBtn.onclick = () => this.showAuthModal();
@@ -322,6 +322,108 @@ class PocketsApp {
 
         // Обновляем статус тем
         this.updateTopicsStatus();
+    }
+
+    // Создание выпадающего меню пользователя
+    createUserDropdown(loginBtn) {
+        // Удаляем старое меню если есть
+        const existingDropdown = document.querySelector('.user-dropdown');
+        if (existingDropdown) {
+            existingDropdown.remove();
+        }
+
+        // Создаем контейнер для кнопки и меню
+        const userContainer = document.createElement('div');
+        userContainer.className = 'user-container';
+        userContainer.style.position = 'relative';
+
+        // Заменяем кнопку входа на кнопку пользователя
+        loginBtn.textContent = this.currentUser.name;
+        loginBtn.innerHTML = `
+            <i class="header__user-icon" data-lucide="user"></i>
+            ${this.currentUser.name}
+            <i class="header__dropdown-icon" data-lucide="chevron-down"></i>
+        `;
+        loginBtn.className = 'header__btn header__btn--user';
+        loginBtn.onclick = (e) => {
+            e.stopPropagation();
+            this.toggleUserDropdown();
+        };
+
+        // Создаем выпадающее меню
+        const dropdown = document.createElement('div');
+        dropdown.className = 'user-dropdown';
+        dropdown.innerHTML = `
+            <div class="user-dropdown__header">
+                <div class="user-dropdown__avatar">
+                    <i data-lucide="user"></i>
+                </div>
+                <div class="user-dropdown__info">
+                    <div class="user-dropdown__name">${this.currentUser.name}</div>
+                    <div class="user-dropdown__email">${this.currentUser.email}</div>
+                </div>
+            </div>
+            <div class="user-dropdown__divider"></div>
+            <div class="user-dropdown__menu">
+                <button class="user-dropdown__item" onclick="app.showProfile()">
+                    <i data-lucide="user"></i>
+                    Профиль
+                </button>
+                <button class="user-dropdown__item" onclick="app.showSettings()">
+                    <i data-lucide="settings"></i>
+                    Настройки
+                </button>
+                <div class="user-dropdown__divider"></div>
+                <button class="user-dropdown__item user-dropdown__item--danger" onclick="app.logout()">
+                    <i data-lucide="log-out"></i>
+                    Выйти из аккаунта
+                </button>
+            </div>
+        `;
+
+        // Вставляем контейнер
+        loginBtn.parentNode.insertBefore(userContainer, loginBtn);
+        userContainer.appendChild(loginBtn);
+        userContainer.appendChild(dropdown);
+
+        // Инициализируем иконки
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!userContainer.contains(e.target)) {
+                this.hideUserDropdown();
+            }
+        });
+    }
+
+    // Показать/скрыть выпадающее меню
+    toggleUserDropdown() {
+        const dropdown = document.querySelector('.user-dropdown');
+        if (dropdown) {
+            dropdown.classList.toggle('user-dropdown--active');
+        }
+    }
+
+    hideUserDropdown() {
+        const dropdown = document.querySelector('.user-dropdown');
+        if (dropdown) {
+            dropdown.classList.remove('user-dropdown--active');
+        }
+    }
+
+    // Показать профиль (заглушка)
+    showProfile() {
+        this.hideUserDropdown();
+        this.showNotification('Функция профиля в разработке', 'info');
+    }
+
+    // Показать настройки (заглушка)
+    showSettings() {
+        this.hideUserDropdown();
+        this.showNotification('Функция настроек в разработке', 'info');
     }
 
     // Обновление статуса тем

@@ -334,6 +334,379 @@
     box-shadow: 0 5px 15px rgba(95, 157, 255, 0.3);
 }
 
+/* Стили для контента страниц топиков */
+.topic {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.topic__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 1.5rem;
+    color: white;
+}
+
+.topic__title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.topic__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* План изучения */
+.topic__plan {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.topic__plan-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.topic__plan-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.topic__plan-step {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.topic__plan-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-accent), #4a89e8);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.topic__plan-step:hover::before {
+    transform: scaleX(1);
+}
+
+.topic__plan-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(95, 157, 255, 0.2);
+    border-color: var(--brand-accent);
+}
+
+.topic__plan-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.topic__plan-step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+}
+
+.topic__plan-step-description {
+    color: var(--warm-gray);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Материалы для изучения */
+.topic__documents {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.topic__documents-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.topic__document {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.topic__document::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-accent), #4a89e8);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.topic__document:hover::before {
+    transform: scaleX(1);
+}
+
+.topic__document:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(95, 157, 255, 0.15);
+    border-color: var(--brand-accent);
+}
+
+.topic__document-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.topic__document-info {
+    flex: 1;
+}
+
+.topic__document-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 0.5rem;
+}
+
+.topic__document-description {
+    color: var(--warm-gray);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.topic__document-download {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--brand-accent) 0%, #4a89e8 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.topic__document-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.topic__document-download:hover::before {
+    left: 100%;
+}
+
+.topic__document-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(95, 157, 255, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+/* Советы по изучению */
+.topic__tips {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.topic__tips-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.topic__tips-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.topic__tip {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 2px solid #0ea5e9;
+    position: relative;
+    overflow: hidden;
+}
+
+.topic__tip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0ea5e9, #0284c7);
+}
+
+.topic__tip-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0ea5e9;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.topic__tip-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.topic__tip-list li {
+    padding: 0.5rem 0;
+    color: var(--warm-gray);
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.topic__tip-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0ea5e9;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Навигация между топиками */
+.topic__footer {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+}
+
+.topic__navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.topic__nav-btn {
+    padding: 1rem 2rem;
+    border: 2px solid var(--brand-accent);
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--brand-accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.topic__nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(95, 157, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.topic__nav-btn:hover::before {
+    left: 100%;
+}
+
+.topic__nav-btn:hover {
+    background: var(--brand-accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(95, 157, 255, 0.3);
+}
+
+.topic__nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f3f4f6;
+    color: #9ca3af;
+    border-color: #d1d5db;
+}
+
+.topic__nav-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    background: #f3f4f6;
+    color: #9ca3af;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .topic-hero {
