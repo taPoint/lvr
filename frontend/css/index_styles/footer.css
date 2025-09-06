@@ -1,0 +1,286 @@
+/* Футер */
+.footer {
+    background-color: hsl(229, 23%, 15%);
+    padding: 60px 0 0 0;
+}
+
+.footer__container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Основная часть футера */
+.footer__main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    padding-bottom: 40px;
+}
+
+/* Левая часть футера */
+.footer__left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 4rem;
+}
+
+/* Логотип */
+.footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer__logo-icon {
+    color: white;
+    width: 32px;
+    height: 32px;
+}
+
+.footer__logo-text {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.footer__logo-subtitle {
+    color: rgb(209, 213, 219);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* Описание */
+.footer__description {
+    color: rgb(209, 213, 219);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Кнопки */
+.footer__buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__button {
+    background: none;
+    border: none;
+    color: rgb(209, 213, 219);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.footer__button:hover {
+    color: white;
+}
+
+.footer__button-icon {
+    width: 18px;
+    height: 18px;
+    color: inherit;
+}
+
+/* Правая часть футера */
+.footer__right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+}
+
+/* Колонка */
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.5rem;
+    gap: 15px;
+}
+
+/* Заголовок колонки */
+.footer__column-title {
+    color: rgb(209, 213, 219);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Список колонки */
+.footer__column-list {
+    list-style: none;
+    margin-right: 1.5rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Элемент списка */
+.footer__column-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Иконка колонки */
+.footer__column-icon {
+    color: rgb(209, 213, 219);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Текст колонки */
+.footer__column-text {
+    color: rgb(209, 213, 219);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Специальный стиль для Telegram */
+.footer__column-text--telegram {
+    color: rgb(209, 213, 219);
+    transition: color 0.3s ease;
+}
+
+.footer__column-item:hover .footer__column-text--telegram {
+    color: #60a5fa;
+}
+
+/* Заметка колонки */
+.footer__column-note {
+    color: rgb(156, 163, 175);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Кругляшок */
+.footer__column-bullet {
+    color: rgb(209, 213, 219);
+    font-size: 1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Нижняя часть футера */
+.footer__bottom {
+    border-top: 1px solid rgb(55, 65, 81);
+    padding: 20px 0;
+}
+
+.footer__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Копирайт */
+.footer__copyright {
+    color: rgb(156, 163, 175);
+    font-size: 0.9rem;
+}
+
+/* Ссылки */
+.footer__links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__link {
+    color: rgb(156, 163, 175);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: white;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 0 0;
+    }
+    
+    .footer__main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer__right {
+        justify-content: flex-start;
+    }
+    
+    .footer__columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: none;
+    }
+    
+    .footer__bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .footer__buttons {
+        justify-content: center;
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 0 0 0;
+    }
+    
+    .footer__container {
+        padding: 0 15px;
+    }
+    
+    .footer__main {
+        gap: 30px;
+    }
+    
+    .footer__logo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .footer__logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .footer__buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer__columns {
+        gap: 25px;
+    }
+    
+    .footer__links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

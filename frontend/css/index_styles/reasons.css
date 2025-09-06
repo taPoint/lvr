@@ -1,0 +1,132 @@
+.reasons {
+    background-color: var(--section-background);
+    padding-bottom: 80px;
+}
+
+.reasons__container {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reasons__title {
+    color: var(--brand-primary);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.reasons__cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 80vw;
+}
+
+.reasons__card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 450px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.reasons__card:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-accent);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background-color: #fafafa;
+}
+
+.reasons__card-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--brand-accent);
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.reasons__card-title {
+    color: var(--brand-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.reasons__card-description {
+    color: var(--brand-primary);
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .reasons__cards {
+        gap: 20px;
+    }
+    
+    .reasons__card {
+        min-width: 220px;
+        max-width: 300px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reasons {
+        padding: 60px 0;
+    }
+    
+    .reasons__title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .reasons__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .reasons__card {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reasons__container {
+        padding: 0 15px;
+    }
+    
+    .reasons__title {
+        font-size: 1.8rem;
+    }
+    
+    .reasons__card {
+        padding: 25px 20px;
+    }
+    
+    .reasons__card-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .reasons__card-title {
+        font-size: 1.2rem;
+    }
+    
+    .reasons__card-description {
+        font-size: 0.95rem;
+    }
+}

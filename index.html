@@ -7,30 +7,43 @@
     <meta name="description"
         content="LVR Языковая школа - курсы иностранных языков для всех уровней. Изучайте английский, немецкий, французский и другие языки с профессионалами.">
     <title>LVR Языковая школа</title>
-    <link rel="stylesheet" href="frontend/css/style.css">
-    <link rel="stylesheet" href="frontend/css/header.css">
-    <link rel="stylesheet" href="frontend/css/hero.css">
-    <link rel="stylesheet" href="frontend/css/about.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/style.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/header.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/hero.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/packages.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/about.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/services.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/teacher.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/reasons.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/reviews.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/gallery.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/contacts.css">
+    <link rel="stylesheet" href="frontend/css/index_styles/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
 </head>
 
 <body>
     <header class="header">
         <div class="header__container">
-            <a href="/" class="header__brand">LVR Языковая школа</a>
+            <a href="/" class="header__brand">
+                <i class="header__brand-icon" data-lucide="languages"></i>
+                <span class="header__brand-main">LVR</span>
+                <span class="header__brand-subtitle">Языковая школа</span>
+            </a>
 
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">О школе</a>
+                        <a href="#about" class="header__nav-link">О школе</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Услуги</a>
+                        <a href="#services" class="header__nav-link">Услуги</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Галерея</a>
+                        <a href="#gallery" class="header__nav-link">Галерея</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Контакты</a>
+                        <a href="#contacts" class="header__nav-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -62,11 +75,11 @@
 
                 <ul class="hero__features">
                     <li class="hero__feature">
-                        <i class="hero__feature-icon"></i>
+                        <i class="hero__feature-icon" data-lucide="star"></i>
                         <span class="hero__feature-text">Опытный преподаватель</span>
                     </li>
                     <li class="hero__feature">
-                        <i class="hero__feature-icon"></i>
+                        <i class="hero__feature-icon hero__feature-icon--primary" data-lucide="user-check"></i>
                         <span class="hero__feature-text">Индивидуальный подход</span>
                     </li>
                 </ul>
@@ -74,6 +87,8 @@
                 <div class="hero__buttons">
                     <a href="#" class="hero__button hero__button--primary">Записаться на урок</a>
                     <a href="#" class="hero__button hero__button--secondary">Узнать больше</a>
+                    <a href="pockets/frontend/pockets.html" class="hero__button hero__button--packages">Попробовать
+                        пакеты</a>
                 </div>
 
                 <div class="hero__contact">
@@ -83,90 +98,696 @@
             </div>
         </section>
 
-        <section class="about">
-            <div class="about__container">
-                <h2 class="about__heading">О нашей школе</h2>
-                <p class="about__intro">Мы создаем комфортную и дружелюбную атмосферу для изучения иностранных языков</p>
-                
-                <div class="about__columns">
-                    <div class="about__column about__column--left">
-                        <div class="about__image-wrapper">
-                            <img src="#" alt="Интерьер языковой школы LVR" class="about__image">
-                            <div class="about__experience">
-                                <span class="about__experience-years">2+</span>
-                                <span class="about__experience-text">года опыта</span>
+        <section class="packages">
+            <div class="packages__container">
+                <div class="packages__hero">
+                    <div class="packages__hero-content">
+                        <div class="packages__badge">
+                            <i class="packages__badge-icon" data-lucide="zap"></i>
+                            <span>Новинка</span>
+                        </div>
+                        <h2 class="packages__title">Или изучайте <span class="packages__title-accent">легко, быстро,
+                                навсегда</span></h2>
+                        <p class="packages__subtitle">Наша интерактивная платформа с пакетами грамматики — это
+                            революционный подход к изучению английского языка</p>
+
+                        <div class="packages__features">
+                            <div class="packages__feature">
+                                <i class="packages__feature-icon" data-lucide="clock"></i>
+                                <span>15 минут в день</span>
+                            </div>
+                            <div class="packages__feature">
+                                <i class="packages__feature-icon" data-lucide="target"></i>
+                                <span>Результат навсегда</span>
+                            </div>
+                            <div class="packages__feature">
+                                <i class="packages__feature-icon" data-lucide="smartphone"></i>
+                                <span>Везде и всегда</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="about__column about__column--right">
-                        <h3 class="about__subheading">Почему выбирают LVR?</h3>
-                        
-                        <ul class="about__features">
-                            <li class="about__feature">
-                                <i class="about__feature-icon"></i>
-                                <span class="about__feature-text">Опытный преподаватель с большим стажем</span>
-                            </li>
-                            <li class="about__feature">
-                                <i class="about__feature-icon"></i>
-                                <span class="about__feature-text">Эффективные методики обучения для всех возрастов</span>
-                            </li>
-                            <li class="about__feature">
-                                <i class="about__feature-icon"></i>
-                                <span class="about__feature-text">Индивидуальный подход к каждому ученику</span>
-                            </li>
-                            <li class="about__feature">
-                                <i class="about__feature-icon"></i>
-                                <span class="about__feature-text">Удобное расположение в центре района</span>
-                            </li>
-                        </ul>
-                        
-                        <blockquote class="about__quote">
-                            Мы верим, что изучение языка должно быть интересным и эффективным. Наши программы адаптированы как для детей, так и для взрослых.
-                        </blockquote>
-                        
-                        <div class="about__info-grid">
-                            <div class="about__info-block">
-                                <i class="about__info-icon"></i>
-                                <h4 class="about__info-title">Адрес</h4>
-                                <p class="about__info-text">Улица Розы Люксембург, 215в<br>1 этаж</p>
+
+                    <div class="packages__preview">
+                        <div class="packages__preview-card packages__preview-card--active">
+                            <div class="packages__preview-header">
+                                <i class="packages__preview-icon" data-lucide="book-open"></i>
+                                <span class="packages__preview-level">Начальный</span>
                             </div>
-                            
-                            <div class="about__info-block">
-                                <i class="about__info-icon"></i>
-                                <h4 class="about__info-title">Время работы</h4>
-                                <p class="about__info-text">
-                                    Пн — Пт: 10:00–19:00<br>
-                                    Перерыв 12:30–13:30<br>
-                                    Сб — Вс: Выходной
-                                </p>
+                            <h4 class="packages__preview-title">Present Simple</h4>
+                            <p class="packages__preview-desc">Основа английской грамматики</p>
+                            <div class="packages__preview-progress">
+                                <div class="packages__progress-bar">
+                                    <div class="packages__progress-fill"></div>
+                                </div>
+                                <span class="packages__progress-text">75% завершено</span>
                             </div>
-                            
-                            <div class="about__info-block">
-                                <i class="about__info-icon"></i>
-                                <h4 class="about__info-title">Оплата</h4>
-                                <p class="about__info-text">
-                                    Наличный расчёт<br>
-                                    Оплата через банк
-                                </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="packages__showcase">
+                    <div class="packages__showcase-header">
+                        <h3 class="packages__showcase-title">Выберите свой путь изучения</h3>
+                        <p class="packages__showcase-subtitle">Каждый пакет — это законченная система знаний с
+                            интерактивными упражнениями</p>
+                    </div>
+
+                    <div class="packages__grid">
+                        <div class="packages__card packages__card--beginner">
+                            <div class="packages__card-header">
+                                <i class="packages__card-icon" data-lucide="book-open"></i>
+                                <div class="packages__card-level">Начальный</div>
                             </div>
-                            
-                            <div class="about__info-block">
-                                <i class="about__info-icon"></i>
-                                <h4 class="about__info-title">Парковка</h4>
-                                <p class="about__info-text">
-                                    <span class="about__info-number">80 мест</span><br>
-                                    <span class="about__info-highlight">Бесплатная</span>
-                                </p>
+                            <h4 class="packages__card-title">Present Simple</h4>
+                            <p class="packages__card-description">Настоящее простое время — основа английской грамматики
+                            </p>
+                            <div class="packages__card-stats">
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="clock"></i>
+                                    <span>15 мин</span>
+                                </div>
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="layers"></i>
+                                    <span>8 уроков</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="packages__card packages__card--intermediate">
+                            <div class="packages__card-header">
+                                <i class="packages__card-icon" data-lucide="clock"></i>
+                                <div class="packages__card-level">Средний</div>
+                            </div>
+                            <h4 class="packages__card-title">Past Simple</h4>
+                            <p class="packages__card-description">Простое прошедшее время — рассказываем о прошлом</p>
+                            <div class="packages__card-stats">
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="clock"></i>
+                                    <span>20 мин</span>
+                                </div>
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="layers"></i>
+                                    <span>12 уроков</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="packages__card packages__card--intermediate">
+                            <div class="packages__card-header">
+                                <i class="packages__card-icon" data-lucide="trending-up"></i>
+                                <div class="packages__card-level">Средний</div>
+                            </div>
+                            <h4 class="packages__card-title">Future Simple</h4>
+                            <p class="packages__card-description">Простое будущее время — планируем будущее</p>
+                            <div class="packages__card-stats">
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="clock"></i>
+                                    <span>18 мин</span>
+                                </div>
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="layers"></i>
+                                    <span>10 уроков</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="packages__card packages__card--advanced">
+                            <div class="packages__card-header">
+                                <i class="packages__card-icon" data-lucide="refresh-cw"></i>
+                                <div class="packages__card-level">Продвинутый</div>
+                            </div>
+                            <h4 class="packages__card-title">Present Continuous</h4>
+                            <p class="packages__card-description">Настоящее длительное время — действия в процессе</p>
+                            <div class="packages__card-stats">
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="clock"></i>
+                                    <span>25 мин</span>
+                                </div>
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="layers"></i>
+                                    <span>15 уроков</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="packages__card packages__card--advanced">
+                            <div class="packages__card-header">
+                                <i class="packages__card-icon" data-lucide="zap"></i>
+                                <div class="packages__card-level">Продвинутый</div>
+                            </div>
+                            <h4 class="packages__card-title">Modal Verbs</h4>
+                            <p class="packages__card-description">Модальные глаголы — выражаем возможности и
+                                необходимость</p>
+                            <div class="packages__card-stats">
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="clock"></i>
+                                    <span>30 мин</span>
+                                </div>
+                                <div class="packages__stat">
+                                    <i class="packages__stat-icon" data-lucide="layers"></i>
+                                    <span>18 уроков</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="packages__card packages__card--cta">
+                            <div class="packages__cta-content">
+                                <div class="packages__cta-icon">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+                                <h4 class="packages__cta-title">И еще больше пакетов!</h4>
+                                <p class="packages__cta-text">Откройте полную платформу с интерактивными упражнениями и
+                                    персональной статистикой</p>
+                                <a href="pockets/frontend/pockets.html" class="packages__cta-button">
+                                    <span>Перейти к пакетам</span>
+                                    <i class="packages__cta-arrow" data-lucide="arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="about" class="about">
+            <div class="about__container">
+                <h2 class="about__heading">О нашей школе</h2>
+                <p class="about__intro">Мы создаем комфортную и дружелюбную атмосферу для изучения иностранных языков
+                </p>
+
+                <div class="about__columns">
+                    <div class="about__column about__column--left">
+                        <div class="about__image-wrapper">
+                            <img src="https://online.spbu.ru/wp-content/uploads/2019/07/cover_MKK_upd-935x590.png"
+                                alt="Интерьер языковой школы LVR" class="about__image">
+                            <div class="about__experience">
+                                <span class="about__experience-years">2+</span>
+                                <span class="about__experience-text">года опыта</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about__column about__column--right">
+                        <h3 class="about__subheading">Почему выбирают LVR?</h3>
+
+                        <ul class="about__features">
+                            <li class="about__feature">
+                                <i class="about__feature-icon"></i>
+                                <span class="about__feature-text"><strong>Опытный преподаватель</strong> с большим
+                                    стажем</span>
+                            </li>
+                            <li class="about__feature">
+                                <i class="about__feature-icon"></i>
+                                <span class="about__feature-text"><strong>Эффективные методики</strong> обучения для
+                                    всех
+                                    возрастов</span>
+                            </li>
+                            <li class="about__feature">
+                                <i class="about__feature-icon"></i>
+                                <span class="about__feature-text"><strong>Индивидуальный подход</strong> к каждому
+                                    ученику</span>
+                            </li>
+                            <li class="about__feature">
+                                <i class="about__feature-icon"></i>
+                                <span class="about__feature-text"><strong>Удобное расположение </strong>в центре
+                                    района</span>
+                            </li>
+                        </ul>
+
+                        <blockquote class="about__quote">
+                            "Мы верим, что изучение языка должно быть интересным и эффективным. Наши программы
+                            адаптированы как для детей, так и для взрослых."
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="about__info-grid">
+                    <div class="about__info-block">
+                        <div class="about__info-header">
+                            <i class="about__info-icon" data-lucide="map-pin"></i>
+                            <h4 class="about__info-title">Адрес</h4>
+                        </div>
+                        <p class="about__info-text">Улица Розы Люксембург, 215в<br>1 этаж</p>
+                    </div>
+
+                    <div class="about__info-block">
+                        <div class="about__info-header">
+                            <i class="about__info-icon" data-lucide="clock"></i>
+                            <h4 class="about__info-title">Время работы</h4>
+                        </div>
+                        <p class="about__info-text">
+                            Пн — Пт: 10:00–19:00<br>
+                            Перерыв 12:30–13:30<br>
+                            Сб — Вс: Выходной
+                        </p>
+                    </div>
+
+                    <div class="about__info-block">
+                        <div class="about__info-header">
+                            <i class="about__info-icon" data-lucide="credit-card"></i>
+                            <h4 class="about__info-title">Оплата</h4>
+                        </div>
+                        <p class="about__info-text">
+                            Наличный расчёт<br>
+                            Оплата через банк
+                        </p>
+                    </div>
+
+                    <div class="about__info-block">
+                        <div class="about__info-header">
+                            <i class="about__info-icon" data-lucide="car"></i>
+                            <h4 class="about__info-title">Парковка</h4>
+                        </div>
+                        <p class="about__info-text">
+                            <span class="about__info-number">80 мест</span><br>
+                            <span class="about__info-highlight">Бесплатная</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="services__container">
+                <h2 class="services__heading">Чем мы поможем</h2>
+                <p class="services__intro">Наши программы открывают новые возможности для личного и профессионального
+                    роста</p>
+
+                <div class="services__cards">
+                    <div class="services__card">
+                        <i class="services__card-icon" data-lucide="briefcase"></i>
+                        <h3 class="services__card-title">Престижная работа</h3>
+                        <p class="services__card-description">Откроем двери к лучшим карьерным возможностям</p>
+                        <a href="#" class="services__card-button">Подробнее</a>
+                    </div>
+
+                    <div class="services__card">
+                        <i class="services__card-icon" data-lucide="globe"></i>
+                        <h3 class="services__card-title">Путешествия и общение</h3>
+                        <p class="services__card-description">Поможем вам свободно общаться с иностранцами во время
+                            путешествий</p>
+                        <a href="#" class="services__card-button">Подробнее</a>
+                    </div>
+
+                    <div class="services__card">
+                        <i class="services__card-icon" data-lucide="film"></i>
+                        <h3 class="services__card-title">Фильмы на английском</h3>
+                        <p class="services__card-description">Научим понимать и наслаждаться фильмами в оригинале</p>
+                        <a href="#" class="services__card-button">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="teacher">
+            <div class="teacher__outer-container">
+                <div class="teacher__container">
+                    <div class="teacher__content">
+                        <div class="teacher__info">
+                            <div class="teacher__header">
+                                <i class="teacher__icon" data-lucide="graduation-cap"></i>
+                                <h2 class="teacher__title">Качественное обучение</h2>
+                            </div>
+                            <p class="teacher__description">Эльвира Витальевна - опытный преподаватель, который поможет
+                                вашему ребёнку полюбить английский язык и добиться заметных результатов в изучении.</p>
+                            <div class="teacher__tags">
+                                <span class="teacher__tag">Помощь с ОГЭ</span>
+                                <span class="teacher__tag">Помощь с ЕГЭ</span>
+                            </div>
+                            <button class="teacher__button">Записаться на урок</button>
+                        </div>
+                        <div class="teacher__image">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+                                alt="Эльвира Витальевна - преподаватель английского языка" class="teacher__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reasons">
+            <div class="reasons__container">
+                <h2 class="reasons__title">Почему родители выбирают нас</h2>
+
+                <div class="reasons__cards">
+                    <div class="reasons__card">
+                        <i class="reasons__card-icon" data-lucide="heart"></i>
+                        <h3 class="reasons__card-title">Персональный подход</h3>
+                        <p class="reasons__card-description">Преподаватель находит подход к каждому ребёнку</p>
+                    </div>
+
+                    <div class="reasons__card">
+                        <i class="reasons__card-icon" data-lucide="trending-up"></i>
+                        <h3 class="reasons__card-title">Видимые результаты</h3>
+                        <p class="reasons__card-description">Улучшение оценок в школе и уверенность в языке</p>
+                    </div>
+
+                    <div class="reasons__card">
+                        <i class="reasons__card-icon" data-lucide="smile"></i>
+                        <h3 class="reasons__card-title">С удовольствием на занятия</h3>
+                        <p class="reasons__card-description">Дети сами хотят изучать английский язык</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="reviews__container">
+                <h2 class="reviews__title">Отзывы родителей</h2>
+
+                <div class="reviews__cards">
+                    <div class="reviews__card">
+                        <p class="reviews__text">В школу английского языка LVR дочка ходит второй год. Ей всё нравится.
+                            Эльвира Витальевна хороший учитель, понятно объясняет, у неё хороший подход к ученикам.
+                            Хорошо структурированная программа. Видимые результаты.</p>
+                        <div class="reviews__footer">
+                            <span class="reviews__author">— Юлия Бараш</span>
+                            <span class="reviews__date">30 марта 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="reviews__card">
+                        <p class="reviews__text">Ходим заниматься второй год. Ребёнок с удовольствием посещает занятия,
+                            самостоятельно делает домашние задания. Эльвира Витальевна находит подход к каждому ребёнку,
+                            подсказывает родителям на что обратить внимание. Рекомендую.</p>
+                        <div class="reviews__footer">
+                            <span class="reviews__author">— Ольга Владимирова</span>
+                            <span class="reviews__date">24 марта 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="reviews__card">
+                        <p class="reviews__text">У сына значительно улучшились оценки в школе, знания даются легко и
+                            непринуждённо, ребёнок ходит с удовольствием. Самый лучший педагог Эльвира Витальевна с
+                            огромным опытом.</p>
+                        <div class="reviews__footer">
+                            <span class="reviews__author">— Анна Чернегова</span>
+                            <span class="reviews__date">22 февраля 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="gallery__container">
+                <h2 class="gallery__heading">Галерея</h2>
+                <p class="gallery__intro">Посмотрите на нашу школу, учеников и атмосферу изучения языков</p>
+
+                <div class="gallery__filters">
+                    <button class="gallery__filter gallery__filter--active" data-filter="all">
+                        Все фото
+                    </button>
+                    <button class="gallery__filter" data-filter="classes">
+                        Занятия
+                    </button>
+                    <button class="gallery__filter" data-filter="rooms">
+                        Классы
+                    </button>
+                    <button class="gallery__filter" data-filter="atmosphere">
+                        Атмосфера
+                    </button>
+                </div>
+
+                <div class="gallery__grid">
+                    <div class="gallery__item" data-category="classes">
+                        <img src="#" alt="Занятие в языковой школе" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <p class="gallery__caption">Интерактивное занятие с носителем языка</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item" data-category="rooms">
+                        <img src="#" alt="Класс языковой школы" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <p class="gallery__caption">Современный класс с мультимедийным оборудованием</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item" data-category="atmosphere">
+                        <img src="#" alt="Атмосфера обучения" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <p class="gallery__caption">Дружеская атмосфера во время перерыва</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item" data-category="classes">
+                        <img src="#" alt="Групповое занятие" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <p class="gallery__caption">Групповая работа на уроке английского</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item" data-category="rooms">
+                        <img src="#" alt="Библиотека школы" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <p class="gallery__caption">Школьная библиотека с литературой на разных языках</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item" data-category="atmosphere">
+                        <img src="#" alt="Мероприятие школы" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <p class="gallery__caption">Тематическое мероприятие ко Дню языков</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery__cta">
+                    <h3 class="gallery__cta-heading">Хотите стать частью нашей семьи?</h3>
+                    <p class="gallery__cta-text">Приходите на пробное занятие и почувствуйте атмосферу нашей школы</p>
+                    <a href="#" class="gallery__cta-button">Записаться на пробный урок</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts">
+            <div class="contacts__container">
+                <h2 class="contacts__heading">Свяжитесь с нами</h2>
+                <p class="contacts__intro">Готовы начать изучение языка? Напишите нам или позвоните для записи на
+                    пробное занятие</p>
+
+                <div class="contacts__columns">
+                    <div class="contacts__column contacts__column--left">
+                        <h3 class="contacts__subheading">Как нас найти</h3>
+
+                        <div class="contacts__info-cards">
+                            <div class="contacts__info-card">
+                                <i class="contacts__info-icon" data-lucide="map-pin"></i>
+                                <div class="contacts__info-content">
+                                    <h4 class="contacts__info-title">Адрес</h4>
+                                    <div class="contacts__info-text">
+                                        ТРЦ ЕвроПарк<br>
+                                        Улица Розы Люксембург, 215в<br>
+                                        1 этаж
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contacts__info-card">
+                                <i class="contacts__info-icon" data-lucide="phone"></i>
+                                <div class="contacts__info-content">
+                                    <h4 class="contacts__info-title">Телефон</h4>
+                                    <div class="contacts__info-text">
+                                        +7‒902‒510‒19‒23
+                                    </div>
+                                    <div class="contacts__info-note">
+                                        для звонков
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contacts__info-card">
+                                <i class="contacts__info-icon" data-lucide="send"></i>
+                                <div class="contacts__info-content">
+                                    <h4 class="contacts__info-title">Telegram</h4>
+                                    <div class="contacts__info-text">
+                                        @markidonova_elvira
+                                    </div>
+                                    <div class="contacts__info-note contacts__info-note--accent">
+                                        Наш канал в Telegram
+                                        <i class="contacts__link-icon" data-lucide="external-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contacts__info-card">
+                                <i class="contacts__info-icon" data-lucide="clock"></i>
+                                <div class="contacts__info-content">
+                                    <h4 class="contacts__info-title">Время работы</h4>
+                                    <div class="contacts__info-text">
+                                        Пн — Пт: 10:00–19:00<br>
+                                        <span class="contacts__info-note">Перерыв 12:30–13:30</span><br>
+                                        Сб — Вс: Выходной
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contacts__quick-contact">
+                            <h4 class="contacts__quick-heading">Быстрая связь</h4>
+                            <div class="contacts__quick-buttons">
+                                <button class="contacts__quick-button contacts__quick-button--primary">
+                                    <i class="contacts__button-icon" data-lucide="phone"></i>
+                                    Позвонить
+                                </button>
+                                <button class="contacts__quick-button contacts__quick-button--secondary">
+                                    <i class="contacts__button-icon" data-lucide="message-circle"></i>
+                                    Telegram
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contacts__column contacts__column--right">
+                        <div class="contacts__form-container">
+                            <h3 class="contacts__form-heading">Записаться на пробное занятие</h3>
+
+                            <form class="contacts__form">
+                                <div class="contacts__form-group">
+                                    <label class="contacts__form-label">Ваше имя *</label>
+                                    <input type="text" class="contacts__form-input" placeholder="Введите ваше имя"
+                                        required>
+                                </div>
+
+                                <div class="contacts__form-group">
+                                    <label class="contacts__form-label">Телефон *</label>
+                                    <input type="tel" class="contacts__form-input" placeholder="Введите ваш телефон"
+                                        required>
+                                </div>
+
+                                <div class="contacts__form-group">
+                                    <label class="contacts__form-label">Сообщение</label>
+                                    <textarea class="contacts__form-textarea"
+                                        placeholder="Расскажите, что вас интересует..."></textarea>
+                                </div>
+
+                                <button type="submit" class="contacts__form-button">
+                                    <i class="contacts__form-button-icon" data-lucide="send"></i>
+                                    Отправить заявку
+                                </button>
+
+                                <p class="contacts__form-agreement">
+                                    Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__main">
+                    <div class="footer__left">
+                        <div class="footer__logo">
+                            <i class="footer__logo-icon" data-lucide="languages"></i>
+                            <span class="footer__logo-text">LVR</span>
+                            <span class="footer__logo-subtitle">Школа иностранных языков</span>
+                        </div>
+
+                        <p class="footer__description">
+                            Мы помогаем детям и взрослым изучать иностранные языки в дружелюбной и эффективной
+                            образовательной среде.
+                        </p>
+
+                        <div class="footer__buttons">
+                            <button class="footer__button">
+                                <i class="footer__button-icon" data-lucide="phone"></i>
+                                Позвонить
+                            </button>
+                            <button class="footer__button">
+                                <i class="footer__button-icon" data-lucide="message-circle"></i>
+                                Telegram
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="footer__right">
+                        <div class="footer__columns">
+                            <div class="footer__column">
+                                <h4 class="footer__column-title">Контакты</h4>
+                                <ul class="footer__column-list">
+                                    <li class="footer__column-item">
+                                        <i class="footer__column-icon" data-lucide="map-pin"></i>
+                                        <span class="footer__column-text">
+                                            ТРЦ ЕвроПарк<br>
+                                            Улица Розы Люксембург, 215в<br>
+                                            1 этаж
+                                        </span>
+                                    </li>
+                                    <li class="footer__column-item">
+                                        <i class="footer__column-icon" data-lucide="phone"></i>
+                                        <span class="footer__column-text">+7‒902‒510‒19‒23</span>
+                                    </li>
+                                    <li class="footer__column-item">
+                                        <i class="footer__column-icon" data-lucide="message-circle"></i>
+                                        <span
+                                            class="footer__column-text footer__column-text--telegram">@markidonova_elvira</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="footer__column">
+                                <h4 class="footer__column-title">Время работы</h4>
+                                <ul class="footer__column-list">
+                                    <li class="footer__column-item">
+                                        <i class="footer__column-icon" data-lucide="clock"></i>
+                                        <span class="footer__column-text">Пн — Пт: 10:00–19:00</span>
+                                    </li>
+                                    <li class="footer__column-item">
+                                        <span class="footer__column-icon"></span>
+                                        <span class="footer__column-note">Перерыв 12:30–13:30</span>
+                                    </li>
+                                    <li class="footer__column-item">
+                                        <span class="footer__column-icon"></span>
+                                        <span class="footer__column-text">Сб — Вс: Выходной</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="footer__column">
+                                <h4 class="footer__column-title">Удобства</h4>
+                                <ul class="footer__column-list">
+                                    <li class="footer__column-item">
+                                        <span class="footer__column-bullet">•</span>
+                                        <span class="footer__column-text">Безналичная оплата</span>
+                                    </li>
+                                    <li class="footer__column-item">
+                                        <span class="footer__column-bullet">•</span>
+                                        <span class="footer__column-text">Бесплатная парковка (80 мест)</span>
+                                    </li>
+                                    <li class="footer__column-item">
+                                        <span class="footer__column-bullet">•</span>
+                                        <span class="footer__column-text">Удобное расположение</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <div class="footer__divider"></div>
+                    <div class="footer__bottom-content">
+                        <span class="footer__copyright">© 2025 Школа иностранных языков LVR. Все права защищены.</span>
+                        <div class="footer__links">
+                            <a href="#" class="footer__link">Политика конфиденциальности</a>
+                            <a href="#" class="footer__link">Договор оферты</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <!-- Футер может быть добавлен позже -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Инициализация иконок Lucide
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

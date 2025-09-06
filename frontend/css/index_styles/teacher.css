@@ -1,0 +1,225 @@
+.teacher {
+    padding: 80px 0;
+    padding-top: 0;
+    background-color: var(--section-background);
+}
+
+.teacher__outer-container {
+    background-color: var(--section-background);
+    padding: 80px 0;
+    padding-bottom: 0;
+}
+
+.teacher__container {
+    max-width: 76vw;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.teacher__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.teacher__info {
+    padding-right: 20px;
+}
+
+.teacher__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.teacher__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--brand-accent);
+    flex-shrink: 0;
+}
+
+.teacher__title {
+    color: var(--brand-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.teacher__description {
+    color: var(--warm-gray);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.teacher__tags {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.teacher__tag {
+    background-color: var(--brand-accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.teacher__tag:hover {
+    background-color: #4a89e8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(95, 157, 255, 0.3);
+}
+
+.teacher__button {
+    background-color: #fff;
+    color: var(--brand-accent);
+    border: 1.5px solid var(--brand-accent);
+    padding: 0.6rem 1.8rem;
+    border-radius: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher__button:hover {
+    background-color: var(--brand-accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(95, 157, 255, 0.4);
+    border-color: #4a89e8;
+}
+
+.teacher__button:active {
+    transform: translateY(0);
+}
+
+.teacher__image {
+    position: relative;
+    padding: 15px;
+}
+
+.teacher__img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .teacher__container {
+        max-width: 90vw;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .teacher__content {
+        grid-template-columns: 2fr;
+        gap: 10px;
+    }
+    
+    .teacher__info {
+        padding-right: 0;
+        text-align: left;
+    }
+    
+    .teacher__header {
+        justify-content: center;
+    }
+    
+    .teacher__description {
+        text-align: left;
+    }
+    
+    .teacher__tags {
+        justify-content: left;
+    }
+    
+    .teacher__img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher {
+        padding: 60px 0;
+    }
+
+    .teacher__outer-container {
+        padding: 60px 0;
+    }
+
+    .teacher__container {
+        padding: 30px;
+        max-width: 95vw;
+    }
+    
+    .teacher__title {
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+    }
+    
+    .teacher__description {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    .teacher__icon {
+        margin-top: 1.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        padding-left: 1rem;
+    }
+    
+    .teacher__tags {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .teacher__tag {
+        width: fit-content;
+    }
+    
+    .teacher__img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher__container {
+        padding: 0 15px;
+    }
+    
+    .teacher__title {
+        font-size: 1.6rem;
+    }
+    
+    .teacher__button {
+        width: 100%;
+        padding: 12px 25px;
+    }
+    
+    .teacher__img {
+        height: 250px;
+    }
+}
