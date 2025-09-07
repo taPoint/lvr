@@ -36,8 +36,17 @@
                     <li class="header__nav-item">
                         <a href="../../../index.html#contacts" class="header__nav-link">Контакты</a>
                     </li>
+                    <li class="header__nav-item header__nav-item--auth">
+                        <button id="loginBtn" class="header__nav-auth-btn">Войти</button>
+                    </li>
                 </ul>
             </nav>
+
+            <button class="header__burger" id="burgerMenu">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
 
             <div class="header__contacts">
                 <a href="tel:+79025101923" class="header__contact header__contact--phone">
@@ -428,7 +437,156 @@
 
         // Initialize
         showQuestion();
+
+        // Бургер меню
+        const burgerMenu = document.getElementById('burgerMenu');
+        const nav = document.querySelector('.header__nav');
+
+        if (burgerMenu && nav) {
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+
+        // Кнопка входа
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+            loginBtn.addEventListener('click', () => {
+                // Закрываем бургер меню
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+                // Переходим на страницу авторизации
+                window.location.href = '../auth.html';
+            });
+        }
+
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.header__nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (nav && burgerMenu && !nav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
     </script>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <i class="footer__logo-icon" data-lucide="languages"></i>
+                        <span class="footer__logo-text">LVR</span>
+                        <span class="footer__logo-subtitle">Школа иностранных языков</span>
+                    </div>
+
+                    <p class="footer__description">
+                        Мы помогаем детям и взрослым изучать иностранные языки в дружелюбной и эффективной
+                        образовательной среде.
+                    </p>
+
+                    <div class="footer__buttons">
+                        <button class="footer__button">
+                            <i class="footer__button-icon" data-lucide="phone"></i>
+                            Позвонить
+                        </button>
+                        <button class="footer__button">
+                            <i class="footer__button-icon" data-lucide="message-circle"></i>
+                            Telegram
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer__right">
+                    <div class="footer__columns">
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Контакты</h4>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="map-pin"></i>
+                                    <span class="footer__column-text">
+                                        ТРЦ ЕвроПарк<br>
+                                        Улица Розы Люксембург, 215в<br>
+                                        1 этаж
+                                    </span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="phone"></i>
+                                    <span class="footer__column-text">+7‒902‒510‒19‒23</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="message-circle"></i>
+                                    <span
+                                        class="footer__column-text footer__column-text--telegram">@markidonova_elvira</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Время работы</h4>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <i class="footer__column-icon" data-lucide="clock"></i>
+                                    <span class="footer__column-text">Пн — Пт: 10:00–19:00</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-icon"></span>
+                                    <span class="footer__column-note">Перерыв 12:30–13:30</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-icon"></span>
+                                    <span class="footer__column-text">Сб — Вс: Выходной</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Удобства</h4>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <span class="footer__column-bullet">•</span>
+                                    <span class="footer__column-text">Безналичная оплата</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-bullet">•</span>
+                                    <span class="footer__column-text">Бесплатная парковка (80 мест)</span>
+                                </li>
+                                <li class="footer__column-item">
+                                    <span class="footer__column-bullet">•</span>
+                                    <span class="footer__column-text">Удобное расположение</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__divider"></div>
+                <div class="footer__bottom-content">
+                    <span class="footer__copyright">© 2025 Школа иностранных языков LVR. Все права защищены.</span>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Политика конфиденциальности</a>
+                        <a href="#" class="footer__link">Договор оферты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

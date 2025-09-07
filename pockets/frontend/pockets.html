@@ -40,6 +40,12 @@
                 </ul>
             </nav>
 
+            <button class="header__burger" id="burgerMenu">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
+
             <div class="header__contacts">
                 <a href="tel:+79025101923" class="header__contact header__contact--phone">
                     <i class="header__icon header__icon--phone"></i>
@@ -68,7 +74,8 @@
                 <div class="topic-card topic-card--free" data-topic="free">
                     <div class="topic-card__icon">🎯</div>
                     <h3 class="topic-card__title">Английский алфавит</h3>
-                    <p class="topic-card__description">Изучите английский алфавит с произношением и примерами слов. Идеально для начинающих!</p>
+                    <p class="topic-card__description">Изучите английский алфавит с произношением и примерами слов.
+                        Идеально для начинающих!</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать бесплатно</button>
                 </div>
 
@@ -229,6 +236,32 @@
     <script>
         // Инициализация иконок Lucide
         lucide.createIcons();
+
+        // Бургер меню
+        const burgerMenu = document.getElementById('burgerMenu');
+        const nav = document.querySelector('.header__nav');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.header__nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
     </script>
     <script src="js/main.js"></script>
 </body>

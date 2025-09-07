@@ -38,7 +38,16 @@ class PocketsApp {
         // Кнопка входа
         const loginBtn = document.getElementById('loginBtn');
         if (loginBtn) {
-            loginBtn.addEventListener('click', () => this.showAuthModal());
+            loginBtn.addEventListener('click', () => {
+                // Закрываем бургер меню если открыто
+                const burgerMenu = document.getElementById('burgerMenu');
+                const nav = document.querySelector('.header__nav');
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+                this.showAuthModal();
+            });
         }
 
         // Клики по карточкам тем

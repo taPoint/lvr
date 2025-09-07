@@ -300,6 +300,10 @@
 }
 
 @media (max-width: 480px) {
+    .payment {
+        padding: 1rem 0.5rem;
+    }
+    
     .payment__title {
         font-size: 1.5rem;
     }
@@ -310,5 +314,34 @@
     
     .payment__price {
         font-size: 2rem;
+    }
+    
+    .payment__topic-title {
+        font-size: 1.25rem;
+    }
+    
+    .payment__topic-description {
+        font-size: 0.9rem;
+    }
+    
+    .payment__benefits-title {
+        font-size: 1.1rem;
+    }
+    
+    .payment__benefits-item {
+        font-size: 0.9rem;
+    }
+    
+    .payment__qr-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .payment__additional-title {
+        font-size: 1.1rem;
+    }
+    
+    .payment__additional-item {
+        font-size: 0.9rem;
     }
 }

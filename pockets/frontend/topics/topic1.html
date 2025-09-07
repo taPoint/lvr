@@ -36,8 +36,17 @@
                     <li class="header__nav-item">
                         <a href="../../../index.html#contacts" class="header__nav-link">Контакты</a>
                     </li>
+                    <li class="header__nav-item header__nav-item--auth">
+                        <button id="loginBtn" class="header__nav-auth-btn">Войти</button>
+                    </li>
                 </ul>
             </nav>
+
+            <button class="header__burger" id="burgerMenu">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
 
             <div class="header__contacts">
                 <a href="tel:+79025101923" class="header__contact header__contact--phone">
@@ -157,9 +166,12 @@
 
                 <footer class="topic__footer">
                     <div class="topic__navigation">
-                        <button class="topic__nav-btn topic__nav-btn--prev" disabled>← Предыдущая тема</button>
-                        <button class="topic__nav-btn topic__nav-btn--next" onclick="nextTopic()">Следующая тема
-                            →</button>
+                        <button class="topic__nav-btn topic__nav-btn--prev" disabled>
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="topic__nav-btn topic__nav-btn--next" onclick="nextTopic()">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
                     </div>
                 </footer>
             </div>
@@ -275,6 +287,50 @@
     <script>
         // Инициализация иконок Lucide
         lucide.createIcons();
+
+        // Бургер меню
+        const burgerMenu = document.getElementById('burgerMenu');
+        const nav = document.querySelector('.header__nav');
+
+        if (burgerMenu && nav) {
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+
+        // Кнопка входа
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+            loginBtn.addEventListener('click', () => {
+                // Закрываем бургер меню
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+                // Переходим на страницу авторизации
+                window.location.href = '../auth.html';
+            });
+        }
+
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.header__nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (nav && burgerMenu && !nav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
     </script>
     <script src="../js/topics.js"></script>
 </body>
