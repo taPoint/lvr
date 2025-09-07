@@ -309,19 +309,67 @@ class PocketsApp {
 
     // Обновление UI
     updateUI() {
-        const loginBtn = document.getElementById('loginBtn');
-        if (loginBtn) {
-            if (this.currentUser) {
-                // Создаем выпадающее меню для пользователя
+        if (this.currentUser) {
+            // Создаем выпадающее меню для пользователя
+            const loginBtn = document.getElementById('loginBtn');
+            if (loginBtn) {
                 this.createUserDropdown(loginBtn);
-            } else {
+            }
+        } else {
+            // Удаляем выпадающее меню если есть
+            const existingDropdown = document.querySelector('.user-dropdown');
+            if (existingDropdown) {
+                existingDropdown.remove();
+            }
+            
+            // Удаляем контейнер пользователя если есть
+            const userContainer = document.querySelector('.user-container');
+            if (userContainer) {
+                userContainer.remove();
+            }
+            
+            // Восстанавливаем кнопку входа
+            const loginBtn = document.getElementById('loginBtn');
+            if (loginBtn) {
                 loginBtn.textContent = 'Войти';
+                loginBtn.className = 'header__btn header__btn--primary';
                 loginBtn.onclick = () => this.showAuthModal();
+            } else {
+                // Если кнопка была заменена, создаем новую
+                this.restoreLoginButton();
             }
         }
 
         // Обновляем статус тем
         this.updateTopicsStatus();
+    }
+
+    // Восстановление кнопки входа
+    restoreLoginButton() {
+        const userContainer = document.querySelector('.user-container');
+        if (userContainer) {
+            // Создаем новую кнопку входа
+            const newLoginBtn = document.createElement('button');
+            newLoginBtn.id = 'loginBtn';
+            newLoginBtn.className = 'header__btn header__btn--primary';
+            newLoginBtn.textContent = 'Войти';
+            newLoginBtn.onclick = () => this.showAuthModal();
+            
+            // Заменяем контейнер пользователя на кнопку входа
+            userContainer.parentNode.replaceChild(newLoginBtn, userContainer);
+        } else {
+            // Если контейнера нет, ищем кнопку в контактах
+            const contactsDiv = document.querySelector('.header__contacts');
+            if (contactsDiv) {
+                const newLoginBtn = document.createElement('button');
+                newLoginBtn.id = 'loginBtn';
+                newLoginBtn.className = 'header__btn header__btn--primary';
+                newLoginBtn.textContent = 'Войти';
+                newLoginBtn.onclick = () => this.showAuthModal();
+                
+                contactsDiv.appendChild(newLoginBtn);
+            }
+        }
     }
 
     // Создание выпадающего меню пользователя
@@ -332,20 +380,24 @@ class PocketsApp {
             existingDropdown.remove();
         }
 
+        // Удаляем старый обработчик события
+        const newLoginBtn = loginBtn.cloneNode(true);
+        loginBtn.parentNode.replaceChild(newLoginBtn, loginBtn);
+
         // Создаем контейнер для кнопки и меню
         const userContainer = document.createElement('div');
         userContainer.className = 'user-container';
         userContainer.style.position = 'relative';
 
         // Заменяем кнопку входа на кнопку пользователя
-        loginBtn.textContent = this.currentUser.name;
-        loginBtn.innerHTML = `
+        newLoginBtn.textContent = this.currentUser.name;
+        newLoginBtn.innerHTML = `
             <i class="header__user-icon" data-lucide="user"></i>
             ${this.currentUser.name}
             <i class="header__dropdown-icon" data-lucide="chevron-down"></i>
         `;
-        loginBtn.className = 'header__btn header__btn--user';
-        loginBtn.onclick = (e) => {
+        newLoginBtn.className = 'header__btn header__btn--user';
+        newLoginBtn.onclick = (e) => {
             e.stopPropagation();
             this.toggleUserDropdown();
         };
@@ -382,8 +434,8 @@ class PocketsApp {
         `;
 
         // Вставляем контейнер
-        loginBtn.parentNode.insertBefore(userContainer, loginBtn);
-        userContainer.appendChild(loginBtn);
+        newLoginBtn.parentNode.insertBefore(userContainer, newLoginBtn);
+        userContainer.appendChild(newLoginBtn);
         userContainer.appendChild(dropdown);
 
         // Инициализируем иконки
@@ -461,7 +513,7 @@ class PocketsApp {
     // Выход из системы
     logout() {
         this.currentUser = null;
-        this.saveUserData();
+        localStorage.removeItem('pockets_user');
         this.updateUI();
         this.showNotification('Вы вышли из системы', 'info');
     }
