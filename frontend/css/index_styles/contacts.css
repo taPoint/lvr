@@ -25,7 +25,7 @@
     text-align: center;
     font-size: 1.25rem;
     margin-bottom: 50px;
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -140,6 +140,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 /* Иконка ссылки */
@@ -339,22 +340,23 @@
     }
     
     .contacts__intro {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 0 20px;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
     }
     
     .contacts__columns {
         grid-template-columns: 1fr;
         gap: 30px;
+        justify-content: center;
     }
     
     .contacts__form-container {
         padding: 25px;
     }
     
-    .contacts__quick-buttons {
-        flex-direction: column;
-    }
+
 }
 
 /* Адаптация для мобильных устройств */
@@ -362,6 +364,7 @@
     .contacts {
         width: 95vw;
         padding: 30px 0;
+        padding-top: 3rem;
     }
     
     .contacts__heading {
@@ -369,8 +372,10 @@
     }
     
     .contacts__intro {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         padding: 0 15px;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
     }
     
     .contacts__container {
@@ -389,4 +394,38 @@
         padding: 12px 15px;
         font-size: 0.95rem;
     }
+}
+
+/* Ссылки Telegram в блоке контактов — сохраняем исходные стили текста без подчеркивания */
+.contacts__telegram-link,
+.contacts__telegram-link:visited {
+    color: inherit;
+    text-decoration: none;
+    font: inherit;
+}
+
+.contacts__telegram-link:hover,
+.contacts__telegram-link:focus {
+    text-decoration: none;
+}
+
+/* Ссылка на канал внутри акцентной заметки */
+.contacts__telegram-channel-link,
+.contacts__telegram-channel-link:visited {
+    color: inherit;
+    text-decoration: none;
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contacts__info-note--accent .contacts__telegram-channel-link,
+.contacts__info-note--accent .contacts__telegram-channel-link:visited {
+    color: var(--brand-accent);
+}
+
+.contacts__telegram-channel-link:hover,
+.contacts__telegram-channel-link:focus {
+    text-decoration: none;
 }

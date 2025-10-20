@@ -2,7 +2,7 @@
 .hero {
     background-color: var(--section-background);
     padding: 6rem 0;
-    padding-bottom: 5rem;
+    padding-bottom: 12rem;
     text-align: center;
 }
 
@@ -155,13 +155,21 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero__container {
+        padding: 0 20px;
+    }
+    
     .hero__title {
         font-size: 2.5rem;
     }
     
     .hero__subtitle {
         font-size: 1.1rem;
-        padding: 0 1rem;
+        padding: 0;
     }
     
     .hero__features {
@@ -172,26 +180,44 @@
     .hero__buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
     
     .hero__button {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
         text-align: center;
     }
     
     .hero__contact {
         padding: 1rem;
-        margin: 1rem;
+        margin: 1rem 0;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero__container {
+        padding: 0 15px;
+    }
+    
     .hero__title {
         font-size: 2rem;
     }
     
-    .hero {
-        padding: 2rem 0;
+    .hero__subtitle {
+        font-size: 1.05rem;
+    }
+    
+    .hero__buttons {
+        gap: 12px;
+    }
+    
+    .hero__button {
+        padding: 0.25rem 1.2rem;
+        font-size: 0.95rem;
     }
 }

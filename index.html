@@ -48,12 +48,18 @@
                 </ul>
             </nav>
 
+            <button class="header__burger" id="burgerMenu">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
+
             <div class="header__contacts">
                 <a href="tel:+79025101923" class="header__contact header__contact--phone">
                     <i class="header__icon header__icon--phone"></i>
                     +7-902‒510‒19‒23
                 </a>
-                <a href="https://t.me/" class="header__contact header__contact--telegram">
+                <a href="https://t.me/markidonova_elvira" class="header__contact header__contact--telegram" target="_blank" rel="noopener noreferrer">
                     <i class="header__icon header__icon--telegram"></i>
                     Telegram
                 </a>
@@ -86,9 +92,9 @@
 
                 <div class="hero__buttons">
                     <a href="#" class="hero__button hero__button--primary">Записаться на урок</a>
-                    <a href="#" class="hero__button hero__button--secondary">Узнать больше</a>
-                    <a href="pockets/frontend/pockets.html" class="hero__button hero__button--packages">Попробовать
+                    <a href="frontend/html/courses.html" class="hero__button hero__button--packages">Попробовать
                         пакеты</a>
+                    <a href="#" class="hero__button hero__button--secondary">Узнать больше</a>
                 </div>
 
                 <div class="hero__contact">
@@ -258,7 +264,7 @@
                                 <h4 class="packages__cta-title">И еще больше пакетов!</h4>
                                 <p class="packages__cta-text">Откройте полную платформу с интерактивными упражнениями и
                                     персональной статистикой</p>
-                                <a href="pockets/frontend/pockets.html" class="packages__cta-button">
+                                <a href="frontend/html/courses.html" class="packages__cta-button">
                                     <span>Перейти к пакетам</span>
                                     <i class="packages__cta-arrow" data-lucide="arrow-right"></i>
                                 </a>
@@ -278,7 +284,7 @@
                 <div class="about__columns">
                     <div class="about__column about__column--left">
                         <div class="about__image-wrapper">
-                            <img src="https://online.spbu.ru/wp-content/uploads/2019/07/cover_MKK_upd-935x590.png"
+                            <img src="frontend/images/about-image.jpg"
                                 alt="Интерьер языковой школы LVR" class="about__image">
                             <div class="about__experience">
                                 <span class="about__experience-years">2+</span>
@@ -417,7 +423,7 @@
                             <button class="teacher__button">Записаться на урок</button>
                         </div>
                         <div class="teacher__image">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+                            <img src="frontend/images/image-teacher.jpg"
                                 alt="Эльвира Витальевна - преподаватель английского языка" class="teacher__img">
                         </div>
                     </div>
@@ -511,44 +517,44 @@
 
                 <div class="gallery__grid">
                     <div class="gallery__item" data-category="classes">
-                        <img src="#" alt="Занятие в языковой школе" class="gallery__image">
+                        <img src="frontend/images/image1.jpeg" alt="Занятие в языковой школе" class="gallery__image">
                         <div class="gallery__overlay">
-                            <p class="gallery__caption">Интерактивное занятие с носителем языка</p>
+                            <p class="gallery__caption">Интерактивное занятие</p>
                         </div>
                     </div>
 
                     <div class="gallery__item" data-category="rooms">
-                        <img src="#" alt="Класс языковой школы" class="gallery__image">
+                        <img src="frontend/images/image2.png" alt="Класс языковой школы" class="gallery__image">
                         <div class="gallery__overlay">
                             <p class="gallery__caption">Современный класс с мультимедийным оборудованием</p>
                         </div>
                     </div>
 
                     <div class="gallery__item" data-category="atmosphere">
-                        <img src="#" alt="Атмосфера обучения" class="gallery__image">
+                        <img src="frontend/images/image3.png" alt="Атмосфера обучения" class="gallery__image">
                         <div class="gallery__overlay">
-                            <p class="gallery__caption">Дружеская атмосфера во время перерыва</p>
+                            <p class="gallery__caption">Новогодняя атмосфера</p>
                         </div>
                     </div>
 
                     <div class="gallery__item" data-category="classes">
-                        <img src="#" alt="Групповое занятие" class="gallery__image">
+                        <img src="frontend/images/image4.png" alt="Групповое занятие" class="gallery__image">
                         <div class="gallery__overlay">
-                            <p class="gallery__caption">Групповая работа на уроке английского</p>
+                            <p class="gallery__caption">Класс перед новым годом</p>
                         </div>
                     </div>
 
                     <div class="gallery__item" data-category="rooms">
-                        <img src="#" alt="Библиотека школы" class="gallery__image">
+                        <img src="frontend/images/image5.png" alt="Библиотека школы" class="gallery__image">
                         <div class="gallery__overlay">
-                            <p class="gallery__caption">Школьная библиотека с литературой на разных языках</p>
+                            <p class="gallery__caption">Костюмы обучающихся к Хеллоуину</p>
                         </div>
                     </div>
 
                     <div class="gallery__item" data-category="atmosphere">
-                        <img src="#" alt="Мероприятие школы" class="gallery__image">
+                        <img src="frontend/images/atmposphere.png" alt="Мероприятие школы" class="gallery__image">
                         <div class="gallery__overlay">
-                            <p class="gallery__caption">Тематическое мероприятие ко Дню языков</p>
+                            <p class="gallery__caption">Тематическое мероприятие к Хеллоуину</p>
                         </div>
                     </div>
                 </div>
@@ -602,11 +608,13 @@
                                 <div class="contacts__info-content">
                                     <h4 class="contacts__info-title">Telegram</h4>
                                     <div class="contacts__info-text">
-                                        @markidonova_elvira
+                                        <a href="https://t.me/markidonova_elvira" class="contacts__telegram-link" target="_blank" rel="noopener noreferrer">@markidonova_elvira</a>
                                     </div>
                                     <div class="contacts__info-note contacts__info-note--accent">
-                                        Наш канал в Telegram
-                                        <i class="contacts__link-icon" data-lucide="external-link"></i>
+                                        <a href="https://t.me/lvr_english" class="contacts__telegram-channel-link" target="_blank" rel="noopener noreferrer">
+                                            Наш канал в Telegram
+                                            <i class="contacts__link-icon" data-lucide="external-link"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -641,25 +649,25 @@
 
                     <div class="contacts__column contacts__column--right">
                         <div class="contacts__form-container">
-                            <h3 class="contacts__form-heading">Записаться на пробное занятие</h3>
+                            <h3 class="contacts__form-heading">Записаться на занятия/пробное занятие</h3>
 
                             <form class="contacts__form">
                                 <div class="contacts__form-group">
-                                    <label class="contacts__form-label">Ваше имя *</label>
-                                    <input type="text" class="contacts__form-input" placeholder="Введите ваше имя"
+                                    <label class="contacts__form-label">Ваше имя</label>
+                                    <input type="text" name="name" class="contacts__form-input" placeholder="Введите ваше имя"
                                         required>
                                 </div>
 
                                 <div class="contacts__form-group">
-                                    <label class="contacts__form-label">Телефон *</label>
-                                    <input type="tel" class="contacts__form-input" placeholder="Введите ваш телефон"
+                                    <label class="contacts__form-label">Телефон</label>
+                                    <input type="tel" name="phone" class="contacts__form-input" placeholder="Введите ваш телефон"
                                         required>
                                 </div>
 
                                 <div class="contacts__form-group">
                                     <label class="contacts__form-label">Сообщение</label>
-                                    <textarea class="contacts__form-textarea"
-                                        placeholder="Расскажите, что вас интересует..."></textarea>
+                                    <textarea name="message" class="contacts__form-textarea"
+                                        placeholder="Расскажите, что вас интересует... (Например: подтянуть знания по английскому языку для школы, научиться свободно говорить по-английски)"></textarea>
                                 </div>
 
                                 <button type="submit" class="contacts__form-button">
@@ -693,11 +701,11 @@
                         </p>
 
                         <div class="footer__buttons">
-                            <button class="footer__button">
+                            <button class="footer__button footer__button--call" aria-label="Позвонить">
                                 <i class="footer__button-icon" data-lucide="phone"></i>
                                 Позвонить
                             </button>
-                            <button class="footer__button">
+                            <button class="footer__button footer__button--telegram" aria-label="Открыть Telegram">
                                 <i class="footer__button-icon" data-lucide="message-circle"></i>
                                 Telegram
                             </button>
@@ -782,12 +790,457 @@
         </footer>
     </main>
 
+    <!-- Services modal markup and styles -->
+    <div class="services-modal" id="servicesModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="services-modal__backdrop"></div>
+        <div class="services-modal__dialog" role="document">
+            <button class="services-modal__close" id="servicesModalClose" aria-label="Закрыть">×</button>
+            <div class="services-modal__body">
+                <div class="services-modal__left">
+                    <h3 class="services-modal__title">Престижная работа</h3>
+                    <p class="services-modal__lead">Подготовим к собеседованию, поможем с резюме и научим уверенно общаться в работе.</p>
+                    <ul class="services-modal__list">
+                        <li>Потренируемся проходить собеседование на английском</li>
+                        <li>Поможем составить резюме</li>
+                        <li>Разберём нужную лексику и лёгкие темы для беседы</li>
+                    </ul>
+                    <p class="services-modal__result"><strong>Результат:</strong> спокойно проходите интервью и презентуете себя на английском, открыты возможности к работе за рубежом</p>
+                    <a href="#contacts" class="services-modal__cta">Записаться на пробный урок</a>
+                </div>
+                <div class="services-modal__right">
+                    <img class="services-modal__image" src="frontend/images/image-job2.jpg" alt="Подготовка к собеседованиям на английском">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-modal" id="servicesModalTravel" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="services-modal__backdrop"></div>
+        <div class="services-modal__dialog" role="document">
+            <button class="services-modal__close" id="servicesModalTravelClose" aria-label="Закрыть">×</button>
+            <div class="services-modal__body">
+                <div class="services-modal__left">
+                    <h3 class="services-modal__title">Путешествия и общение</h3>
+                    <p class="services-modal__lead">Чувствуйте себя увереннее за границей: в аэропорту, отеле, кафе или просто на улице.</p>
+                    <ul class="services-modal__list">
+                      <li>Полезные фразы и живые диалоги для поездок</li>
+                      <li>Потренируем понимание речи и произношение</li>
+                      <li>Сыграем реальные ситуации, с которыми сталкиваются туристы</li>
+                    </ul>
+                    <p class="services-modal__result"><strong>Результат:</strong> легкое общение в путешествиях без лишнего стресса.</p>
+                    <a href="#contacts" class="services-modal__cta">Записаться на пробный урок</a>
+                </div>
+                <div class="services-modal__right">
+                    <img class="services-modal__image" src="frontend/images/image-trip.png" alt="Английский для путешествий: аэропорт, отель, кафе">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-modal" id="servicesModalMovies" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="services-modal__backdrop"></div>
+        <div class="services-modal__dialog" role="document">
+            <button class="services-modal__close" id="servicesModalMoviesClose" aria-label="Закрыть">×</button>
+            <div class="services-modal__body">
+                <div class="services-modal__left">
+                    <h3 class="services-modal__title">Фильмы на английском</h3>
+                    <p class="services-modal__lead">Научимся понимать английскую речь в фильмах и сериалах, улавливать сленг и разные акценты.</p>
+                    <ul class="services-modal__list">
+                        <li>Лексика и разговорные выражения из фильмов/сериалов</li>
+                        <li>Попрактикуем произношение и ритм речи</li>
+                        <li>Научимся обходиться без субтитров или использовать их с умом</li>
+                    </ul>
+                    <p class="services-modal__result"><strong>Результат:</strong> лучшее понимание английской речи и становление вашей речи естественнее.</p>
+                    <a href="#contacts" class="services-modal__cta">Записаться на пробный урок</a>
+                </div>
+                <div class="services-modal__right">
+                    <img class="services-modal__image" src="frontend/images/image-films.jpg" alt="Английский по фильмам и сериалам">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .services-modal { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 220ms ease, visibility 220ms ease; height: 100vh; overscroll-behavior: contain; }
+        .services-modal.open { opacity: 1; visibility: visible; pointer-events: auto; }
+        .services-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 220ms ease; }
+        .services-modal.open .services-modal__backdrop { opacity: 1; }
+        .services-modal__dialog { position: relative; margin: 0 auto; background: #fff; border-radius: 12px; max-width: 1176px; width: calc(100% - 32px); max-height: 90vh; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; transform: translateY(-6px) scale(0.96); opacity: 0; transition: transform 220ms ease, opacity 220ms ease; }
+        .services-modal.open .services-modal__dialog { transform: translateY(0) scale(1); opacity: 1; }
+        .services-modal__body { display: grid; grid-template-columns: 1.2fr 1fr; overflow-y: auto; -webkit-overflow-scrolling: touch; max-height: 90vh; }
+        .services-modal__left { padding: 34px; }
+        .services-modal__right { min-height: 336px; }
+        .services-modal__image { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .services-modal__close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border: none; border-radius: 8px; background: rgba(0,0,0,0.06); color: #333; font-size: 26px; line-height: 1; cursor: pointer; }
+        .services-modal__close:hover { background: rgba(0,0,0,0.12); }
+        .services-modal__title { color: var(--brand-primary); font-size: 1.8rem; font-weight: 800; margin: 0 0 12px; }
+        .services-modal__lead { color: var(--warm-gray); font-size: 1.25rem; margin: 0 0 16px; }
+        .services-modal__list { margin: 0 0 16px 22px; color: var(--warm-gray); font-size: 1.2rem; font-weight: 500; }
+        .services-modal__list li { margin: 6px 0; }
+        .services-modal__result { color: var(--brand-primary); font-size: 1.2rem; margin: 0 0 20px; }
+        .services-modal__cta { display: inline-block; padding: 12px 20px; background: var(--brand-accent); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 700; }
+        .services-modal__cta:hover { filter: brightness(0.95); }
+        @media (max-width: 768px) {
+            .services-modal__dialog { margin: 0 auto; max-width: 768px; max-height: 96vh; }
+            .services-modal__body { grid-template-columns: 1fr; }
+            .services-modal__right { height: 264px; }
+        }
+        body.modal-open { overflow: hidden; }
+    </style>
+
     <!-- Футер может быть добавлен позже -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="backend/js/gallery.js"></script>
     <script>
         // Инициализация иконок Lucide
         lucide.createIcons();
+        
+        // Бургер меню
+        const burgerMenu = document.getElementById('burgerMenu');
+        const nav = document.querySelector('.header__nav');
+        
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.header__nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
     </script>
+    <script>
+        const PHONE_NUMBER = '+79025101923';
+        const TELEGRAM_ID = 'markidonova_elvira';
+
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+
+        async function copyToClipboard(text) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                    return true;
+                } else {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    textarea.style.position = 'fixed';
+                    textarea.style.top = '-1000px';
+                    document.body.appendChild(textarea);
+                    textarea.focus();
+                    textarea.select();
+                    const success = document.execCommand('copy');
+                    textarea.remove();
+                    return success;
+                }
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.setAttribute('role', 'status');
+            toast.style.position = 'fixed';
+            toast.style.left = '50%';
+            toast.style.bottom = '24px';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.background = 'rgba(0, 0, 0, 0.85)';
+            toast.style.color = '#fff';
+            toast.style.padding = '10px 14px';
+            toast.style.borderRadius = '8px';
+            toast.style.fontSize = '14px';
+            toast.style.zIndex = '9999';
+            toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.transition = 'opacity 0.3s';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 1800);
+        }
+
+        // Header phone: copy on desktop, call on mobile via native tel: behavior
+        const headerPhoneLink = document.querySelector('.header__contact--phone');
+        if (headerPhoneLink) {
+            headerPhoneLink.addEventListener('click', async (e) => {
+                if (!isMobile()) {
+                    e.preventDefault();
+                    const ok = await copyToClipboard(PHONE_NUMBER);
+                    showToast(ok ? 'Номер скопирован: ' + PHONE_NUMBER : 'Не удалось скопировать номер');
+                }
+            });
+        }
+
+        // Footer call button
+        const footerCallBtn = document.querySelector('.footer__button--call');
+        if (footerCallBtn) {
+            footerCallBtn.addEventListener('click', async () => {
+                if (isMobile()) {
+                    window.location.href = 'tel:' + PHONE_NUMBER;
+                } else {
+                    const ok = await copyToClipboard(PHONE_NUMBER);
+                    showToast(ok ? 'Номер скопирован: ' + PHONE_NUMBER : 'Не удалось скопировать номер');
+                }
+            });
+        }
+
+        // Ensure header Telegram link points to the correct chat
+        const headerTelegramLink = document.querySelector('.header__contact--telegram');
+        if (headerTelegramLink) {
+            headerTelegramLink.setAttribute('href', 'https://t.me/' + TELEGRAM_ID);
+            headerTelegramLink.setAttribute('target', '_blank');
+            headerTelegramLink.setAttribute('rel', 'noopener noreferrer');
+        }
+
+        // Footer Telegram button
+        const footerTelegramBtn = document.querySelector('.footer__button--telegram');
+        if (footerTelegramBtn) {
+            footerTelegramBtn.addEventListener('click', () => {
+                window.open('https://t.me/' + TELEGRAM_ID, '_blank', 'noopener');
+            });
+        }
+    </script>
+    
+    <script>
+        (function() {
+            const modal = document.getElementById('servicesModal');
+            const closeBtn = document.getElementById('servicesModalClose');
+            const firstServicesBtn = document.querySelector('.services__cards .services__card .services__card-button');
+            let lastFocused = null;
+
+            function openModal() {
+                if (!modal) return;
+                lastFocused = document.activeElement;
+                modal.classList.add('open');
+                document.body.classList.add('modal-open');
+                modal.setAttribute('aria-hidden', 'false');
+                closeBtn && closeBtn.focus();
+                document.addEventListener('keydown', onKeyDown);
+            }
+
+            function closeModal() {
+                if (!modal) return;
+                modal.classList.remove('open');
+                document.body.classList.remove('modal-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.removeEventListener('keydown', onKeyDown);
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
+
+            function onKeyDown(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            }
+
+            if (firstServicesBtn) {
+                firstServicesBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() { closeModal(); });
+            }
+
+            // Закрытие по клику на подложку
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    const isBackdrop = e.target.classList.contains('services-modal__backdrop');
+                    if (isBackdrop) closeModal();
+                });
+            }
+            // CTA: закрыть модалку и перейти к контактам
+            const cta = modal.querySelector('.services-modal__cta');
+            if (cta) {
+                cta.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    closeModal();
+                    const contacts = document.getElementById('contacts');
+                    if (contacts && contacts.scrollIntoView) {
+                        contacts.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.hash = '#contacts';
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('servicesModalTravel');
+            const closeBtn = document.getElementById('servicesModalTravelClose');
+            const secondServicesBtn = document.querySelectorAll('.services__cards .services__card .services__card-button')[1];
+            let lastFocused = null;
+
+            function openModal() {
+                if (!modal) return;
+                lastFocused = document.activeElement;
+                modal.classList.add('open');
+                document.body.classList.add('modal-open');
+                modal.setAttribute('aria-hidden', 'false');
+                closeBtn && closeBtn.focus();
+                document.addEventListener('keydown', onKeyDown);
+            }
+
+            function closeModal() {
+                if (!modal) return;
+                modal.classList.remove('open');
+                document.body.classList.remove('modal-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.removeEventListener('keydown', onKeyDown);
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
+
+            function onKeyDown(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            }
+
+            if (secondServicesBtn) {
+                secondServicesBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() { closeModal(); });
+            }
+
+            // Закрытие по клику на по��ложку
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    const isBackdrop = e.target.classList.contains('services-modal__backdrop');
+                    if (isBackdrop) closeModal();
+                });
+            }
+            // CTA: закрыть модалку и перейти к контактам
+            const cta = modal.querySelector('.services-modal__cta');
+            if (cta) {
+                cta.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    closeModal();
+                    const contacts = document.getElementById('contacts');
+                    if (contacts && contacts.scrollIntoView) {
+                        contacts.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.hash = '#contacts';
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('servicesModalMovies');
+            const closeBtn = document.getElementById('servicesModalMoviesClose');
+            const thirdServicesBtn = document.querySelectorAll('.services__cards .services__card .services__card-button')[2];
+            let lastFocused = null;
+
+            function openModal() {
+                if (!modal) return;
+                lastFocused = document.activeElement;
+                modal.classList.add('open');
+                document.body.classList.add('modal-open');
+                modal.setAttribute('aria-hidden', 'false');
+                closeBtn && closeBtn.focus();
+                document.addEventListener('keydown', onKeyDown);
+            }
+
+            function closeModal() {
+                if (!modal) return;
+                modal.classList.remove('open');
+                document.body.classList.remove('modal-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.removeEventListener('keydown', onKeyDown);
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
+
+            function onKeyDown(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            }
+
+            if (thirdServicesBtn) {
+                thirdServicesBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() { closeModal(); });
+            }
+
+            // Закрытие по клику на подложку
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    const isBackdrop = e.target.classList.contains('services-modal__backdrop');
+                    if (isBackdrop) closeModal();
+                });
+            }
+
+            // CTA: закрыть модалку и перейти к контактам
+            const cta = modal.querySelector('.services-modal__cta');
+            if (cta) {
+                cta.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    closeModal();
+                    const contacts = document.getElementById('contacts');
+                    if (contacts && contacts.scrollIntoView) {
+                        contacts.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.location.hash = '#contacts';
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <!-- Подключение основного JavaScript файла -->
+    <script>
+      (function(){
+        const ctas = document.querySelectorAll('.services-modal .services-modal__cta');
+        ctas.forEach(cta => {
+          cta.addEventListener('click', function() {
+            const target = document.querySelector('.contacts__quick-heading') || document.getElementById('contacts');
+            if (target && target.scrollIntoView) {
+              setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+            } else {
+              window.location.hash = '#contacts';
+            }
+          });
+        });
+      })();
+    </script>
+    <script src="frontend/js/main.js"></script>
 </body>
 
 </html>

@@ -76,7 +76,7 @@
     font-size: 0.95rem;
     white-space: nowrap;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: default;
 }
 
 .teacher__tag:hover {
@@ -133,8 +133,8 @@
 /* Адаптивность */
 @media (max-width: 968px) {
     .teacher__content {
-        grid-template-columns: 2fr;
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
     
     .teacher__info {
@@ -143,7 +143,7 @@
     }
     
     .teacher__header {
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     .teacher__description {
@@ -151,7 +151,7 @@
     }
     
     .teacher__tags {
-        justify-content: left;
+        justify-content: flex-start;
     }
     
     .teacher__img {
@@ -169,7 +169,7 @@
     }
 
     .teacher__container {
-        padding: 30px;
+        padding: 30px 20px;
         max-width: 95vw;
     }
     
@@ -180,20 +180,21 @@
     
     .teacher__description {
         font-size: 1rem;
-        padding-left: 1rem;
+        padding-left: 0;
     }
 
     .teacher__icon {
         margin-top: 1.5rem;
         width: 3.5rem;
         height: 3.5rem;
-        padding-left: 1rem;
+        padding-left: 0;
     }
     
     .teacher__tags {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 15px;
+        justify-content: center;
     }
     
     .teacher__tag {
@@ -206,8 +207,16 @@
 }
 
 @media (max-width: 480px) {
+    .teacher {
+        padding: 40px 0;
+    }
+    
+    .teacher__outer-container {
+        padding: 40px 0;
+    }
+    
     .teacher__container {
-        padding: 0 15px;
+        padding: 20px 15px;
     }
     
     .teacher__title {

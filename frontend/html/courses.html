@@ -7,9 +7,9 @@
     <meta name="description"
         content="LVR Языковая школа - курсы иностранных языков для всех уровней. Изучайте английский, немецкий, французский и другие языки с профессионалами.">
     <title>LVR - Пакеты изучения английского языка</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="../../frontend/css/index_styles/header.css">
-    <link rel="stylesheet" href="../../frontend/css/index_styles/footer.css">
+    <link rel="stylesheet" href="../css/courses_styles/courses.css">
+    <link rel="stylesheet" href="../css/courses_styles/header.css">
+    <link rel="stylesheet" href="../css/index_styles/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
 </head>
 
@@ -47,10 +47,6 @@
             </button>
 
             <div class="header__contacts">
-                <a href="tel:+79025101923" class="header__contact header__contact--phone">
-                    <i class="header__icon header__icon--phone"></i>
-                    +7-902‒510‒19‒23
-                </a>
                 <a href="https://t.me/" class="header__contact header__contact--telegram">
                     <i class="header__icon header__icon--telegram"></i>
                     Telegram
@@ -68,49 +64,87 @@
                 <p class="hero__subtitle">Выберите тему и начните обучение прямо сейчас</p>
             </section>
 
-            <!-- Блоки с темами -->
+            <!-- Блоки с курсами -->
             <section class="topics-grid">
-                <!-- Бесплатный топик -->
+                <!-- Бесплатный курс -->
                 <div class="topic-card topic-card--free" data-topic="free">
-                    <div class="topic-card__icon">🎯</div>
-                    <h3 class="topic-card__title">Английский алфавит</h3>
-                    <p class="topic-card__description">Изучите английский алфавит с произношением и примерами слов.
-                        Идеально для начинающих!</p>
+                    <div class="topic-card__icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3 class="topic-card__title">Глагол to be</h3>
+                    <p class="topic-card__description">Основа основ! Изучите формы am, is, are и их использование в предложениях</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать бесплатно</button>
                 </div>
 
                 <div class="topic-card" data-topic="1">
-                    <div class="topic-card__icon">📚</div>
-                    <h3 class="topic-card__title">Present Simple</h3>
-                    <p class="topic-card__description">Настоящее простое время - основа английской грамматики</p>
+                    <div class="topic-card__icon">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3 class="topic-card__title">Артикли a/an/the</h3>
+                    <p class="topic-card__description">Правила использования артиклей в английском языке с примерами</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
                 </div>
 
                 <div class="topic-card" data-topic="2">
-                    <div class="topic-card__icon">⏰</div>
-                    <h3 class="topic-card__title">Past Simple</h3>
-                    <p class="topic-card__description">Простое прошедшее время - рассказываем о прошлом</p>
+                    <div class="topic-card__icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3 class="topic-card__title">Present Simple</h3>
+                    <p class="topic-card__description">Настоящее простое время - рассказываем о привычках и фактах</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
                 </div>
 
                 <div class="topic-card" data-topic="3">
-                    <div class="topic-card__icon">🔮</div>
-                    <h3 class="topic-card__title">Future Simple</h3>
-                    <p class="topic-card__description">Простое будущее время - планируем будущее</p>
+                    <div class="topic-card__icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="topic-card__title">Множественное число</h3>
+                    <p class="topic-card__description">Образование множественного числа существительных и исключения</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
                 </div>
 
                 <div class="topic-card" data-topic="4">
-                    <div class="topic-card__icon">🔄</div>
-                    <h3 class="topic-card__title">Present Continuous</h3>
-                    <p class="topic-card__description">Настоящее длительное время - действия в процессе</p>
+                    <div class="topic-card__icon">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <h3 class="topic-card__title">Притяжательный падеж</h3>
+                    <p class="topic-card__description">Изучите 's и of для выражения принадлежности</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
                 </div>
 
                 <div class="topic-card" data-topic="5">
-                    <div class="topic-card__icon">💪</div>
-                    <h3 class="topic-card__title">Modal Verbs</h3>
-                    <p class="topic-card__description">Модальные глаголы - выражаем возможности и необходимость</p>
+                    <div class="topic-card__icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="topic-card__title">Местоимения</h3>
+                    <p class="topic-card__description">Личные, притяжательные и указательные местоимения</p>
+                    <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="6">
+                    <div class="topic-card__icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3 class="topic-card__title">Прилагательные</h3>
+                    <p class="topic-card__description">Степени сравнения прилагательных: сравнительная и превосходная</p>
+                    <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="7">
+                    <div class="topic-card__icon">
+                        <i data-lucide="star"></i>
+                    </div>
+                    <h3 class="topic-card__title">Предлоги места</h3>
+                    <p class="topic-card__description">in, on, at, under, over и другие предлоги для описания местоположения</p>
+                    <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
+                </div>
+
+                <div class="topic-card" data-topic="8">
+                    <div class="topic-card__icon">
+                        <i data-lucide="smile"></i>
+                    </div>
+                    <h3 class="topic-card__title">Вопросы с do/does</h3>
+                    <p class="topic-card__description">Общие вопросы в Present Simple с вспомогательными глаголами</p>
                     <button class="topic-card__btn topic-card__btn--primary">Начать изучение</button>
                 </div>
             </section>
@@ -263,7 +297,7 @@
             }
         });
     </script>
-    <script src="js/main.js"></script>
+    <script src="../../backend/js/main.js"></script>
 </body>
 
 </html>

@@ -110,18 +110,25 @@
         padding: 60px 0;
     }
     
+    .services__container {
+        padding: 0 20px;
+    }
+    
     .services__heading {
         font-size: 2rem;
     }
     
     .services__intro {
-        font-size: 1rem;
+        font-size: 1.05rem;
         margin-bottom: 40px;
     }
     
     .services__cards {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: none;
     }
     
     .services__card {

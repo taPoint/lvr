@@ -220,6 +220,10 @@
         padding: 40px 0 0 0;
     }
     
+    .footer__container {
+        padding: 0 20px;
+    }
+    
     .footer__main {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -227,6 +231,10 @@
     
     .footer__right {
         justify-content: flex-start;
+    }
+
+    .footer__left {
+        padding-left: 0;
     }
     
     .footer__columns {

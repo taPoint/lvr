@@ -504,17 +504,18 @@ class PocketsApp {
             
             if (this.currentUser) {
                 if (this.isTopicPurchased(topicId)) {
-                    button.textContent = 'Изучать';
-                    button.style.backgroundColor = '#28a745';
+                    button.innerHTML = '<span class="beige-text">Изучать</span>';
+                    button.style.background = 'linear-gradient(135deg, #5f9dff, #4a89e8)';
+                    button.classList.add('shimmer-button');
                 } else {
-                    button.textContent = 'Купить за 299₽';
-                    button.style.backgroundColor = '#ffc107';
-                    button.style.color = '#000';
+                    button.innerHTML = '<span class="gold-gradient-text">Купить за 299₽</span>';
+                    button.style.backgroundColor = '#5f9dff';
+                    button.classList.add('shimmer-button');
                 }
             } else {
-                button.textContent = 'Начать изучение';
-                button.style.backgroundColor = '#28a745';
-                button.style.color = 'white';
+                button.innerHTML = '<span class="gold-gradient-text">Купить навсегда</span>';
+                button.style.background = 'linear-gradient(135deg, #5f9dff, #4a89e8)';
+                button.classList.add('shimmer-button');
             }
         });
     }

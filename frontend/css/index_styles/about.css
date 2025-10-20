@@ -36,6 +36,7 @@
 
 .about__column--left {
     flex: 1;
+    max-height: 400px;
 }
 
 .about__column--right {
@@ -55,7 +56,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-    min-width: 650px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -146,7 +146,7 @@
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
     text-align: left;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: default;
 }
 
 .about__info-block:hover {
@@ -198,6 +198,14 @@
 }
 
 @media (max-width: 768px) {
+    .about {
+        padding: 3rem 0;
+    }
+    
+    .about__container {
+        padding: 0 20px;
+    }
+    
     .about__columns {
         flex-direction: column;
         gap: 2rem;
@@ -227,7 +235,8 @@
     }
     
     .about__intro {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        margin-top: 0.1rem;
         margin-bottom: 2rem;
     }
 }
@@ -235,6 +244,10 @@
 @media (max-width: 480px) {
     .about {
         padding: 2rem 0;
+    }
+    
+    .about__container {
+        padding: 0 15px;
     }
     
     .about__heading {

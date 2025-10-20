@@ -213,7 +213,7 @@ class PaymentManager {
 
     // Переход на главную страницу
     redirectToMain() {
-        window.location.href = 'pockets.html';
+        window.location.href = 'courses.html';
     }
 
     // Показать уведомление

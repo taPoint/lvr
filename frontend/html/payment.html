@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Present Simple - LVR</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../../../frontend/css/index_styles/header.css">
-    <link rel="stylesheet" href="../../../frontend/css/index_styles/footer.css">
-    <link rel="stylesheet" href="../css/topics.css">
+    <title>Оплата - Courses</title>
+    <link rel="stylesheet" href="../css/courses_styles/payment.css">
+    <link rel="stylesheet" href="../css/index_styles/header.css">
+    <link rel="stylesheet" href="../css/index_styles/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
 </head>
 
@@ -16,7 +15,7 @@
     <!-- Хедер -->
     <header class="header">
         <div class="header__container">
-            <a href="../../../index.html" class="header__brand">
+            <a href="../../index.html" class="header__brand">
                 <i class="header__brand-icon" data-lucide="languages"></i>
                 <span class="header__brand-main">LVR</span>
                 <span class="header__brand-subtitle">Языковая школа</span>
@@ -25,16 +24,16 @@
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="header__nav-item">
-                        <a href="../../../index.html#about" class="header__nav-link">О школе</a>
+                        <a href="../../index.html#about" class="header__nav-link">О школе</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="../../../index.html#services" class="header__nav-link">Услуги</a>
+                        <a href="../../index.html#services" class="header__nav-link">Услуги</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="../../../index.html#gallery" class="header__nav-link">Галерея</a>
+                        <a href="../../index.html#gallery" class="header__nav-link">Галерея</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="../../../index.html#contacts" class="header__nav-link">Контакты</a>
+                        <a href="../../index.html#contacts" class="header__nav-link">Контакты</a>
                     </li>
                     <li class="header__nav-item header__nav-item--auth">
                         <button id="loginBtn" class="header__nav-auth-btn">Войти</button>
@@ -57,126 +56,75 @@
                     <i class="header__icon header__icon--telegram"></i>
                     Telegram
                 </a>
-                <a href="../pockets.html" class="header__btn header__btn--primary">← Назад к темам</a>
             </div>
         </div>
     </header>
 
-    <!-- Основной контент -->
-    <main class="main">
-        <div class="main__container">
-            <div class="topic">
-                <div class="topic__header">
-                    <h1 class="topic__title">Present Simple</h1>
+    <div class="payment">
+        <div class="payment__header">
+            <h1 class="payment__title">Оплата темы</h1>
+            <a href="courses.html" class="payment__back-link">← Вернуться к темам</a>
+        </div>
+
+        <div class="payment__content">
+            <!-- Информация о теме -->
+            <div class="payment__topic-info">
+                <div class="payment__topic-icon" id="topicIcon">📚</div>
+                <h2 class="payment__topic-title" id="topicTitle">Название темы</h2>
+                <p class="payment__topic-description" id="topicDescription">Описание темы</p>
+            </div>
+
+            <!-- Преимущества покупки -->
+            <div class="payment__benefits">
+                <h3 class="payment__benefits-title">Что вы получите:</h3>
+                <ul class="payment__benefits-list">
+                    <li class="payment__benefits-item">✅ Подробное объяснение грамматики</li>
+                    <li class="payment__benefits-item">✅ Практические задания для закрепления знаний</li>
+                    <li class="payment__benefits-item">✅ Аудио материалы</li>
+                    <li class="payment__benefits-item">✅ Доступ навсегда</li>
+                </ul>
+            </div>
+
+            <!-- Цена -->
+            <div class="payment__price-section">
+                <div class="payment__price">
+                    <span class="payment__price-currency">₽</span>
+                    <span class="payment__price-amount">299</span>
+                    <span class="payment__price-period">/тема</span>
                 </div>
+                <p class="payment__price-note">Оплата через СБП</p>
+            </div>
 
-                <main class="topic__content">
-                    <!-- План действий -->
-                    <section class="topic__plan">
-                        <h2 class="topic__plan-title">План изучения темы</h2>
-                        <div class="topic__plan-steps">
-                            <div class="topic__plan-step">
-                                <div class="topic__plan-icon">📚</div>
-                                <h3 class="topic__plan-step-title">1. Изучите теорию</h3>
-                                <p class="topic__plan-step-description">Внимательно прочитайте документ с теорией
-                                    Present
-                                    Simple. Обратите внимание на правила образования и случаи использования.</p>
-                            </div>
-
-                            <div class="topic__plan-step">
-                                <div class="topic__plan-icon">✏️</div>
-                                <h3 class="topic__plan-step-title">2. Решите задания</h3>
-                                <p class="topic__plan-step-description">Выполните практические задания для закрепления
-                                    материала. Не торопитесь, думайте над каждым ответом.</p>
-                            </div>
-
-                            <div class="topic__plan-step">
-                                <div class="topic__plan-icon">✅</div>
-                                <h3 class="topic__plan-step-title">3. Проверьте себя</h3>
-                                <p class="topic__plan-step-description">Сверьте свои ответы с правильными.
-                                    Проанализируйте
-                                    ошибки и повторите сложные моменты.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Документы для скачивания -->
-                    <section class="topic__documents">
-                        <h2 class="topic__documents-title">Материалы для изучения</h2>
-
-                        <div class="topic__document">
-                            <div class="topic__document-icon">📄</div>
-                            <div class="topic__document-info">
-                                <h3 class="topic__document-title">Теория Present Simple</h3>
-                                <p class="topic__document-description">Подробное объяснение грамматики, правила
-                                    образования и
-                                    примеры использования</p>
-                                <a href="#" class="topic__document-download">Скачать теорию</a>
-                            </div>
-                        </div>
-
-                        <div class="topic__document">
-                            <div class="topic__document-icon">📝</div>
-                            <div class="topic__document-info">
-                                <h3 class="topic__document-title">Задания для практики</h3>
-                                <p class="topic__document-description">Практические упражнения для закрепления
-                                    изученного
-                                    материала</p>
-                                <a href="#" class="topic__document-download">Скачать задания</a>
-                            </div>
-                        </div>
-
-                        <div class="topic__document">
-                            <div class="topic__document-icon">🔑</div>
-                            <div class="topic__document-info">
-                                <h3 class="topic__document-title">Ответы к заданиям</h3>
-                                <p class="topic__document-description">Правильные ответы для самопроверки и анализа
-                                    ошибок</p>
-                                <a href="#" class="topic__document-download">Скачать ответы</a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Советы по изучению -->
-                    <section class="topic__tips">
-                        <h2 class="topic__tips-title">Советы по изучению</h2>
-                        <div class="topic__tips-content">
-                            <div class="topic__tip">
-                                <h3 class="topic__tip-title">💡 Как эффективно изучать грамматику</h3>
-                                <ul class="topic__tip-list">
-                                    <li>Читайте теорию медленно, делая заметки</li>
-                                    <li>Выписывайте примеры в тетрадь</li>
-                                    <li>Практикуйтесь ежедневно по 15-20 минут</li>
-                                    <li>Не бойтесь делать ошибки - они помогают учиться</li>
-                                </ul>
-                            </div>
-
-                            <div class="topic__tip">
-                                <h3 class="topic__tip-title">🎯 Что делать после изучения</h3>
-                                <ul class="topic__tip-list">
-                                    <li>Попробуйте составить свои предложения</li>
-                                    <li>Найдите примеры в текстах или фильмах</li>
-                                    <li>Обсудите тему с преподавателем</li>
-                                    <li>Переходите к следующей теме только после полного понимания</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-
-                <footer class="topic__footer">
-                    <div class="topic__navigation">
-                        <button class="topic__nav-btn topic__nav-btn--prev" disabled>
-                            <i data-lucide="chevron-left"></i>
-                        </button>
-                        <button class="topic__nav-btn topic__nav-btn--next" onclick="nextTopic()">
-                            <i data-lucide="chevron-right"></i>
-                        </button>
+            <!-- QR код СБП (заглушка) -->
+            <div class="payment__qr-section">
+                <div class="payment__qr-code">
+                    <div class="payment__qr-placeholder">
+                        <span class="payment__qr-text">QR</span>
+                        <small class="payment__qr-label">СБП</small>
                     </div>
-                </footer>
+                </div>
+                <p class="payment__qr-description">Отсканируйте QR-код для оплаты</p>
+            </div>
+
+            <!-- Кнопка оплаты -->
+            <div class="payment__actions">
+                <button id="payButton" class="payment__btn payment__btn--pay">Оплатить тему</button>
+                <p class="payment__note">После оплаты тема будет доступна в вашем аккаунте</p>
+            </div>
+
+            <!-- Дополнительная информация -->
+            <div class="payment__additional-info">
+                <h3 class="payment__additional-title">Как это работает:</h3>
+                <ol class="payment__additional-list">
+                    <li class="payment__additional-item">Нажмите кнопку "Оплатить тему"</li>
+                    <li class="payment__additional-item">Откроется QR-код для оплаты через СБП</li>
+                    <li class="payment__additional-item">Отсканируйте код в вашем банковском приложении</li>
+                    <li class="payment__additional-item">Подтвердите оплату</li>
+                    <li class="payment__additional-item">Получите доступ к теме автоматически</li>
+                </ol>
             </div>
         </div>
-    </main>
+    </div>
 
     <!-- Футер -->
     <footer class="footer">
@@ -309,7 +257,7 @@
                     nav.classList.remove('active');
                 }
                 // Переходим на страницу авторизации
-                window.location.href = '../auth.html';
+                window.location.href = 'auth.html';
             });
         }
 
@@ -332,7 +280,7 @@
             }
         });
     </script>
-    <script src="../js/topics.js"></script>
+    <script src="../../backend/js/payment.js"></script>
 </body>
 
 </html>

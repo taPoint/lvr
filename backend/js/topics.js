@@ -147,7 +147,7 @@ class TopicManager {
 
     // Переход на главную
     goToMain() {
-        window.location.href = '../pockets.html';
+        window.location.href = '../courses.html';
     }
 
     // Следующая тема

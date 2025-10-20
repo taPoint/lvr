@@ -136,6 +136,10 @@
 }
 
 @media (max-width: 480px) {
+    .reviews {
+        padding: 40px 0;
+    }
+    
     .reviews__container {
         max-width: 100vw;
         border-radius: 0;

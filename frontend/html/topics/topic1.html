@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future Simple - LVR</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../../../frontend/css/index_styles/header.css">
-    <link rel="stylesheet" href="../../../frontend/css/index_styles/footer.css">
-    <link rel="stylesheet" href="../css/topics.css">
+    <title>Present Simple - LVR</title>
+    <link rel="stylesheet" href="../../css/courses_styles/courses.css">
+    <link rel="stylesheet" href="../../css/index_styles/header.css">
+    <link rel="stylesheet" href="../../css/index_styles/footer.css">
+    <link rel="stylesheet" href="../../css/courses_styles/topics.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
 </head>
 
@@ -36,8 +36,17 @@
                     <li class="header__nav-item">
                         <a href="../../../index.html#contacts" class="header__nav-link">Контакты</a>
                     </li>
+                    <li class="header__nav-item header__nav-item--auth">
+                        <button id="loginBtn" class="header__nav-auth-btn">Войти</button>
+                    </li>
                 </ul>
             </nav>
+
+            <button class="header__burger" id="burgerMenu">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
 
             <div class="header__contacts">
                 <a href="tel:+79025101923" class="header__contact header__contact--phone">
@@ -48,7 +57,7 @@
                     <i class="header__icon header__icon--telegram"></i>
                     Telegram
                 </a>
-                <a href="../pockets.html" class="header__btn header__btn--primary">← Назад к темам</a>
+                <a href="../courses.html" class="header__btn header__btn--primary">← Назад к темам</a>
             </div>
         </div>
     </header>
@@ -58,7 +67,7 @@
         <div class="main__container">
             <div class="topic">
                 <div class="topic__header">
-                    <h1 class="topic__title">Future Simple</h1>
+                    <h1 class="topic__title">Present Simple</h1>
                 </div>
 
                 <main class="topic__content">
@@ -69,9 +78,9 @@
                             <div class="topic__plan-step">
                                 <div class="topic__plan-icon">📚</div>
                                 <h3 class="topic__plan-step-title">1. Изучите теорию</h3>
-                                <p class="topic__plan-step-description">Внимательно прочитайте документ с теорией Future
-                                    Simple.
-                                    Обратите внимание на правила образования и случаи использования.</p>
+                                <p class="topic__plan-step-description">Внимательно прочитайте документ с теорией
+                                    Present
+                                    Simple. Обратите внимание на правила образования и случаи использования.</p>
                             </div>
 
                             <div class="topic__plan-step">
@@ -98,7 +107,7 @@
                         <div class="topic__document">
                             <div class="topic__document-icon">📄</div>
                             <div class="topic__document-info">
-                                <h3 class="topic__document-title">Теория Future Simple</h3>
+                                <h3 class="topic__document-title">Теория Present Simple</h3>
                                 <p class="topic__document-description">Подробное объяснение грамматики, правила
                                     образования и
                                     примеры использования</p>
@@ -147,7 +156,7 @@
                                 <ul class="topic__tip-list">
                                     <li>Попробуйте составить свои предложения</li>
                                     <li>Найдите примеры в текстах или фильмах</li>
-                                    <li>Обсудите тему с преподавателем</li>
+                                    <li>Если хотите разобраться проще - запишитесь на урок</li>
                                     <li>Переходите к следующей теме только после полного понимания</li>
                                 </ul>
                             </div>
@@ -157,10 +166,12 @@
 
                 <footer class="topic__footer">
                     <div class="topic__navigation">
-                        <button class="topic__nav-btn topic__nav-btn--prev" onclick="previousTopic()">← Предыдущая
-                            тема</button>
-                        <button class="topic__nav-btn topic__nav-btn--next" onclick="nextTopic()">Следующая тема
-                            →</button>
+                        <button class="topic__nav-btn topic__nav-btn--prev" disabled>
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="topic__nav-btn topic__nav-btn--next" onclick="nextTopic()">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
                     </div>
                 </footer>
             </div>
@@ -276,8 +287,52 @@
     <script>
         // Инициализация иконок Lucide
         lucide.createIcons();
+
+        // Бургер меню
+        const burgerMenu = document.getElementById('burgerMenu');
+        const nav = document.querySelector('.header__nav');
+
+        if (burgerMenu && nav) {
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+
+        // Кнопка входа
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+            loginBtn.addEventListener('click', () => {
+                // Закрываем бургер меню
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+                // Переходим на страницу авторизации
+                window.location.href = '../auth.html';
+            });
+        }
+
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.header__nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (burgerMenu && nav) {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (nav && burgerMenu && !nav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
     </script>
-    <script src="../js/topics.js"></script>
+    <script src="../../../backend/js/topics.js"></script>
 </body>
 
 </html>
